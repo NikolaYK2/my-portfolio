@@ -4,3 +4,17 @@
     min-height: 100%;
     overflow: hidden;
 }
+
+.appGeneralTitle{
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.appGeneralDescription{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}

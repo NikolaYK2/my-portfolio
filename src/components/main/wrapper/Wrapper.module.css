@@ -1,5 +1,5 @@
 .wrapper {
-    background-color: rgb(0, 230, 255);
+    background-color: rgb(0, 144, 159);
     height: 500px;
     padding: 100px 0;
 }
@@ -16,7 +16,7 @@
 }
 
 .wrapperName {
-    background-color: rgba(93, 125, 141, 0.3);
+    background-color: rgba(93, 125, 141, 0.9);
     flex: 0 1 70%;
     max-width: 500px;
     margin: 0 5px 0 0;
