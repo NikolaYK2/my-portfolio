@@ -1,0 +1,49 @@
+.mySkills {
+    background-color: yellow;
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1200px;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+.containerSkills {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    gap: 30px;
+}
+
+.containerItem{
+        flex: 1 1 20%;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 200px;
+        padding:10px;
+    }
+    .containerImg{
+        max-width: 100px;
+        height: 100px;
+        }
+        .containerImg img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+        }
+    .containerItem p{
+        font-size: 22px;
+    }
+    .containerText{
+        border: 1px solid black;
+
+    }
+        .containerText p{
+                font-size: 16px;
+                text-align: center;
+        }
