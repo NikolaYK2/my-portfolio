@@ -1,5 +1,6 @@
+
 .mySkills {
-    background-color: yellow;
+    background-color: #bebe06;
     padding: 100px 0;
 }
 
@@ -11,32 +12,41 @@
     text-align: center;
     }
     .container h2{
-        background-color: #5d7d8d;
+        background-color: #547F8F;
         display: inline-flex;
 }
 
 .containerSkills {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     border: 1px solid black;
-    gap: 30px;
     margin: 50px 0 0;
 }
 
 .containerItem{
-        flex: 1 1 20%;
+        flex: 1 1 100%;
+        max-width: 330px;
         border: 1px solid black;
         display: flex;
         flex-direction: column;
-        min-width: 200px;
         padding:10px;
+        margin: 0 5px 5px;
+    }
+    @media (max-width: 650px){
+        .containerSkills{
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .containerItem{
+            max-width: 100%;
+        }
     }
     .containerImg{
         max-width: 100px;
         height: 100px;
         margin: 0 auto 10px;
-        background-color: #5d7d8d;
+        background-color: #547F8F;
         }
         .containerImg img{
                 width: 100%;
