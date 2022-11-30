@@ -11,10 +11,12 @@
     font-weight: 900;
     letter-spacing: -1px;
     text-align: center;
+    background-color: #547F8F;
 }
 
 .appGeneralDescription{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     text-align: center;
+    background-color: #547F8F;
 }

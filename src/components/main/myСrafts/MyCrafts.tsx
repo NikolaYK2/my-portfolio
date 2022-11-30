@@ -17,10 +17,13 @@ export const MyCrafts = () => {
                 <div className={s.containerCrafts}>
                     {crafts.map(c => {
                         return (
-                            <div className={s.containerBlock} style={{backgroundImage: `url(${c.background})`}}>
-                                <div>
-                                    <span>{c.title}</span>
-                                    <p className='appGeneralDescription'></p>
+                            <div key={c.id} className={s.containerBlock}>
+                                <div className={s.containerBackground} style={{backgroundImage: `url(${c.background})`}}>
+                                    <button><a href="">watch</a></button>
+                                </div>
+                                <div className={s.containerText}>
+                                    <p className='appGeneralTitle'>{c.title}</p>
+                                    <p className='appGeneralDescription'>{c.description}</p>
                                 </div>
                             </div>
                         );
