@@ -7,8 +7,18 @@ import appImg from './app.jpeg';
 export const MyCrafts = () => {
 
     const crafts = [
-        {id: v1(), title: 'Social network', background:socialImg,  description:'Have a good mood checking'},
-        {id: v1(), title: 'Application', background:appImg,  description:'And again to you sensei! May the force be with you'},
+        {id: v1(),
+            title: 'Social network',
+            background:socialImg,
+            description:'Have a good mood checking',
+            link:'https://nikolayk2.github.io/samurai-way-k2/'
+        },
+        {id: v1(),
+            title: 'Application',
+            background:appImg,
+            description:'And again to you sensei! May the force be with you',
+            link:'https://nikolayk2.github.io/it-incubator-todolist-ts-01/'
+        },
     ]
     return (
         <section className={s.craft}>
@@ -19,7 +29,7 @@ export const MyCrafts = () => {
                         return (
                             <div key={c.id} className={s.containerBlock}>
                                 <div className={s.containerBackground} style={{backgroundImage: `url(${c.background})`}}>
-                                    <button><a href="">watch</a></button>
+                                    <button><a href={c.link}>watch</a></button>
                                 </div>
                                 <div className={s.containerText}>
                                     <p className='appGeneralTitle'>{c.title}</p>
