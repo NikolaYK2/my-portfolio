@@ -41,19 +41,14 @@
         }
     .containerBackground{
         width: 100%;
-        height: 250px;
         display: flex;
         justify-content: center;
         align-items: center;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-            }
-            @media (max-width:650px ) {
-                .containerBackground{
-                    height: 200px;
-                }
-            }
+        padding: 28%;
+    }
     .containerText{
         display: block;
         padding: 0 15px 10px;
