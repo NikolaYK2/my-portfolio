@@ -1,0 +1,19 @@
+.work{
+    background-color: #BEBE06;
+    padding: 100px 0;
+    }
+    @media (max-width:650px ) {
+        .work {
+            padding: 50px;
+        }
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 150px;
+}

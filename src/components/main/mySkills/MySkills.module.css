@@ -1,9 +1,12 @@
-
 .mySkills {
     background-color: #bebe06;
     padding: 100px 0;
+    }
+    @media (max-width: 630px) {
+        .mySkills {
+            padding: 50px 0;
+        }
 }
-
 .container {
     max-width: 1200px;
     border: 1px solid black;
