@@ -16,4 +16,7 @@
     max-width: 1200px;
     margin: 0 auto;
     min-height: 150px;
+    }
+    .container button{
+        margin: 10px 0 0;
 }
