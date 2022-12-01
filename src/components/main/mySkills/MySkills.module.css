@@ -1,4 +1,5 @@
 .mySkills {
+    flex: 1 1 auto;
     background-color: #bebe06;
     padding: 100px 0;
     }

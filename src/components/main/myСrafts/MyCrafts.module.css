@@ -1,4 +1,5 @@
 .craft {
+    flex: 1 1 auto;
     background: #00909F;
     padding: 100px 0;
     }
