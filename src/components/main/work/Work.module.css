@@ -1,11 +1,11 @@
 .work{
     flex: 1 1 auto;
     background-color: #BEBE06;
-    padding: 100px 0;
+    padding: 100px 5px;
     }
     @media (max-width:650px ) {
         .work {
-            padding: 50px;
+            padding: 50px 5px;
         }
 }
 .container{
