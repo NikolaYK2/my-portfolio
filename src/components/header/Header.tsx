@@ -8,10 +8,10 @@ export const Header = () => {
                 <p><span>N</span>ikolaj Kevlich</p>
                 <nav className={s.headerNav}>
                     <ul>
-                        <li><a href="">Главная</a></li>
-                        <li><a href="">Скиллы</a></li>
-                        <li><a href="">Работы</a></li>
-                        <li><a href="">Контакты</a></li>
+                        <li><a href={'#wrap'}>Home</a></li>
+                        <li><a href={'#skills'}>Skills</a></li>
+                        <li><a href={'#crafts'}>Works</a></li>
+                        <li><a href={'#contact'}>Contacts</a></li>
                     </ul>
                 </nav>
             </div>

@@ -22,6 +22,9 @@
 }
 
 button{
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
     padding: 10px 40px;
     background-color: #547F8F;
 }

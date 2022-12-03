@@ -11,9 +11,16 @@ export const MySkills = () => {
         {id: v1(), title: 'Html/CSS', icon: htmlCSSIcon, description: 'Google translator rules'},
         {id: v1(), title: 'JS', icon: JS, description: 'I also translated this in google translator.'},
         {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
     ]
     return (
-        <div className={s.mySkills}>
+        <div id={'skills'} className={s.mySkills}>
             <section className={s.container}>
                 <h2 className='appGeneralTitle'>My skills</h2>
                 <div className={s.containerSkills}>

@@ -21,7 +21,7 @@ export const MyCrafts = () => {
         },
     ]
     return (
-        <section className={s.craft}>
+        <section id={'crafts'} className={s.craft}>
             <div className={s.containerItem}>
                 <h3 className='appGeneralTitle'>My crafts</h3>
                 <div className={s.containerCrafts}>
@@ -29,7 +29,7 @@ export const MyCrafts = () => {
                         return (
                             <div key={c.id} className={s.containerBlock}>
                                 <div className={s.containerBackground} style={{backgroundImage: `url(${c.background})`}}>
-                                    <button><a href={c.link}>watch</a></button>
+                                    <a href={c.link}><button>watch</button></a>
                                 </div>
                                 <div className={s.containerText}>
                                     <p className='appGeneralTitle'>{c.title}</p>
