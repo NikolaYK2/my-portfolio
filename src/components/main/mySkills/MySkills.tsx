@@ -11,13 +11,6 @@ export const MySkills = () => {
         {id: v1(), title: 'Html/CSS', icon: htmlCSSIcon, description: 'Google translator rules'},
         {id: v1(), title: 'JS', icon: JS, description: 'I also translated this in google translator.'},
         {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
-        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
-        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
-        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
-        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
-        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
-        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
-        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
     ]
     return (
         <div id={'skills'} className={s.mySkills}>

@@ -14,6 +14,7 @@
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    overflow: hidden;
     }
     .containerItem h3{
         display: inline-flex;
@@ -22,24 +23,23 @@
 .containerCrafts {
     border: 1px solid black;
     display: flex;
-    justify-content: space-between;
-    margin: 50px 0 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px -5% 0;
 }
 
 .containerBlock {
-    flex: 0 1 55%;
-    max-width: 400px;
+    flex: 1 1 45%;
+    max-width:40%;
+    min-width: 300px;
     border: 1px solid black;
-    margin: 0 10px 5px;
+    margin: 0 5% 5px;
+    }
+    @media (max-width: 690px) {
+        .containerBlock {
+            max-width:100%;
         }
-        @media (max-width:650px ) {
-            .containerCrafts{
-                flex-direction: column;
-            }
-            .containerBlock{
-                max-width: 100%;
-            }
-        }
+}
     .containerBackground{
         width: 100%;
         display: flex;
