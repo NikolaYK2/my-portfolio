@@ -1,6 +1,8 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    /*background-color: #804f4f;*/
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  /*background-color: #804f4f;*/
 }
+
+/*# sourceMappingURL=Main.module.css.map */
