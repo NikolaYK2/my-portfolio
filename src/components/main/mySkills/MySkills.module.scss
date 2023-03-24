@@ -1,6 +1,4 @@
-.mySkills {
-  padding: 5% 0;
-}
+@import '../../../styleSCSS/style';
 
 @keyframes borderTopRight {
   0% {
@@ -24,6 +22,7 @@
     border-right: 1px solid red;
   }
 }
+
 @keyframes borderBotLeft {
   0% {
     width: 0%;
@@ -46,22 +45,28 @@
     border-left: 1px solid red;
   }
 }
+
+
 .mySkills {
   flex: 1 1 auto;
+  @extend %padding;
 }
 
 .container {
   max-width: 1200px;
+  //border: 1px solid black;
   margin: 0 auto;
   overflow: hidden;
-}
-.container .containerSkills {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  overflow: hidden;
-  padding: 3% 0 3% 0;
-  margin: 50px -3% 0;
+
+  .containerSkills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    //border: 1px solid black;
+    overflow: hidden;
+    padding: 3% 0 3% 0;
+    margin: 50px -3% 0;
+  }
 }
 
 .containerItem {
@@ -77,46 +82,51 @@
   background: #1a1a1a;
   box-shadow: 0px 9px 36px 6px rgba(0, 0, 0, 0.2) !important;
   position: relative;
-}
-.containerItem:hover:after {
-  position: absolute;
-  display: block;
-  content: "";
-  top: 0;
-  left: 0;
-  animation: borderTopRight 0.4s linear forwards;
-}
-.containerItem:hover:before {
-  position: absolute;
-  display: block;
-  content: "";
-  bottom: 0;
-  right: 0;
-  animation: borderBotLeft 0.4s linear 0.4s forwards;
-}
-.containerItem .containerImg {
-  max-width: 100px;
-  height: 100px;
-  margin: 0 auto 10px;
-  background-color: #547F8F;
-}
-.containerItem .containerImg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.containerItem p {
-  font-size: 22px;
-  margin: 0 0 10px;
-  background: none;
-}
-.containerItem .containerText {
-  flex: 1 1 auto;
-  border: 1px solid black;
-}
-.containerItem .containerText p {
-  font-size: 16px;
-  text-align: center;
-}
 
-/*# sourceMappingURL=MySkills.module.css.map */
+  &:hover:after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    animation: borderTopRight 0.4s linear forwards;
+  }
+
+  &:hover:before {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 0;
+    right: 0;
+    animation: borderBotLeft 0.4s linear 0.4s forwards;
+  }
+
+  .containerImg {
+    max-width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    background-color: #547F8F;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  p {
+    font-size: 22px;
+    margin: 0 0 10px;
+    background: none;
+  }
+
+  .containerText {
+    flex: 1 1 auto;
+    border: 1px solid black;
+
+    p {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+}

@@ -1,9 +1,10 @@
 import React from 'react';
-import s from './MySkills.module.css';
+import s from './MySkills.module.scss';
 import {v1} from "uuid";
 import reactIcon from './icon-react.png'
 import htmlCSSIcon from './htmlCSS.png'
 import JS from './JS.png'
+import {TitleH2} from "../../titleH2/titleH2";
 
 export const MySkills = () => {
 
@@ -15,7 +16,7 @@ export const MySkills = () => {
     return (
         <div id={'skills'} className={s.mySkills}>
             <section className={s.container}>
-                <h2 className='appGeneralTitle'>My skills</h2>
+                <TitleH2 title={'My skills'}/>
                 <div className={s.containerSkills}>
                     {mySkillsProduct.map(skill => {
                         return (

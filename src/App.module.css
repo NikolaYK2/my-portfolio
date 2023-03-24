@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  background: rgb(26, 26, 26);
+  font-family: Jost, sans-serif;
+}
+
+.appGeneralDescription {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  background-color: #547F8F;
+}
+
+button {
+  font-family: "Jost", sans-serif;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  background-color: #547F8F;
+}
+
+/*# sourceMappingURL=App.module.css.map */

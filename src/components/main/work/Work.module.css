@@ -1,13 +1,8 @@
 .work{
     flex: 1 1 auto;
-    background-color: #BEBE06;
-    padding: 100px 5px;
+    background: url(/src/components/main/wrapper/I_maloy.jpg)center/cover no-repeat fixed;
+    padding: 5% 5px;
     }
-    @media (max-width:650px ) {
-        .work {
-            padding: 50px 5px;
-        }
-}
 .container{
     display: flex;
     flex-direction: column;

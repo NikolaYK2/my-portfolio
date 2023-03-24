@@ -1,0 +1,36 @@
+@import '../../styleSCSS/style';
+
+.title {
+  display: inline-block;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  font-size: 40/14+0rem;
+  color: #9da1a5;
+  font-weight: 700;
+  padding: 0 20px;
+  line-height: 1.06em;
+
+  &:before, &:after{
+    background: #1DCB0A;
+    height: 4px;
+    bottom: -10px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    right: 19px;
+    width: 30px;
+    height: 4px;
+    z-index: 1010000;
+    border-radius: 0 0 0 100px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 15px;
+    border-radius: 0 100px 0 0;
+  }
+}
