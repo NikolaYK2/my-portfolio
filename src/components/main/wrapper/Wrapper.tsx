@@ -6,7 +6,7 @@ export const Wrapper = () => {
         <div id='wrap' className={s.wrapper}>
             <div className={s.wrapperContainer}>
                 <div className={s.wrapperName}>
-                    <h1><span>N</span>ikolaj Ivanovich Kevlich<span>.</span></h1>
+                    <h1><span>N</span>ikolaj Kevlich<span>.</span></h1>
                     <p>I am a front-end developer</p>
                 </div>
                 {/*<div className={s.wrapperImg}>*/}

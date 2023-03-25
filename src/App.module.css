@@ -1,9 +1,12 @@
 .App {
+  background: rgb(16, 16, 16);
+}
+
+.App {
   display: flex;
   flex-direction: column;
   min-height: 100%;
   overflow: hidden;
-  background: rgb(26, 26, 26);
   font-family: Jost, sans-serif;
 }
 

@@ -1,10 +1,10 @@
-
+@import "./styleSCSS/style";
 .App{
     display: flex;
     flex-direction: column;
     min-height: 100%;
     overflow: hidden;
-    background: rgb(26, 26, 26);
+    @extend %bcApp;
     font-family: Jost, sans-serif;
 
 }

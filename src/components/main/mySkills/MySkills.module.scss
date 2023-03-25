@@ -3,47 +3,48 @@
 @keyframes borderTopRight {
   0% {
     width: 0%;
-    border-top: 1px solid red;
+    border-top: 1px solid #1DCB0A;
   }
-  50% {
+  33% {
     width: 100%;
-    border-top: 1px solid red;
+    border-top: 1px solid #1DCB0A;
   }
-  75% {
+  66% {
     width: 100%;
     height: 0%;
-    border-top: 1px solid red;
-    border-right: 1px solid red;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
   }
   100% {
     width: 100%;
     height: 100%;
-    border-top: 1px solid red;
-    border-right: 1px solid red;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
   }
 }
 
 @keyframes borderBotLeft {
   0% {
     width: 0%;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #1DCB0A;
   }
-  35% {
+  33% {
     width: 100%;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #1DCB0A;
   }
-  60% {
+  66% {
     width: 100%;
     height: 0%;
-    border-bottom: 1px solid red;
-    border-left: 1px solid red;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
   }
   100% {
     width: 100%;
     height: 100%;
-    border-bottom: 1px solid red;
-    border-left: 1px solid red;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
   }
+
 }
 
 
@@ -78,9 +79,9 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  margin: 0 4% 5px;
-  background: #1a1a1a;
-  box-shadow: 0px 9px 36px 6px rgba(0, 0, 0, 0.2) !important;
+  margin: 0 4% 30px;
+  @extend %bcSkill;
+  box-shadow: 0px 9px 16px 6px rgba(0, 0, 0, 0.2) !important;
   position: relative;
 
   &:hover:after {
@@ -105,7 +106,7 @@
     max-width: 100px;
     height: 100px;
     margin: 0 auto 10px;
-    background-color: #547F8F;
+    //background-color: #547F8F;
 
     img {
       width: 100%;
@@ -116,6 +117,7 @@
 
   p {
     font-size: 22px;
+    color:#1DCB0A;
     margin: 0 0 10px;
     background: none;
   }

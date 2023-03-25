@@ -1,17 +1,31 @@
 import React from 'react';
 import s from './MySkills.module.scss';
 import {v1} from "uuid";
-import reactIcon from './icon-react.png'
-import htmlCSSIcon from './htmlCSS.png'
-import JS from './JS.png'
+import reactIcon from './react.svg';
+import htmlIcon from './html5.svg'
+import cssIcon from './css3.svg'
+import gitIcon from './git.svg'
+import jestIcon from './jest.svg'
+import apiIcon from './api.svg'
+import jsIcon from './js.svg'
+import reduxIcon from './redux.svg'
+import stBkIcon from './storybook.svg'
+import tsIcon from './typescript.svg'
 import {TitleH2} from "../../titleH2/titleH2";
 
 export const MySkills = () => {
 
     const mySkillsProduct = [
-        {id: v1(), title: 'Html/CSS', icon: htmlCSSIcon, description: 'Google translator rules'},
-        {id: v1(), title: 'JS', icon: JS, description: 'I also translated this in google translator.'},
-        {id: v1(), title: 'React', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'HTML', icon: htmlIcon, description: 'Google translator rules'},
+        {id: v1(), title: 'CSS', icon: cssIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'JAVASCRIPT', icon: jsIcon, description: 'I also translated this in google translator.'},
+        {id: v1(), title: 'TYPESCRIPT', icon: tsIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'GIT', icon: gitIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'REACT', icon: reactIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'REDUX', icon: reduxIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'STORYBOOK', icon: stBkIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'TDD-JEST', icon: jestIcon, description: 'My react is lame somewhere'},
+        {id: v1(), title: 'REST API', icon: apiIcon, description: 'My react is lame somewhere'},
     ]
     return (
         <div id={'skills'} className={s.mySkills}>

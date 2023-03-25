@@ -1,16 +1,32 @@
 //padding Для всех блоков
-%padding{
+%padding {
   padding: 5% 0;
 }
 
 //параграфы(описание) размер шрифта
-%fontSizeP{
+%fontSizeP {
   font-size: 20/14+0rem;
 }
+
 //H2(описание) размер шрифта H2 всех уровней кроме 1-го
 
 
 //Font famaly h p
-%fontFamily{
+%fontFamily {
   font-family: 'Jost', sans-serif;
+}
+
+//bc all App
+%bcApp {
+  background: rgb(16, 16, 16);
+}
+
+//bc skills
+%bcSkill {
+  background: rgb(26, 26, 26);
+}
+
+//color p
+%c{
+background: #9da1a5;
 }
