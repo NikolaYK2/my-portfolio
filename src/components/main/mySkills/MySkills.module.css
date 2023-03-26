@@ -2,54 +2,20 @@
   padding: 5% 0;
 }
 
+.containerItem .containerText p, .containerItem p {
+  font-size: 1.4285714286rem;
+  margin: 0 0 10px 0;
+}
+
+.containerItem .containerText p:last-child {
+  font-size: 1.4285714286rem;
+  line-height: 1.3em;
+}
+
 .containerItem {
   background: rgb(26, 26, 26);
 }
 
-@keyframes borderTopRight {
-  0% {
-    width: 0%;
-    border-top: 1px solid #1DCB0A;
-  }
-  33% {
-    width: 100%;
-    border-top: 1px solid #1DCB0A;
-  }
-  66% {
-    width: 100%;
-    height: 0%;
-    border-top: 1px solid #1DCB0A;
-    border-right: 1px solid #1DCB0A;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    border-top: 1px solid #1DCB0A;
-    border-right: 1px solid #1DCB0A;
-  }
-}
-@keyframes borderBotLeft {
-  0% {
-    width: 0%;
-    border-bottom: 1px solid #1DCB0A;
-  }
-  33% {
-    width: 100%;
-    border-bottom: 1px solid #1DCB0A;
-  }
-  66% {
-    width: 100%;
-    height: 0%;
-    border-bottom: 1px solid #1DCB0A;
-    border-left: 1px solid #1DCB0A;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid #1DCB0A;
-    border-left: 1px solid #1DCB0A;
-  }
-}
 .mySkills {
   flex: 1 1 auto;
 }
@@ -69,17 +35,25 @@
 }
 
 .containerItem {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  justify-content: start;
+  min-height: 170px;
   flex: 1 1 23%;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
   max-width: 320px;
   min-width: 200px;
   border: 1px solid #313131;
-  display: flex;
-  flex-direction: column;
   padding: 10px;
   margin: 0 4% 30px;
-  box-shadow: 0px 9px 16px 6px rgba(0, 0, 0, 0.2) !important;
-  position: relative;
+  box-shadow: 0 9px 16px 6px rgb(0, 0, 0) !important;
+}
+.containerItem:hover {
+  transition: all 0.3s ease 0.8s;
+  box-shadow: 0 9px 16px 6px rgba(29, 203, 10, 0.05) !important;
 }
 .containerItem:hover:after {
   position: absolute;
@@ -89,6 +63,28 @@
   left: 0;
   animation: borderTopRight 0.4s linear forwards;
 }
+@keyframes borderTopRight {
+  0% {
+    width: 0;
+    border-top: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-top: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+}
 .containerItem:hover:before {
   position: absolute;
   display: block;
@@ -97,29 +93,77 @@
   right: 0;
   animation: borderBotLeft 0.4s linear 0.4s forwards;
 }
+@keyframes borderBotLeft {
+  0% {
+    width: 0;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+}
 .containerItem .containerImg {
   max-width: 100px;
-  height: 100px;
   margin: 0 auto 10px;
+  transition: all 1s ease;
 }
 .containerItem .containerImg img {
   width: 100%;
-  height: 100%;
+  height: 70%;
   object-fit: cover;
 }
 .containerItem p {
-  font-size: 22px;
   color: #1DCB0A;
-  margin: 0 0 10px;
-  background: none;
+  text-align: center;
+  margin: 10px 0 0 0;
 }
 .containerItem .containerText {
   flex: 1 1 auto;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .containerItem .containerText p {
-  font-size: 16px;
+  animation: containerText 1s ease-in-out;
   text-align: center;
+  color: #9da1a5;
+}
+@keyframes containerText {
+  0% {
+    transform: translate(0, 320%);
+    color: #1DCB0A;
+  }
+  100% {
+    transform: translate(0, 0);
+    color: #9da1a5;
+  }
+}
+.containerItem .containerText p:last-child {
+  animation: containerText1 1s ease-in-out;
+  text-align: center;
+  margin: 0 0 0 0;
+  color: #1DCB0A;
+}
+@keyframes containerText1 {
+  0% {
+    transform: translate(0, 300px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 /*# sourceMappingURL=MySkills.module.css.map */

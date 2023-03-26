@@ -6,6 +6,11 @@
 //параграфы(описание) размер шрифта
 %fontSizeP {
   font-size: 20/14+0rem;
+  margin: 0 0 10px 0;
+}
+%fontSizePp {
+  font-size: 20/14+0rem;
+  line-height: 1.3em;
 }
 
 //H2(описание) размер шрифта H2 всех уровней кроме 1-го
