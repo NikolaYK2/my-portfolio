@@ -51,9 +51,28 @@
   margin: 0 4% 30px;
   box-shadow: 0 9px 16px 6px rgb(0, 0, 0) !important;
 }
+.containerItem:hover .containerImg img {
+  animation: imgOff 1s ease-in-out forwards;
+  opacity: 1;
+}
+@keyframes imgOff {
+  100% {
+    transform: translate(0, -200px);
+  }
+}
+.containerItem:hover .containerImg p {
+  animation: imgOf 1s ease-in-out forwards;
+  opacity: 1;
+}
+@keyframes imgOf {
+  100% {
+    transform: translate(0, 200px);
+  }
+}
 .containerItem:hover {
   transition: all 0.3s ease 0.8s;
   box-shadow: 0 9px 16px 6px rgba(29, 203, 10, 0.05) !important;
+  opacity: 1;
 }
 .containerItem:hover:after {
   position: absolute;
@@ -135,15 +154,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: all 1s ease-in-out;
 }
 .containerItem .containerText p {
-  animation: containerText 1s ease-in-out;
+  animation: containerText 0.7s ease-in-out forwards;
   text-align: center;
   color: #9da1a5;
+  transition: all 1s ease-in-out;
 }
 @keyframes containerText {
   0% {
-    transform: translate(0, 320%);
+    transform: translate(0, 800%);
     color: #1DCB0A;
   }
   100% {
@@ -152,18 +173,55 @@
   }
 }
 .containerItem .containerText p:last-child {
-  animation: containerText1 1s ease-in-out;
+  animation: containerText1 0.7s ease-in-out;
   text-align: center;
   margin: 0 0 0 0;
   color: #1DCB0A;
+  transition: all 1s ease-in-out;
 }
 @keyframes containerText1 {
   0% {
-    transform: translate(0, 300px);
+    opacity: 0.1;
+    transform: translate(0, -300%);
   }
   100% {
+    opacity: 1;
     transform: translate(0, 0);
   }
+}
+
+.mod {
+  opacity: 1;
+}
+.mod img {
+  animation: img 1s ease-in-out;
+}
+@keyframes img {
+  0% {
+    opacity: 0;
+    transform: translate(0, -300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+}
+.mod p {
+  animation: p 1s ease-in-out;
+}
+@keyframes p {
+  0% {
+    opacity: 0;
+    transform: translate(0, 300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+}
+
+.modReverse {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=MySkills.module.css.map */
