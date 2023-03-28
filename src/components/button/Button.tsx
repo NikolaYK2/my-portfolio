@@ -14,7 +14,7 @@ export const Button = (props: ButtonType) => {
 
     return (
         <>
-            <button className={`${style}`} onMouseOut={off}>{title}</button>
+            <button className={`${s.button} ${style}`} onMouseOut={off}>{title}</button>
         </>
     );
 };
