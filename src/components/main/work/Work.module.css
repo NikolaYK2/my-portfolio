@@ -1,18 +1,17 @@
-.work{
-    flex: 1 1 auto;
-    background: url(/src/components/main/wrapper/I_maloy.jpg)center/cover no-repeat fixed;
-    padding: 5% 5px;
-    }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid black;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 150px;
-    }
-    .container button{
-        margin: 10px 0 0;
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "./src/styleSCSS/style";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   Work.module.scss 1:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./src/styleSCSS/style\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Work.module.scss 1:9  root stylesheet";
 }

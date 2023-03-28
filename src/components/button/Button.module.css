@@ -1,0 +1,143 @@
+button {
+  font-size: 1.4285714286rem;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  color: #9da1a5;
+}
+
+@keyframes borderTopRight {
+  0% {
+    width: 0;
+    border-top: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-top: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+}
+
+@keyframes borderBotLeft {
+  0% {
+    width: 0;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+}
+
+button {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  margin: 40px 0 0;
+  color: #1DCB0A;
+  border: 1px solid #9da1a5;
+  transition: all 0.3s linear;
+}
+button:hover {
+  position: relative;
+  z-index: 3;
+  text-shadow: 1px 1px 3px #1DCB0A, 2px 2px 3px black;
+  transition: all 0.4s linear 0.4s;
+  animation: qq 0.4s linear forwards 0.4s;
+}
+@keyframes qq {
+  0% {
+    color: #1DCB0A;
+  }
+  100% {
+    color: #9da1a5;
+  }
+}
+button:hover:hover:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  animation: bcZapolnenie 0.4s ease forwards;
+  background: rgb(29, 203, 10);
+}
+@keyframes bcZapolnenie {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 55%;
+  }
+}
+button:hover:hover:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  animation: bcZapolnenie 0.4s ease forwards;
+  background: rgb(29, 203, 10);
+}
+
+.modOff {
+  transition: all 0.4s linear;
+}
+.modOff:before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  animation: bcZapolnenie1 0.4s ease reverse 0.3s forwards;
+  background: #1DCB0A;
+}
+@keyframes bcZapolnenie1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 55%;
+  }
+}
+.modOff:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  animation: bcZapolnenie1 0.4s ease reverse 0.3s forwards;
+  background: #1DCB0A;
+}
+
+/*# sourceMappingURL=Button.module.css.map */

@@ -29,7 +29,7 @@
     font-size: 60/14 + 0rem;
     font-weight: 700;
     color: #9da1a5;
-    line-height: 1.06em;
+    line-height: 1.5em;
   }
 
   span {
@@ -41,5 +41,6 @@
     font-weight: 400;
     color: #1DCB0A;
     @extend %fontSizeP;
+    text-transform: capitalize;
   }
 }

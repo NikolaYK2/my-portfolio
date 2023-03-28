@@ -1,15 +1,23 @@
 //padding Для всех блоков
 %padding {
-  padding: 3% 0;
+  padding: 5% 0;
 }
 
-//параграфы(описание) размер шрифта
+//H and параграфы(описание) размер шрифта
+%fontSizeH2 {
+  font-size: 40/14+0rem;
+  color: #9da1a5;
+  font-weight: 700;
+  line-height: 1.06em;
+}
+
 %fontSizeP {
   font-size: 20/14+0rem;
   text-transform: uppercase;
   margin: 0 0 10px 0;
   color: #9da1a5;
 }
+
 %fontSizePp {
   font-size: 20/14+0rem;
   text-transform: capitalize;
@@ -25,7 +33,7 @@
   font-family: 'Jost', sans-serif;
 }
 
-//bc all App
+//bc all App =================================
 %bcApp {
   background: rgb(16, 16, 16);
 }
@@ -33,15 +41,25 @@
 //bc skills
 %bcSkill {
   background: rgb(26, 26, 26);
+
 }
 
+@mixin bcImg($pV, $pG,$s,$r,$a) {
+  background-position: $pV $pG;
+  background-size: $s;
+  background-repeat: $r;
+  background-attachment: $a;
+}
+
+//===================================================
+
 //color p
-%c{
-background: #9da1a5;
+%c {
+  background: #9da1a5;
 }
 
 //Border animations ===============
-%animationBorderTopRight{
+%animationBorderTopRight {
   @keyframes borderTopRight {
     0% {
       width: 0;
@@ -71,7 +89,8 @@ background: #9da1a5;
   top: 0;
   left: 0;
 }
-%animationBorderBotLeft{
+
+%animationBorderBotLeft {
   @keyframes borderBotLeft {
     0% {
       width: 0;
@@ -102,5 +121,8 @@ background: #9da1a5;
   bottom: 0;
   right: 0;
 }
+
+//bc animation------
+
 //-----------------------------------------
 

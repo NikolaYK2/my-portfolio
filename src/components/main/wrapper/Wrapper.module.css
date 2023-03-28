@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 3% 0;
+  padding: 5% 0;
 }
 
 .wrapperName p {
@@ -82,7 +82,7 @@
   font-size: 4.2857142857rem;
   font-weight: 700;
   color: #9da1a5;
-  line-height: 1.06em;
+  line-height: 1.5em;
 }
 .wrapperName span {
   color: #1DCB0A;
@@ -91,6 +91,7 @@
   font-family: "Jost", sans-serif;
   font-weight: 400;
   color: #1DCB0A;
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=Wrapper.module.css.map */

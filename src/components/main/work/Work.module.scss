@@ -1,0 +1,28 @@
+@import "./src/styleSCSS/style";
+
+.work {
+  flex: 1 1 auto;
+  @extend %padding;
+  @include bcImg(center, center, cover, no-repeat, fixed)
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  //border: 1px solid black;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 150px;
+
+  > h2 {
+    @extend %fontSizeH2;
+    margin: 0 0 20px 0;
+  }
+
+  > p {
+    @extend %fontSizePp;
+    margin: 0 0 20px 0;
+  }
+}

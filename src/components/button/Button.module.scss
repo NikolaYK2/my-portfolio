@@ -1,0 +1,102 @@
+@import "../../../src/styleSCSS/style";
+
+
+button {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  margin: 40px 0 0;
+  @extend %fontSizeP;
+  color: #1DCB0A;
+  border: 1px solid #9da1a5;
+  transition: all .3s linear;
+
+  &:hover {
+    @keyframes qq {
+      0% {
+        color: #1DCB0A;
+      }
+      100% {
+        color: #9da1a5;
+      }
+    }
+
+    &:hover:before {
+      @keyframes bcZapolnenie {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 55%;
+        }
+      }
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      content: '';
+      height: 100%;
+      width: 100%;
+      animation: bcZapolnenie .4s ease forwards;
+      background: rgb(29, 203, 10);
+      //background: rgb(29, 203, 10);
+    }
+
+    &:hover:after {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      content: '';
+      height: 100%;
+      width: 100%;
+      animation: bcZapolnenie .4s ease forwards;
+      background: rgb(29, 203, 10);
+    }
+
+    position: relative;
+    z-index: 3;
+    text-shadow: 1px 1px 3px #1DCB0A, 2px 2px 3px black;
+    transition: all .4s linear .4s;
+    animation: qq .4s linear forwards .4s;
+    //color: #9da1a5;
+  }
+}
+
+
+//===============================================
+.modOff {
+  transition: all .4s linear;
+
+  &:before {
+    @keyframes bcZapolnenie1 {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 55%;
+      }
+    }
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    animation: bcZapolnenie1 .4s ease reverse .3s forwards;
+    background: #1DCB0A;
+  }
+
+  &:after {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    animation: bcZapolnenie1 .4s ease reverse .3s forwards;
+    background: #1DCB0A;
+  }
+}
