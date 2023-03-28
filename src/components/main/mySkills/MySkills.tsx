@@ -18,12 +18,7 @@ let stop: any = null;
 export const MySkills = () => {
     const [skills, setSkills] = useState(
         [
-            {
-                id: v1(),
-                title: 'HTML',
-                icon: htmlIcon,
-                description: 'Google translator rules Google translator rulesGoogle translator rulesGoogle translator rulesGoogle translator rulesGoogle translator rulesGoogle translator rulesGoogle translator rulesGoogle translator rulesGoogle translator rulesGoogle translator rules'
-            },
+            {id: v1(), title: 'HTML', icon: htmlIcon, description: 'Google translator rules' },
             {id: v1(), title: 'CSS', icon: cssIcon, description: 'My react is lame somewhere'},
             {id: v1(), title: 'JAVASCRIPT', icon: jsIcon, description: 'I also translated this in google translator.'},
             {id: v1(), title: 'TYPESCRIPT', icon: tsIcon, description: 'My react is lame somewhere'},
@@ -80,15 +75,15 @@ type SkillType = {
 }
 const Skill = memo((props: SkillType) => {
     const {skill, switchOn, switchOff} = props;
-    const [style, setStyle] = useState(s.mod);
+    const [style, setStyle] = useState('');
 
    const on=(id:string)=>{
-       switchOn(id)
-       setStyle(s.mod)
+       switchOn(id);
+       setStyle(s.mod);
    }
    const off=()=>{
-       switchOff()
-       setStyle(s.modReverse)
+       switchOff();
+       setStyle(s.modReverse);
    }
     console.log('render')
     return (

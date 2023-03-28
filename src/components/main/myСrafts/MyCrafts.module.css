@@ -1,61 +1,223 @@
 .craft {
-    flex: 1 1 auto;
-    /*background: #00909F;*/
-    padding: 5% 0;
-    }
+  padding: 3% 0;
+}
+
+.containerBlock .containerText p:first-child, .containerBlock .containerBackground button {
+  font-size: 1.4285714286rem;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  color: #9da1a5;
+}
+
+.containerBlock .containerText p:last-child {
+  font-size: 1.4285714286rem;
+  text-transform: capitalize;
+  line-height: 1.3em;
+  color: #1DCB0A;
+}
+
+.containerBlock .containerBackground:hover button:after {
+  animation: borderTopRight 0.4s linear forwards;
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+}
+@keyframes borderTopRight {
+  0% {
+    width: 0;
+    border-top: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-top: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+}
+
+.containerBlock .containerBackground:hover button:before {
+  animation: borderBotLeft 0.4s linear 0.4s forwards;
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 0;
+  right: 0;
+}
+@keyframes borderBotLeft {
+  0% {
+    width: 0;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+}
+
+.craft {
+  flex: 1 1 auto;
+}
 
 .containerItem {
-    border: 1px solid black;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    overflow: hidden;
-    }
-    .containerItem h3{
-        display: inline-flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .containerCrafts {
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 50px -5% 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px -5% 0;
 }
 
 .containerBlock {
-    flex: 1 1 45%;
-    max-width:40%;
-    min-width: 300px;
-    border: 1px solid black;
-    margin: 0 5% 5px;
-    }
-    @media (max-width: 690px) {
-        .containerBlock {
-            max-width:100%;
-        }
+  position: relative;
+  flex: 1 1 45%;
+  max-width: 40%;
+  min-width: 300px;
+  margin: 0 5% 5%;
+  box-shadow: 0px 9px 31px 6px rgb(0, 0, 0) !important;
+  overflow: hidden;
+  transition: all 1s ease;
 }
-    .containerBackground{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 28%;
-    }
-    .containerText{
-        display: block;
-        padding: 0 15px 10px;
-        }
-        .containerText p:first-child {
-            font-size: 22px;
-            display: inline-flex;
-            margin: 5px 0;
-        }
-        .containerText p:last-child{
-            display: block;
-            text-align: start;
+@media (max-width: 690px) {
+  .containerBlock {
+    max-width: 80%;
+  }
+}
+.containerBlock .containerBackground {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 28%;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 0.4s ease;
+}
+.containerBlock .containerBackground:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease;
+}
+.containerBlock .containerBackground:hover:before {
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease;
+}
+.containerBlock .containerBackground:hover {
+  transform: scale(1.3);
+  transition: all 1s ease;
+}
+.containerBlock .containerBackground:hover a {
+  transform: scale(0.7);
+  transition: all 1s ease;
+  background-color: rgba(16, 16, 16, 0.8);
+}
+.containerBlock .containerBackground a {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.containerBlock .containerBackground button {
+  background: transparent;
+  margin: 0;
+}
+.containerBlock .containerBackground:hover a {
+  transition: all 0.5s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+.containerBlock .containerText {
+  position: relative;
+  background: #101010;
+  display: block;
+  padding: 20px;
+  overflow: hidden;
+  z-index: 11111;
+}
+.containerBlock .containerText p:first-child {
+  display: inline-flex;
+  margin: 5px 0;
+}
+.containerBlock .containerText p:last-child {
+  display: block;
+  text-align: start;
+}
 
+.active:after {
+  animation: bor 0.3s ease forwards;
+  border-bottom: 3px solid #9da1a5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  z-index: 300000000;
 }
+@keyframes bor {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.off:after {
+  animation: bor1 0.3s ease reverse;
+  border-bottom: 3px solid #9da1a5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  z-index: 300000000;
+}
+@keyframes bor1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=MyCrafts.module.css.map */

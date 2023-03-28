@@ -1,0 +1,170 @@
+@import '../../../styleSCSS/style';
+
+.craft {
+  flex: 1 1 auto;
+  @extend %padding;
+}
+
+.containerItem {
+  //border: 1px solid black;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.containerCrafts {
+  //border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px -5% 0;
+}
+
+.containerBlock {
+  position: relative;
+  flex: 1 1 45%;
+  max-width: 40%;
+  min-width: 300px;
+  //border: 1px solid black;
+  margin: 0 5% 5%;
+  box-shadow: 0px 9px 31px 6px rgb(0, 0, 0) !important;
+  overflow: hidden;
+  transition: all 1s ease;
+
+  @media (max-width: 690px) {
+    max-width: 80%;
+  }
+
+  .containerBackground {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 28%;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all .4s ease;
+
+    &:before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.45);
+      visibility: hidden;
+      opacity: 0;
+      transition: all 1s ease;
+    }
+    &:hover:before{
+      opacity: 1;
+      visibility: visible;
+      transition: all 1s ease;
+    }
+    &:hover{
+      transform: scale(1.3);
+      transition: all 1s ease;
+    }
+
+    &:hover a {
+      transform: scale(0.7);
+      transition: all 1s ease;
+      background-color: rgba(16, 16, 16, 0.8);
+    }
+
+    a {
+      position: relative;
+      visibility: hidden;
+      opacity: 0;
+      transition: all .5s ease-in-out;
+    }
+
+    &:hover button:after {
+      @extend %animationBorderTopRight;
+    }
+
+    &:hover button:before {
+      @extend %animationBorderBotLeft;
+    }
+
+    button {
+      background: transparent;
+      @extend %fontSizeP;
+      margin: 0;
+    }
+
+    &:hover a {
+      transition: all .5s ease-in-out;
+      visibility: visible;
+      opacity: 1;
+
+    }
+  }
+
+  .containerText {
+    position: relative;
+    background: #101010;
+    display: block;
+    padding: 20px;
+    overflow: hidden;
+    z-index: 11111;
+    //padding: 0 15px 10px;
+
+    p:first-child {
+      display: inline-flex;
+      @extend %fontSizeP;
+      margin: 5px 0;
+    }
+
+    p:last-child {
+      display: block;
+      text-align: start;
+      @extend %fontSizePp
+    }
+  }
+
+}
+
+//Animats blocks ===============================
+.active:after {
+  @keyframes bor {
+    0%{
+      width: 0;
+    }
+    100%{
+      width: 100%;
+    }
+  }
+  animation: bor .3s ease forwards;
+  border-bottom: 3px solid #9da1a5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: '';
+  z-index: 300000000;
+}
+.off:after{
+  @keyframes bor1 {
+    0%{
+      width: 0;
+    }
+    100%{
+      width: 100%;
+    }
+  }
+  animation: bor1 .3s ease reverse;
+  border-bottom: 3px solid #9da1a5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: '';
+  z-index: 300000000;
+}
+
