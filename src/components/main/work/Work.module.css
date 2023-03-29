@@ -1,17 +1,89 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "./src/styleSCSS/style";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   Work.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./src/styleSCSS/style\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Work.module.scss 1:9  root stylesheet";
+.work {
+  padding: 5% 0;
 }
+
+.container > h2 {
+  font-size: 2.8571428571rem;
+  color: #9da1a5;
+  font-weight: 700;
+  line-height: 1.06em;
+}
+
+.container > p {
+  font-size: 1.4285714286rem;
+  text-transform: capitalize;
+  line-height: 1.3em;
+  color: #1DCB0A;
+}
+
+@keyframes borderTopRight {
+  0% {
+    width: 0;
+    border-top: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-top: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+}
+
+@keyframes borderBotLeft {
+  0% {
+    width: 0;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+}
+
+.work {
+  flex: 1 1 auto;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 150px;
+}
+.container > h2 {
+  margin: 0 0 20px 0;
+}
+.container > p {
+  margin: 0 0 80px 0;
+}
+
+/*# sourceMappingURL=Work.module.css.map */

@@ -6,6 +6,7 @@
   -webkit-font-smoothing: antialiased;
   @extend %fontSizeH2;
   padding: 0 0 0 20px;
+  margin: 0 0 3%;
 
   &:before, &:after {
     background: #1DCB0A;

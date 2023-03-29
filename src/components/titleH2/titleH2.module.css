@@ -56,6 +56,7 @@
   position: relative;
   -webkit-font-smoothing: antialiased;
   padding: 0 0 0 20px;
+  margin: 0 0 3%;
 }
 .title:before, .title:after {
   background: #1DCB0A;

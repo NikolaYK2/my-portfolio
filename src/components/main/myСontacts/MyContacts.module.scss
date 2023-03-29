@@ -1,0 +1,84 @@
+@import "../../../../src/styleSCSS/style";
+
+.contact {
+  flex: 1 1 auto;
+  /*background-color: #00909F;*/
+  @extend %padding;
+}
+
+.container {
+  //border: 1px solid black;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  //justify-content: space-between;
+  //width: 100%;
+  margin: 5% auto 0;
+  //border: 1px solid black;
+
+  .formMod {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+
+    .formInput {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 50%;
+      padding: 0 10px;
+
+      input {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #9da1a5;
+        overflow: hidden;
+        padding: 12px 40px;
+        margin: 0 0 20px;
+        font-family: inherit;
+        font-size: 17px;
+        background-color: #1a1a1a;
+        outline: none;
+        color: #9da1a5;
+
+        &:focus {
+          border-bottom: 2px solid black;
+          color: #1DCB0A;
+        }
+      }
+    }
+
+    .formTextarea {
+      flex: 1 1 50%;
+      padding: 0 10px;
+      margin: 0 0 20px;
+
+      textarea {
+        min-width: 284px;
+        width: 100%;
+        height: 100%;
+        padding: 12px 40px;
+        font-family: inherit;
+        font-size: 17px;
+        background-color: #1a1a1a;
+        border: 1px solid #9da1a5;
+        color: #9da1a5;
+        outline: none;
+        resize: none;
+
+        &:focus {
+          border-bottom: 2px solid black;
+          color: #1DCB0A;
+        }
+      }
+    }
+  }
+Button{
+  background: #1a1a1a;
+}
+}
