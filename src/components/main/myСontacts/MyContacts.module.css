@@ -2,6 +2,13 @@
   padding: 5% 0;
 }
 
+.form .formMod .formTextarea textarea, .form .formMod .formInput input {
+  font-size: 1.4285714286rem;
+  text-transform: capitalize;
+  line-height: 1.3em;
+  color: #1DCB0A;
+}
+
 @keyframes borderTopRight {
   0% {
     width: 0;
@@ -78,19 +85,21 @@
 .form .formMod .formInput input {
   width: 100%;
   height: 100%;
-  border: 1px solid #9da1a5;
   overflow: hidden;
-  padding: 12px 40px;
+  padding: 2% 4%;
   margin: 0 0 20px;
-  font-family: inherit;
-  font-size: 17px;
+  border: 1px solid #9da1a5;
   background-color: #1a1a1a;
+  color: #1DCB0A;
   outline: none;
-  color: #9da1a5;
+}
+.form .formMod .formInput input::placeholder {
+  color: #1DCB0A;
+  opacity: 0.5;
 }
 .form .formMod .formInput input:focus {
-  border-bottom: 2px solid black;
-  color: #1DCB0A;
+  border: 1px solid #1DCB0A;
+  color: #9da1a5;
 }
 .form .formMod .formTextarea {
   flex: 1 1 50%;
@@ -98,21 +107,23 @@
   margin: 0 0 20px;
 }
 .form .formMod .formTextarea textarea {
-  min-width: 284px;
   width: 100%;
+  min-width: 220px;
   height: 100%;
-  padding: 12px 40px;
-  font-family: inherit;
-  font-size: 17px;
+  padding: 2% 4%;
   background-color: #1a1a1a;
   border: 1px solid #9da1a5;
-  color: #9da1a5;
+  color: #1DCB0A;
   outline: none;
   resize: none;
 }
-.form .formMod .formTextarea textarea:focus {
-  border-bottom: 2px solid black;
+.form .formMod .formTextarea textarea::placeholder {
   color: #1DCB0A;
+  opacity: 0.5;
+}
+.form .formMod .formTextarea textarea:focus {
+  border: 1px solid #1DCB0A;
+  color: #9da1a5;
 }
 .form Button {
   background: #1a1a1a;
