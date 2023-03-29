@@ -23,6 +23,7 @@
 .containerBlock {
   position: relative;
   flex: 1 1 45%;
+  align-self: start;
   max-width: 40%;
   min-width: 300px;
   //border: 1px solid black;
@@ -107,9 +108,13 @@
   }
 
   .containerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-self: end;
+    align-content: end;
     position: relative;
-    background: #101010;
-    display: block;
+    background: #1a1a1a;
     padding: 20px;
     overflow: hidden;
     z-index: 11111;

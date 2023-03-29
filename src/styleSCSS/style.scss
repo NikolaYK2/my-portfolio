@@ -52,7 +52,15 @@
 }
 
 //===================================================
-
+//PSEVDO ===================================================
+@mixin psdEl($top,$left,$bot,$right,$content){
+  position: absolute;
+  top: $top;
+  left: $left;
+  bottom: $bot;
+  right: $right;
+  content: $content;
+}
 //color p
 %c {
   background: #9da1a5;

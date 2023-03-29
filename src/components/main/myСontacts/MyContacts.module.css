@@ -92,6 +92,7 @@
   background-color: #1a1a1a;
   color: #1DCB0A;
   outline: none;
+  transition: all 0.4s linear;
 }
 .form .formMod .formInput input::placeholder {
   color: #1DCB0A;
@@ -100,6 +101,11 @@
 .form .formMod .formInput input:focus {
   border: 1px solid #1DCB0A;
   color: #9da1a5;
+  transition: all 0.4s linear;
+}
+.form .formMod .formInput input:focus::placeholder {
+  color: #9da1a5;
+  transition: all 0.4s linear;
 }
 .form .formMod .formTextarea {
   flex: 1 1 50%;
@@ -116,6 +122,7 @@
   color: #1DCB0A;
   outline: none;
   resize: none;
+  transition: all 1s linear;
 }
 .form .formMod .formTextarea textarea::placeholder {
   color: #1DCB0A;
@@ -124,6 +131,11 @@
 .form .formMod .formTextarea textarea:focus {
   border: 1px solid #1DCB0A;
   color: #9da1a5;
+  transition: all 0.4s linear;
+}
+.form .formMod .formTextarea textarea:focus::placeholder {
+  color: #9da1a5;
+  transition: all 0.4s linear;
 }
 .form Button {
   background: #1a1a1a;

@@ -1,44 +1,121 @@
+@keyframes borderTopRight {
+  0% {
+    width: 0;
+    border-top: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-top: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #1DCB0A;
+    border-right: 1px solid #1DCB0A;
+  }
+}
+
+@keyframes borderBotLeft {
+  0% {
+    width: 0;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+}
+
 .footer {
-    /*background-color: #5D7D8D;*/
-    /*padding: 5% 0;*/
+  position: relative;
+  padding-bottom: 0;
+  background: #1a1a1a;
+  border-top: 2px solid #343434;
 }
-
-.footer h3 {
-    font-size: 20px;
+.footer:before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  bottom: "";
+  right: "";
+  content: "";
+  background: #1DCB0A;
+  opacity: 0.5;
+  box-shadow: 0px 0px 10px #1DCB0A;
+  height: 2px;
+  animation: footGo 14s infinite linear;
 }
-
-.footer span {
-    color: #1DCB0A;
+@keyframes footGo {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  10% {
+    left: 0;
+    width: 30%;
+  }
+  33% {
+    left: 100%;
+    width: 30%;
+  }
+  100% {
+    left: 100%;
+    width: 30%;
+  }
 }
 
 .containerFooter {
-    border: 1px solid black;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 20px;
+}
+.containerFooter span {
+  color: #1DCB0A;
 }
 
 .containerSocial {
-    display: flex;
-    justify-content: space-between;
-    max-width: 500px;
-    height: 50px;
-    border: 1px solid black;
-    margin: 4% auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  height: 50px;
+  border: 1px solid black;
+  margin: 4% auto;
 }
 
 .containerBlock {
-    width: 50px;
-    perspective-origin: center;
-    transition: all .1s ease;
-    /*height: 70px;*/
-    }
-    .containerBlock img{
-        width: 100%;
-        height: 100%;
-    }  .containerBlock:hover{
-    filter: drop-shadow(1px 2px 5px black);
-    transition: all .1s ease;
-               transform: rotate(-9deg) scale(1.4);
-
+  width: 50px;
+  perspective-origin: center;
+  transition: all 0.1s ease;
+  /*height: 70px;*/
 }
+
+.containerBlock img {
+  width: 100%;
+  height: 100%;
+}
+
+.containerBlock:hover {
+  filter: drop-shadow(1px 2px 5px black);
+  transition: all 0.1s ease;
+  transform: rotate(-9deg) scale(1.4);
+}
+
+/*# sourceMappingURL=Footer.module.css.map */
