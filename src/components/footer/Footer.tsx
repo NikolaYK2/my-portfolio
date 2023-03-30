@@ -1,20 +1,21 @@
 import React from 'react';
 import s from './Footer.module.scss';
-import vk from './vk.png';
-import fc from './facebook.png';
-import lin from './linkedin.png';
+import lin from './linkedin.svg';
+import git from './github.svg';
+import telega from './telegram.svg';
+import {Logo} from "../logo/Logo";
 
 export const Footer = () => {
 
     const social = [
-        {icon: vk, link: 'https://vk.com/'},
-        {icon: lin, link: 'https://ru.linkedin.com/'},
-        {icon: fc, link: 'https://www.facebook.com/'},
+        {icon: git, link: 'https://github.com/NikolaYK2'},
+        {icon: lin, link: 'https://www.linkedin.com/feed/'},
+        {icon: telega, link: 'https://t.me/Nik_Kev'},
     ]
     return (
         <section className={s.footer}>
             <div className={s.containerFooter}>
-                <h3><span>N</span>ikolaj Kevlich</h3>
+                <Logo title={'Nik.'}/>
                 <div className={s.containerSocial}>
                     {social.map((social, index) => {
                         return (
@@ -26,7 +27,7 @@ export const Footer = () => {
                         );
                     })}
                 </div>
-                <p className='appGeneralDescription'>© Все права защищены</p>
+                <p className='appGeneralDescription'>© All Rights Reserved.</p>
             </div>
         </section>
     );

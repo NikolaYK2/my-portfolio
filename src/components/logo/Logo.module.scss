@@ -1,0 +1,10 @@
+@import "../../styleSCSS/style";
+
+.logo{
+  h3{
+    @extend %fontSizeH2;
+  }
+  span{
+    color: #1DCB0A;
+  }
+}
