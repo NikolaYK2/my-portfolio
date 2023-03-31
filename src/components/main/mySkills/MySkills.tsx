@@ -13,6 +13,7 @@ import stBkIcon from './storybook.svg'
 import tsIcon from './typescript.svg'
 import {TitleH2} from "../../titleH2/titleH2";
 
+
 let stop: any = null;
 
 export const MySkills = () => {

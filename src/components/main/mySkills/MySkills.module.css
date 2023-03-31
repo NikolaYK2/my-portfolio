@@ -82,11 +82,25 @@
   }
 }
 
-.mySkills {
-  flex: 1 1 auto;
+.mySkills:after {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  bottom: "";
+  right: "";
+  content: "";
+  width: 2px;
+  height: 50px;
+  background: #1DCB0A;
 }
 
+.mySkills {
+  position: relative;
+  flex: 1 1 auto;
+  padding-bottom: 0;
+}
 .container {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
@@ -115,6 +129,7 @@
   padding: 10px;
   margin: 0 4% 30px;
   box-shadow: 0 9px 16px 6px rgb(0, 0, 0) !important;
+  z-index: 2;
 }
 .containerItem:hover .containerImg img {
   animation: imgOff 1s ease-in-out forwards;

@@ -1,27 +1,22 @@
 @import "./styleSCSS/style";
-.App{
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    overflow: hidden;
-    @extend %bcApp;
-    font-family: Jost, sans-serif;
 
-}
-.fontFamilyJust{
+.App {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  //@extend %bcApp;
+  background: url("./15.png") center center/cover no-repeat,
+  rgb(16, 16, 16);
+  font-family: Jost, sans-serif;
+
+  &:after {
+    @include psdEl(0, 50%, '', '','');
+    width: 2px;
+    height: 100%;
+    background: rgba(157, 161, 165, 0.1);
+    z-index: 0;
+  }
 }
 
-.appGeneralDescription{
-    font-family: 'Jost', sans-serif;
-    font-size: 16px;
-    text-align: center;
-    background-color: #547F8F;
-}
-
-button{
-    font-family: 'Jost', sans-serif;
-    font-size: 17px;
-    text-transform: uppercase;
-    padding: 10px 40px;
-    background-color: #547F8F;
-}

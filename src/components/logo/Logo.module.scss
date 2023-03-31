@@ -1,6 +1,7 @@
 @import "../../styleSCSS/style";
 
 .logo{
+  z-index: 4;
   h3{
     @extend %fontSizeH2;
   }

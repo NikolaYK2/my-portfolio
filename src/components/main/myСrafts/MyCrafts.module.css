@@ -78,10 +78,22 @@
   }
 }
 
-.craft {
-  flex: 1 1 auto;
+.craft:after {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  bottom: "";
+  right: "";
+  content: "";
+  width: 2px;
+  height: 50px;
+  background: #1DCB0A;
 }
 
+.craft {
+  position: relative;
+  flex: 1 1 auto;
+}
 .containerItem {
   max-width: 1200px;
   margin: 0 auto;
@@ -102,7 +114,7 @@
   max-width: 40%;
   min-width: 300px;
   margin: 0 5% 5%;
-  box-shadow: 0px 9px 31px 6px rgb(0, 0, 0) !important;
+  box-shadow: 0 9px 31px 6px rgb(0, 0, 0) !important;
   overflow: hidden;
   transition: all 1s ease;
 }
@@ -124,6 +136,7 @@
   cursor: pointer;
   transform: scale(1);
   transition: all 0.4s ease;
+  z-index: 2;
 }
 .containerBlock .containerBackground:before {
   position: absolute;
@@ -159,7 +172,9 @@
 }
 .containerBlock .containerBackground button {
   background: transparent;
+  font-weight: 700;
   margin: 0;
+  padding: 20px 30px;
 }
 .containerBlock .containerBackground:hover a {
   transition: all 0.5s ease-in-out;

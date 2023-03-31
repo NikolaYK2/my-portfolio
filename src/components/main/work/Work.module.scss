@@ -3,7 +3,8 @@
 .work {
   flex: 1 1 auto;
   @extend %padding;
-  @include bcImg(center, center, cover, no-repeat, fixed)
+  @include bcImg(center, center, cover, no-repeat, fixed);
+  z-index: 2;
 }
 
 .container {

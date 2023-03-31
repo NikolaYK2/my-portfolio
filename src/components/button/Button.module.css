@@ -58,6 +58,7 @@
   color: #1DCB0A;
   border: 1px solid #9da1a5;
   transition: all 0.3s linear;
+  padding: 1% 4%;
 }
 .button:hover {
   position: relative;

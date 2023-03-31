@@ -51,6 +51,9 @@
   }
 }
 
+.logo {
+  z-index: 4;
+}
 .logo span {
   color: #1DCB0A;
 }

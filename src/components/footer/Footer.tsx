@@ -14,21 +14,24 @@ export const Footer = () => {
     ]
     return (
         <section className={s.footer}>
-            <div className={s.containerFooter}>
-                <Logo title={'Nik.'}/>
-                <div className={s.containerSocial}>
-                    {social.map((social, index) => {
-                        return (
-                            <div key={index} className={s.containerBlock}>
-                                <a href={social.link}>
-                                    <img src={social.icon} alt=""/>
-                                </a>
-                            </div>
-                        );
-                    })}
+            <div className={s.ss}>
+                <div className={s.containerFooter}>
+                    <Logo title={'Nik.'}/>
+                    <div className={s.containerSocial}>
+                        {social.map((social, index) => {
+                            return (
+                                <div key={index} className={s.containerBlock}>
+                                    <a href={social.link}>
+                                        <img src={social.icon} alt=""/>
+                                    </a>
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <p>© All Rights Reserved.</p>
                 </div>
-                <p className='appGeneralDescription'>© All Rights Reserved.</p>
             </div>
+
         </section>
     );
 };

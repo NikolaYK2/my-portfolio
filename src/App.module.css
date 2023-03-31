@@ -1,7 +1,3 @@
-.App {
-  background: rgb(16, 16, 16);
-}
-
 @keyframes borderTopRight {
   0% {
     width: 0;
@@ -49,26 +45,25 @@
 }
 
 .App {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100%;
   overflow: hidden;
+  background: url("./15.png") center center/cover no-repeat, rgb(16, 16, 16);
   font-family: Jost, sans-serif;
 }
-
-.appGeneralDescription {
-  font-family: "Jost", sans-serif;
-  font-size: 16px;
-  text-align: center;
-  background-color: #547F8F;
-}
-
-button {
-  font-family: "Jost", sans-serif;
-  font-size: 17px;
-  text-transform: uppercase;
-  padding: 10px 40px;
-  background-color: #547F8F;
+.App:after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: "";
+  right: "";
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: rgba(157, 161, 165, 0.1);
+  z-index: 0;
 }
 
 /*# sourceMappingURL=App.module.css.map */
