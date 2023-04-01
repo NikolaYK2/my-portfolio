@@ -29,18 +29,18 @@
     -webkit-font-smoothing: antialiased;
     font-size: 60/14 + 0rem;
     font-weight: 700;
-    color: #9da1a5;
+    color: $colorH;
     line-height: 1.5em;
   }
 
   span {
-    color: #1DCB0A;
+    color: $colorSpanMod;
   }
 
   p {
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    color: #1DCB0A;
+    color: $colorP;
     @extend %fontSizeP;
     text-transform: capitalize;
   }

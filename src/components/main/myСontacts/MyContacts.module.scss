@@ -36,15 +36,15 @@
       flex: 1 1 50%;
       padding: 0 10px;
 
+
       input {
         width: 100%;
         height: 100%;
         overflow: hidden;
         padding: 2% 4%;
         margin: 0 0 20px;
-        border: 1px solid #9da1a5;
-        background-color: #1a1a1a;
-        color: #1DCB0A;
+        border: 1px solid $buttonsBorderColor;
+        background-color: $formBc;
         outline: none;
         @extend %fontSizePp;
         transition: all .4s linear;
@@ -52,14 +52,15 @@
         &::placeholder{
           @extend %fontSizePp;
           opacity: .5;
+          transition: all .4s linear;
         }
         &:focus {
-          border: 1px solid #1DCB0A;
-          color: #9da1a5;
+          border: 1px solid $formBorderColor;
+          color: $colorP;
           transition: all .4s linear;
         }
         &:focus::placeholder {
-          color: #9da1a5;
+          color: $colorH;
           transition: all .4s linear;
 
         }
@@ -67,19 +68,19 @@
     }
 
     .formTextarea {
-      flex: 1 1 50%;
+      flex: 1 0 50%;
+      min-width: 220px;
       padding: 0 10px;
       margin: 0 0 20px;
 
       textarea {
         width: 100%;
-        min-width: 220px;
         height: 100%;
         padding: 2% 4%;
         @extend %fontSizePp;
-        background-color: #1a1a1a;
-        border: 1px solid #9da1a5;
-        color: #1DCB0A;
+        background-color: $formBc;
+        border: 1px solid $buttonsBorderColor;
+        color: $colorP;
         outline: none;
         resize: none;
         transition: all 1s linear;
@@ -87,21 +88,22 @@
         &::placeholder{
           @extend %fontSizePp;
           opacity: .5;
+          transition: all .4s linear;
         }
         &:focus {
-          border: 1px solid #1DCB0A;
-          color: #9da1a5;
+          border: 1px solid $formFoces;
+          color: $colorP;
           transition: all .4s linear;
 
         }
         &:focus::placeholder {
-          color: #9da1a5;
+          color: $colorH;
           transition: all .4s linear;
         }
       }
     }
   }
 Button{
-  background: #1a1a1a;
+  background: $formBc;
 }
 }

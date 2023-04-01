@@ -6,7 +6,7 @@
   font-size: 1.4285714286rem;
   text-transform: uppercase;
   margin: 0 0 10px 0;
-  color: #9da1a5;
+  color: #1DCB0A;
 }
 
 .containerBlock .containerText p:last-child {
@@ -23,6 +23,7 @@
   content: "";
   top: 0;
   left: 0;
+  z-index: 1212222222;
 }
 @keyframes borderTopRight {
   0% {
@@ -113,7 +114,7 @@
   align-self: start;
   max-width: 40%;
   margin: 0 5% 5%;
-  box-shadow: 0 9px 31px 6px rgb(0, 0, 0) !important;
+  box-shadow: 0 9px 31px 6px black !important;
   overflow: hidden;
   transition: all 1s ease;
 }

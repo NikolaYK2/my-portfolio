@@ -41,15 +41,15 @@
   max-width: 320px;
   min-width: 200px;
   min-height: 170px;
-  border: 1px solid #313131;
+  border: 1px solid $footerBorderTopColor;
   padding: 10px;
   margin: 0 4% 30px;
   z-index: 1;
   @extend %bcSkill;
-  box-shadow: 0 9px 16px 6px rgb(0, 0, 0) !important;
+  box-shadow: 0 9px 16px 6px $shadowSkill !important;
 
   &:hover .containerImg {
-    img {
+    svg {
       @keyframes imgOff {
         100% {
           transform: translate(0, -200px);
@@ -72,7 +72,7 @@
 
   &:hover {
     transition: all .3s ease 0.8s;
-    box-shadow: 0 9px 16px 6px rgba(29, 203, 10, 0.05) !important;
+    box-shadow: 0 9px 16px 6px $shadowSkillHover !important;
     opacity: 1;
   }
 
@@ -89,16 +89,16 @@
     margin: 0 auto 10px;
     transition: all 1s ease;
 
-    img {
-      width: 100%;
-      height: 70%;
-      object-fit: cover;
+    svg {
+      fill: $skillIconBc;
+      path{
+        fill: $skillIconBc;
+      }
     }
   }
 
   p {
-    @extend %fontSizeP;
-    color: #1DCB0A;
+    @extend %fontSizePp;
     text-align: center;
     margin: 10px 0 0 0;
   }
@@ -124,7 +124,6 @@
       animation: containerText .7s ease-in-out forwards;
       @extend %fontSizeP;
       text-align: center;
-      color: #9da1a5;
       transition: all 1s ease-in-out;
 
     }
@@ -145,7 +144,6 @@
       @extend %fontSizePp;
       text-align: center;
       margin: 0 0 0 0;
-      color: #1DCB0A;
       transition: all 1s ease-in-out;
 
     }
@@ -156,7 +154,7 @@
 .mod {
   opacity: 1;
 
-  img {
+  svg {
     @keyframes img {
       0% {
         opacity: 0;

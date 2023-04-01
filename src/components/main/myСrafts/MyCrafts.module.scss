@@ -31,7 +31,7 @@
   max-width: 40%;
   //border: 1px solid black;
   margin: 0 5% 5%;
-  box-shadow: 0 9px 31px 6px rgb(0, 0, 0) !important;
+  box-shadow: 0 9px 31px 6px $shadowSkill !important;
   overflow: hidden;
   transition: all 1s ease;
 
@@ -61,7 +61,7 @@
       content: '';
       height: 100%;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.45);
+      background-color: $craftBcPsevd;
       visibility: hidden;
       opacity: 0;
       transition: all 1s ease;
@@ -79,7 +79,7 @@
     &:hover a {
       transform: scale(0.7);
       transition: all 1s ease;
-      background-color: rgba(16, 16, 16, 0.8);
+      background-color: $craftBcA;
     }
 
     a {
@@ -152,7 +152,7 @@
     }
   }
   animation: bor .3s ease forwards;
-  border-bottom: 3px solid #9da1a5;
+  border-bottom: 3px solid $craftColorBorder;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -170,7 +170,7 @@
     }
   }
   animation: bor1 .3s ease reverse;
-  border-bottom: 3px solid #9da1a5;
+  border-bottom: 3px solid $craftColorBorder;
   position: absolute;
   bottom: 0;
   left: 0;

@@ -1,19 +1,38 @@
 $colorH: #9da1a5;
-$colorP: #9da1a5;
-$colorPp: #1DCB0A;
+$colorP: #1DCB0A;
 $colorSpanMod: #1DCB0A;
 
+//BUTTON----------------------------
 $buttonsColor: #1DCB0A;
 $buttonsBorderColor: #9da1a5;
 
+//PSEVDO--------------------------------------
 $psevdoElemsPoloskiColor: #1DCB0A;
 
+//HEADER-----------------------------------------
+$headBcColor:#101010;
+$headGradientBc1:#101010FF;
+$headGradientBc2:#101010E5;
+$headGradientBc3:#1DCB0A19;
+$headBurgerColor:#9da1a5;
 
-$skillslIconsColor: #9da1a5;
-$skillslBorderColor: #1DCB0A;
+//SKILL-----------------------------------------
+$skillsBorderColor: #1DCB0A;
+$shadowSkill:#000000FF;
+$shadowSkillHover:#1DCB0A0C;
+$skillIconBc:#9da1a5;
 
-$colorCraftBorder: #9da1a5;
+//CRAFT-----------------------------------------------
+$craftColorBorder: #9da1a5;
+$craftBcPsevd:rgba(0, 0, 0, 0.45);
+$craftBcA:rgba(16, 16, 16, 0.8);
 
+//CONTACTS------------------------------------------------
+$formBorderColor:#1DCB0A;
+$formBc:#1a1a1a;
+$formFoces:#1DCB0A;
+
+//footer--------------------------------
 $footerIconsColor: #1DCB0A;
 $footerBorderIcons: rgb(165, 157, 163);
 $footerBorderTopColor: rgba(157, 161, 165, 0.35);

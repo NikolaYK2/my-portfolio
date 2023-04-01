@@ -2,14 +2,14 @@
   padding: 5% 0;
 }
 
-.containerItem .containerText p, .containerItem p {
+.containerItem .containerText p {
   font-size: 1.4285714286rem;
   text-transform: uppercase;
   margin: 0 0 10px 0;
-  color: #9da1a5;
+  color: #1DCB0A;
 }
 
-.containerItem .containerText p:last-child {
+.containerItem .containerText p:last-child, .containerItem p {
   font-size: 1.4285714286rem;
   text-transform: capitalize;
   line-height: 1.3em;
@@ -27,6 +27,7 @@
   content: "";
   top: 0;
   left: 0;
+  z-index: 1212222222;
 }
 @keyframes borderTopRight {
   0% {
@@ -125,13 +126,13 @@
   max-width: 320px;
   min-width: 200px;
   min-height: 170px;
-  border: 1px solid #313131;
+  border: 1px solid rgba(157, 161, 165, 0.35);
   padding: 10px;
   margin: 0 4% 30px;
   z-index: 1;
-  box-shadow: 0 9px 16px 6px rgb(0, 0, 0) !important;
+  box-shadow: 0 9px 16px 6px black !important;
 }
-.containerItem:hover .containerImg img {
+.containerItem:hover .containerImg svg {
   animation: imgOff 1s ease-in-out forwards;
   opacity: 1;
 }
@@ -151,7 +152,7 @@
 }
 .containerItem:hover {
   transition: all 0.3s ease 0.8s;
-  box-shadow: 0 9px 16px 6px rgba(29, 203, 10, 0.05) !important;
+  box-shadow: 0 9px 16px 6px rgba(29, 203, 10, 0.0470588235) !important;
   opacity: 1;
 }
 .containerItem .containerImg {
@@ -159,13 +160,13 @@
   margin: 0 auto 10px;
   transition: all 1s ease;
 }
-.containerItem .containerImg img {
-  width: 100%;
-  height: 70%;
-  object-fit: cover;
+.containerItem .containerImg svg {
+  fill: #9da1a5;
+}
+.containerItem .containerImg svg path {
+  fill: #9da1a5;
 }
 .containerItem p {
-  color: #1DCB0A;
   text-align: center;
   margin: 10px 0 0 0;
 }
@@ -179,7 +180,6 @@
 .containerItem .containerText p {
   animation: containerText 0.7s ease-in-out forwards;
   text-align: center;
-  color: #9da1a5;
   transition: all 1s ease-in-out;
 }
 @keyframes containerText {
@@ -196,7 +196,6 @@
   animation: containerText1 0.7s ease-in-out;
   text-align: center;
   margin: 0 0 0 0;
-  color: #1DCB0A;
   transition: all 1s ease-in-out;
 }
 @keyframes containerText1 {
@@ -213,7 +212,7 @@
 .mod {
   opacity: 1;
 }
-.mod img {
+.mod svg {
   animation: img 1s ease-in-out;
 }
 @keyframes img {
