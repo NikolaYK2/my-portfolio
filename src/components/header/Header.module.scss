@@ -9,6 +9,15 @@
   background-color: $headBcColor;
   //box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   z-index: 40000;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  &.down {
+    top:-10%;
+  }
+  &.up{
+    top: 0;
+  }
 }
 
 .headerContainer {
@@ -44,6 +53,7 @@
 }
 
 .menuBurger {
+  //position: fixed;
   display: none;
 }
 //=======================================================================
@@ -92,6 +102,8 @@
     z-index: 5;
     display: block;
     position: relative;
+    top: 0;
+    right: 0;
     width: 30px;
     height: 18px;
     cursor: pointer;
@@ -134,5 +146,6 @@
     }
   }
 }
+
 
 

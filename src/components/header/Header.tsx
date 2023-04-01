@@ -30,14 +30,35 @@ export const Header = memo(() => {
             document.body.style.overflow = 'hidden'
         }
 
-    },[switchNav])
+    }, [switchNav])
+
     const burgerClick = () => {
         setSwitchNav(!switchNav);
     }
 
+    //SCROLL-------------------------------------------------------------------
+    const [scrollDirection, setScrollDirection] = useState<any>(null);
+
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+
+        const updateScrollDirection = () => {
+            const scrollY = window.scrollY;
+            const direction = scrollY > lastScrollY ? 'down' : 'up';
+            if (direction !== scrollDirection) {
+                setScrollDirection(direction);
+            }
+            lastScrollY = scrollY > 0 ? scrollY : 0;
+        };
+        window.addEventListener("scroll", updateScrollDirection); // add event listener
+        return () => {
+            window.removeEventListener("scroll", updateScrollDirection); // clean up
+        }
+    }, [scrollDirection]);
+
 
     return (
-        <section className={s.header}>
+        <section className={`${s.header} ${scrollDirection === "down" ? s.down : s.up}`}>
             <div className={s.headerContainer}>
                 <Logo title={'Nik.'}/>
                 <div className={`${s.menuBurger} ${modBurger}`} onClick={burgerClick}>

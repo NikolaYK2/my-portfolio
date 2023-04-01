@@ -59,6 +59,15 @@
   width: 100%;
   background-color: #101010;
   z-index: 40000;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+.header.down {
+  top: -10%;
+}
+.header.up {
+  top: 0;
 }
 
 .headerContainer {
@@ -135,6 +144,8 @@
     z-index: 5;
     display: block;
     position: relative;
+    top: 0;
+    right: 0;
     width: 30px;
     height: 18px;
     cursor: pointer;
