@@ -6,22 +6,21 @@
   z-index: 1;
   background: transparent;
   @extend %fontSizeP;
-  color: #1DCB0A;
-  border: 1px solid #9da1a5;
+  color: $buttonsColor;
+  border: 1px solid $buttonsBorderColor;
   transition: all .3s linear;
   padding: 1% 4%;
 
   &:hover {
-    @keyframes qq {
+    @keyframes fontColor {
       0% {
-        color: #1DCB0A;
+        color: $buttonsColor;
       }
       100% {
-        color: #9da1a5;
+        color: $colorP;
       }
     }
-
-    &:hover:before {
+    &:before {
       @keyframes bcZapolnenie {
         0% {
           width: 0;
@@ -38,8 +37,7 @@
       height: 100%;
       width: 100%;
       animation: bcZapolnenie .4s ease forwards;
-      background: rgb(29, 203, 10);
-      //background: rgb(29, 203, 10);
+      background: $buttonsColor;
     }
 
     &:hover:after {
@@ -51,14 +49,14 @@
       height: 100%;
       width: 100%;
       animation: bcZapolnenie .4s ease forwards;
-      background: rgb(29, 203, 10);
+      background: $buttonsColor;
     }
 
     position: relative;
     z-index: 3;
-    text-shadow: 1px 1px 3px #1DCB0A, 2px 2px 3px black;
+    text-shadow: 1px 1px 3px $buttonsColor, 2px 2px 3px black;
     transition: all .4s linear .4s;
-    animation: qq .4s linear forwards .4s;
+    animation: fontColor .4s linear forwards .4s;
     //color: #9da1a5;
   }
 }
@@ -85,7 +83,7 @@
     height: 100%;
     width: 100%;
     animation: bcZapolnenie1 .4s ease reverse .3s forwards;
-    background: #1DCB0A;
+    background: $buttonsColor;
   }
 
   &:after {
@@ -97,6 +95,6 @@
     height: 100%;
     width: 100%;
     animation: bcZapolnenie1 .4s ease reverse .3s forwards;
-    background: #1DCB0A;
+    background: $buttonsColor;
   }
 }

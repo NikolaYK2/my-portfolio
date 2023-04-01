@@ -1,4 +1,5 @@
 //padding Для всех блоков
+@import "./fontColor.scss";
 %padding {
   padding: 5% 0;
 }
@@ -7,7 +8,8 @@
 //H and параграфы(описание) размер шрифта
 %fontSizeH2 {
   font-size: 40/14+0rem;
-  color: #9da1a5;
+  //font-size: calc(17.1px + 14 * ((100vw - 320px) / (1280 - 320)));
+  color: $colorH;
   font-weight: 700;
   line-height: 1.06em;
 }
@@ -16,15 +18,22 @@
   font-size: 20/14+0rem;
   text-transform: uppercase;
   margin: 0 0 10px 0;
-  color: #9da1a5;
+  color: $colorP;
 }
 
 %fontSizePp {
   font-size: 20/14+0rem;
   text-transform: capitalize;
   line-height: 1.3em;
-  color: #1DCB0A;
+  color: $colorPp;
 }
+
+
+//Адаптатив шрифт ===============
+$maxWidth: 1280;
+@mixin adaptivАont($pcSize, $mobSize) { $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})); }
 
 //H2(описание) размер шрифта H2 всех уровней кроме 1-го
 
@@ -53,7 +62,8 @@
 }
 
 //===================================================
-//PSEVDO ===================================================
+//Mixins =================================================================
+//PSEVDO ==========================
 @mixin psdEl($top,$left,$bot,$right,$content) {
   position: absolute;
   top: $top;
@@ -73,23 +83,23 @@
   @keyframes borderTopRight {
     0% {
       width: 0;
-      border-top: 1px solid #1DCB0A;
+      border-top: 1px solid $skillslBorderColor;
     }
     33% {
       width: 100%;
-      border-top: 1px solid #1DCB0A;
+      border-top: 1px solid $skillslBorderColor;
     }
     66% {
       width: 100%;
       height: 0;
-      border-top: 1px solid #1DCB0A;
-      border-right: 1px solid #1DCB0A;
+      border-top: 1px solid $skillslBorderColor;
+      border-right: 1px solid $skillslBorderColor;
     }
     100% {
       width: 100%;
       height: 100%;
-      border-top: 1px solid #1DCB0A;
-      border-right: 1px solid #1DCB0A;
+      border-top: 1px solid $skillslBorderColor;
+      border-right: 1px solid $skillslBorderColor;
     }
   }
   animation: borderTopRight 0.4s linear forwards;
@@ -104,23 +114,23 @@
   @keyframes borderBotLeft {
     0% {
       width: 0;
-      border-bottom: 1px solid #1DCB0A;
+      border-bottom: 1px solid $skillslBorderColor;
     }
     33% {
       width: 100%;
-      border-bottom: 1px solid #1DCB0A;
+      border-bottom: 1px solid $skillslBorderColor;
     }
     66% {
       width: 100%;
       height: 0;
-      border-bottom: 1px solid #1DCB0A;
-      border-left: 1px solid #1DCB0A;
+      border-bottom: 1px solid $skillslBorderColor;
+      border-left: 1px solid $skillslBorderColor;
     }
     100% {
       width: 100%;
       height: 100%;
-      border-bottom: 1px solid #1DCB0A;
-      border-left: 1px solid #1DCB0A;
+      border-bottom: 1px solid $skillslBorderColor;
+      border-left: 1px solid $skillslBorderColor;
     }
 
   }
@@ -139,7 +149,7 @@
   @include psdEl(10px, 50%, '', '', '');
   width: 2px;
   height: 50px;
-  background: #1DCB0A;
+  background: $psevdoElemsPoloskiColor;
 }
 
 //-----------------------------------------

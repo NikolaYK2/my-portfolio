@@ -101,14 +101,14 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgb(16, 16, 16) url("../../15.png") 0 0/cover no-repeat;
+    background: url("../../15.png") center -500px/cover no-repeat, linear-gradient(110deg, rgb(16, 16, 16) 50%, rgba(16, 16, 16, 0.9) 70%, rgba(29, 203, 10, 0.1) 100%);
     padding: 100px 30px 30px 30px;
     transition: all 0.3s ease 0s;
     overflow: hidden;
     z-index: 2;
     opacity: 0;
   }
-  .headerNav.active {
+  .headerNav.activeMenu {
     left: 0;
     transition: all 0.3s ease 0s;
     opacity: 1;
@@ -162,14 +162,14 @@
     top: 50%;
     transform: scale(1) translate(0px, -50%);
   }
-  .menuBurger.as span {
+  .menuBurger.activeBurger span {
     transform: scale(0) translate(0px, -50%);
   }
-  .menuBurger.as:before {
+  .menuBurger.activeBurger:before {
     top: 50%;
     transform: rotate(-45deg) translate(0px, -50%);
   }
-  .menuBurger.as:after {
+  .menuBurger.activeBurger:after {
     top: 50%;
     transform: rotate(45deg) translate(0px, -50%);
   }

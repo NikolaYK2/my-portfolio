@@ -114,22 +114,22 @@
 }
 
 .containerItem {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-self: start;
   justify-content: start;
-  min-height: 170px;
   flex: 1 1 23%;
-  position: relative;
   overflow: hidden;
   cursor: pointer;
   max-width: 320px;
   min-width: 200px;
+  min-height: 170px;
   border: 1px solid #313131;
   padding: 10px;
   margin: 0 4% 30px;
+  z-index: 1;
   box-shadow: 0 9px 16px 6px rgb(0, 0, 0) !important;
-  z-index: 2;
 }
 .containerItem:hover .containerImg img {
   animation: imgOff 1s ease-in-out forwards;

@@ -4,7 +4,7 @@
   position: relative;
   z-index: 2;
   background: rgba(26, 26, 26, 0.9);
-  border-top: 2px solid #343434;
+  border-top: 2px solid $footerBorderTopColor;
 
   &:before {
     @include psdEl(-2px, 0, '', '', '');
@@ -27,9 +27,9 @@
       }
     }
     animation: footGo 14s infinite linear;
-    background: #1DCB0A;
+    background: $psevdoElemsPoloskiColor;
     opacity: 0.5;
-    box-shadow: 0 0 10px #1DCB0A;
+    box-shadow: 0 0 10px $psevdoElemsPoloskiColor;
     height: 2px;
   }
 }
@@ -45,8 +45,6 @@
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-  //padding: 0 1%;
-  color: #9da1a5;
   margin: 0 -12%;
 
   > div {
@@ -76,17 +74,20 @@
     height: 40px;
     transition: all .1s ease;
     border-radius: 50%;
-    border: 1px solid #a59da3;
+    border: 1px solid $footerBorderIcons;
     margin: 0 5px;
 
     &:hover {
-      box-shadow: 0 0 5px #9da1a5, inset 0 0 5px #9da1a5;
+      box-shadow: 0 0 5px $footerBorderIcons, inset 0 0 5px $footerBorderIcons;
       transition: all .3s linear;
     }
 
     a {
       opacity: 0.7;
       transition: all .1s ease;
+      >svg {
+        fill: $footerIconsColor;
+      }
 
       &:hover {
         filter: drop-shadow(1px 2px 5px black);

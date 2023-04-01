@@ -10,8 +10,8 @@ export const Header = memo(() => {
         {id: '3', link: '#crafts', title: 'Works', color: '#9da1a5'},
         {id: '4', link: '#contact', title: 'Contacts', color: '#9da1a5'},
     ])
-    const [style, setStyle] = useState(s.headerNav);
-    const [style1, setStyle1] = useState('');
+    const [modNav, setStyleNav] = useState(s.headerNav);
+    const [modBurger, setStyleBurger] = useState('');
     const [switchNav, setSwitchNav] = useState(true);
 
     const a = useCallback((id: string) => {
@@ -21,12 +21,12 @@ export const Header = memo(() => {
 
     useEffect(() => {
         if (switchNav) {
-            setStyle(s.headerNav);
-            setStyle1(s.menuBurger);
+            setStyleNav(s.headerNav);
+            setStyleBurger(s.menuBurger);
             document.body.style.overflow = 'unset'
         } else {
-            setStyle(s.active);
-            setStyle1(s.as);
+            setStyleNav(s.activeMenu);
+            setStyleBurger(s.activeBurger);
             document.body.style.overflow = 'hidden'
         }
 
@@ -40,10 +40,10 @@ export const Header = memo(() => {
         <section className={s.header}>
             <div className={s.headerContainer}>
                 <Logo title={'Nik.'}/>
-                <div className={`${s.menuBurger} ${style1}`} onClick={burgerClick}>
+                <div className={`${s.menuBurger} ${modBurger}`} onClick={burgerClick}>
                     <span></span>
                 </div>
-                <nav className={`${s.headerNav} ${style}`}>
+                <nav className={`${s.headerNav} ${modNav}`}>
                     <ul>
                         {taskNav.map(e => {
                             return (
