@@ -89,8 +89,7 @@ const Li = memo((props: LiType) => {
     console.log('render Nav')
     return (
         <li>
-            <a href={task.link} style={{color: task.color}}
-               onClick={() => activeLi(task.id)}>{task.title}</a>
+            <a href={task.link} style={{color: task.color}} onClick={() => activeLi(task.id)}>{task.title}</a>
         </li>
     );
 });

@@ -212,7 +212,7 @@
   left: 0;
   display: block;
   content: "";
-  z-index: 300000000;
+  z-index: 30000;
 }
 @keyframes bor {
   0% {
@@ -231,7 +231,7 @@
   left: 0;
   display: block;
   content: "";
-  z-index: 300000000;
+  z-index: 30000;
 }
 @keyframes bor1 {
   0% {
