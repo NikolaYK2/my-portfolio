@@ -1,5 +1,5 @@
 @import '../../../styleSCSS/style';
-
+@import "../../../styleSCSS/fontColor";
 .craft {
   position: relative;
   flex: 1 1 auto;
@@ -99,8 +99,9 @@
 
     button {
       background: transparent;
-      @extend %fontSizeP;
-      font-weight: 700;
+      @extend %fontSizeH2;
+      font-size: 25/14+0rem;
+      text-transform: uppercase;
       margin: 0;
       padding: 20px 30px;
     }
@@ -128,7 +129,8 @@
 
     p:first-child {
       display: inline-flex;
-      @extend %fontSizeP;
+      @extend %fontSizeH2;
+      font-size: 25/14+0rem;;
       margin: 5px 0;
     }
 

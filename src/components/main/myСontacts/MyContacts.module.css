@@ -112,7 +112,7 @@
 }
 .form .formMod .formInput input:focus {
   border: 1px solid #1DCB0A;
-  color: #1DCB0A;
+  color: #9da1a5;
   transition: all 0.4s linear;
 }
 .form .formMod .formInput input:focus::placeholder {
@@ -142,7 +142,7 @@
 }
 .form .formMod .formTextarea textarea:focus {
   border: 1px solid #1DCB0A;
-  color: #1DCB0A;
+  color: #9da1a5;
   transition: all 0.4s linear;
 }
 .form .formMod .formTextarea textarea:focus::placeholder {

@@ -1,4 +1,5 @@
 @import "../../../../src/styleSCSS/style";
+@import "../../../../src/styleSCSS/fontColor";
 
 .contact {
   position: relative;
@@ -56,7 +57,7 @@
         }
         &:focus {
           border: 1px solid $formBorderColor;
-          color: $colorP;
+          color: $colorH;
           transition: all .4s linear;
         }
         &:focus::placeholder {
@@ -92,9 +93,8 @@
         }
         &:focus {
           border: 1px solid $formFoces;
-          color: $colorP;
+          color: $colorH;
           transition: all .4s linear;
-
         }
         &:focus::placeholder {
           color: $colorH;

@@ -14,8 +14,8 @@ export const Header = memo(() => {
     const [modBurger, setStyleBurger] = useState('');
     const [switchNav, setSwitchNav] = useState(true);
 
-    const a = useCallback((id: string) => {
-        setTaskNav(taskNav.map(e => e.id === id ? {...e, color: 'green'} : e));
+    const activeLi = useCallback((id: string) => {
+        setTaskNav(taskNav.map(e => e.id === id ? {...e, color: '#1DCB0A'} : e));
         setSwitchNav(true);
     }, []);
 
@@ -45,7 +45,7 @@ export const Header = memo(() => {
         const updateScrollDirection = () => {
             const scrollY = window.scrollY;
             const direction = scrollY > lastScrollY ? 'down' : 'up';
-            if (direction !== scrollDirection) {
+            if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
                 setScrollDirection(direction);
             }
             lastScrollY = scrollY > 0 ? scrollY : 0;
@@ -68,7 +68,7 @@ export const Header = memo(() => {
                     <ul>
                         {taskNav.map(e => {
                             return (
-                                <Li task={e} a={a} key={e.id}/>
+                                <Li task={e} activeLi={activeLi} key={e.id}/>
                             );
                         })}
                     </ul>
@@ -82,15 +82,15 @@ export const Header = memo(() => {
 //=================================================================
 type LiType = {
     task: { id: string, link: string, title: string, color: string },
-    a: (id: string) => void;
+    activeLi: (id: string) => void;
 }
 const Li = memo((props: LiType) => {
-    const {task, a} = props;
+    const {task, activeLi} = props;
     console.log('render Nav')
     return (
         <li>
             <a href={task.link} style={{color: task.color}}
-               onClick={() => a(task.id)}>{task.title}</a>
+               onClick={() => activeLi(task.id)}>{task.title}</a>
         </li>
     );
 });
