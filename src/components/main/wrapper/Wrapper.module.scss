@@ -1,4 +1,4 @@
-@import '../../../styleSCSS/style';
+@import '../../../assets/styleSCSS/style';
 
 .wrapper {
   background: url(I_maloy.jpg) center/cover no-repeat fixed;
@@ -6,6 +6,8 @@
   margin: 0 0 0 0;
   height: 100vh;
   z-index: 2;
+  scroll-behavior: $scroll;
+
 }
 
 .wrapperContainer {

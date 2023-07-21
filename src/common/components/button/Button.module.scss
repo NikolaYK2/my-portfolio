@@ -1,4 +1,4 @@
-@import "../../../src/styleSCSS/style";
+@import "../../../assets/styleSCSS/style";
 
 
 .button {
@@ -20,6 +20,7 @@
         color: $colorH;
       }
     }
+
     &:before {
       @keyframes bcZapolnenie {
         0% {

@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import s from './Logo.module.scss';
+import s from 'common/components/logo/Logo.module.scss';
 
 
 export const Logo = memo((props:{title:string}) => {

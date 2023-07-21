@@ -71,6 +71,7 @@
   position: relative;
   flex: 1 1 auto;
   /*background-color: #00909F;*/
+  scroll-behavior: smooth;
 }
 .container {
   max-width: 1200px;
@@ -105,6 +106,9 @@
   background-color: #1a1a1a;
   outline: none;
   transition: all 0.4s linear;
+}
+.form .formMod .formInput input:nth-child(3) {
+  text-transform: none;
 }
 .form .formMod .formInput input::placeholder {
   opacity: 0.5;

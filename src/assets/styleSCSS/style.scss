@@ -1,5 +1,6 @@
 //padding Для всех блоков
-@import "./fontColor.scss";
+@import "fontColor";
+
 %padding {
   padding: 5% 0;
 }
@@ -31,9 +32,11 @@
 
 //Адаптатив шрифт ===============
 $maxWidth: 1280;
-@mixin adaptivFont($pcSize, $mobSize) { $addSize: $pcSize - $mobSize;
+@mixin adaptivFont($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
   $maxWidth: $maxWidth - 320;
-  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})); }
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
 
 //H2(описание) размер шрифта H2 всех уровней кроме 1-го
 

@@ -1,11 +1,14 @@
-@import "../../../../src/styleSCSS/style";
-@import "../../../../src/styleSCSS/fontColor";
+@import "../../../assets/styleSCSS/style";
+@import "../../../assets/styleSCSS/fontColor";
 
 .contact {
   position: relative;
   flex: 1 1 auto;
   /*background-color: #00909F;*/
   @extend %padding;
+
+  scroll-behavior: $scroll;
+
   &:after{
     @extend %psevdo;
   }
@@ -49,6 +52,9 @@
         outline: none;
         @extend %fontSizePp;
         transition: all .4s linear;
+        &:nth-child(3){
+          text-transform: none;
+        }
 
         &::placeholder{
           @extend %fontSizePp;

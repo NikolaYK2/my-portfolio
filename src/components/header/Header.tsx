@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import s from './Header.module.scss';
-import {Logo} from "../logo/Logo";
+import {Logo} from "common/components/logo/Logo";
 
 
 export const Header = memo(() => {

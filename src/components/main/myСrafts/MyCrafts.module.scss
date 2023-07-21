@@ -1,9 +1,12 @@
-@import '../../../styleSCSS/style';
-@import "../../../styleSCSS/fontColor";
+@import '../../../assets/styleSCSS/style';
+@import "../../../assets/styleSCSS/fontColor";
 .craft {
   position: relative;
   flex: 1 1 auto;
   @extend %padding;
+
+  scroll-behavior: $scroll;
+
   &:after{
     @extend %psevdo;
   }
@@ -73,6 +76,7 @@
     }
     &:hover{
       transform: scale(1.3);
+      filter: grayscale(.35);
       transition: all 1s ease;
     }
 

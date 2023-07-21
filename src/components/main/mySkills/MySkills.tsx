@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useState} from 'react';
 import s from './MySkills.module.scss';
 import {v1} from "uuid";
-import {TitleH2} from "../../titleH2/titleH2";
+import {TitleH2} from "common/components/titleH2/titleH2";
 import {IconSvg} from "../../iconSvg/IconSvg";
 
 

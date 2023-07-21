@@ -94,6 +94,7 @@
 .craft {
   position: relative;
   flex: 1 1 auto;
+  scroll-behavior: smooth;
 }
 .containerItem {
   max-width: 1200px;
@@ -157,6 +158,7 @@
 }
 .containerBlock .containerBackground:hover {
   transform: scale(1.3);
+  filter: grayscale(0.35);
   transition: all 1s ease;
 }
 .containerBlock .containerBackground:hover a {

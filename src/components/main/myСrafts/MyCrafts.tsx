@@ -3,7 +3,7 @@ import s from './MyCrafts.module.scss';
 import {v1} from "uuid";
 import socialImg from './social.jpg';
 import appImg from './app.jpg';
-import {TitleH2} from "../../titleH2/titleH2";
+import {TitleH2} from "common/components/titleH2/titleH2";
 
 export const MyCrafts = () => {
 

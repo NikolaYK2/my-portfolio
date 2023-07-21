@@ -1,10 +1,11 @@
-@import '../../../styleSCSS/style';
+@import '../../../assets/styleSCSS/style';
 
 .mySkills {
   position: relative;
   flex: 1 1 auto;
   @extend %padding;
   padding-bottom: 0;
+  scroll-behavior: $scroll;
 
   &:after {
     @extend %psevdo;

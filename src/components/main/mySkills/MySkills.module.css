@@ -99,6 +99,7 @@
   position: relative;
   flex: 1 1 auto;
   padding-bottom: 0;
+  scroll-behavior: smooth;
 }
 .container {
   position: relative;
