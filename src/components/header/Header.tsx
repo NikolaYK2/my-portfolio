@@ -38,6 +38,7 @@ export const Header = memo(() => {
 
     //SCROLL-------------------------------------------------------------------
     const [scrollDirection, setScrollDirection] = useState<any>(null);
+    const [background, setBackground] = useState(s.bcOff);//bc для header
 
     useEffect(() => {
         let lastScrollY = window.scrollY;
@@ -49,6 +50,11 @@ export const Header = memo(() => {
                 setScrollDirection(direction);
             }
             lastScrollY = scrollY > 0 ? scrollY : 0;
+            if (scrollY === 0) {
+                setBackground(s.bcOff);//делаем прозрачным
+            } else {
+                setBackground(s.bcOn);
+            }
         };
         window.addEventListener("scroll", updateScrollDirection); // add event listener
         return () => {
@@ -58,7 +64,7 @@ export const Header = memo(() => {
 
 
     return (
-        <section className={`${s.header} ${scrollDirection === "down" ? s.down : s.up}`}>
+        <section className={`${s.header} ${scrollDirection === "down" ? s.down : s.up} ${background}`}>
             <div className={s.headerContainer}>
                 <Logo title={'Nik.'}/>
                 <div className={`${s.menuBurger} ${modBurger}`} onClick={burgerClick}>
