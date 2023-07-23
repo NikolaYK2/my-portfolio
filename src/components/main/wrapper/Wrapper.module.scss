@@ -1,13 +1,17 @@
 @import '../../../assets/styleSCSS/style';
 
 .wrapper {
-  background: url(I_maloy.jpg) center/cover no-repeat fixed;
-  @extend %padding;
+  //background: url(I_maloy.jpg) center/cover no-repeat fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 5% 0;
   margin: 0 0 0 0;
   height: 100vh;
   z-index: 2;
-  scroll-behavior: $scroll;
-
+  //scroll-behavior: $scroll;
+  overflow: auto;
 }
 
 .wrapperContainer {
@@ -21,10 +25,11 @@
   padding: 0 5px;
   //border: 1px solid black;
 }
-
 .wrapperName {
   flex: 1 1 33%;
   max-width: 500px;
+  transform: translate(0px,0px);
+  //overflow: auto;
 
   h1 {
     font-family: 'Jost', sans-serif;

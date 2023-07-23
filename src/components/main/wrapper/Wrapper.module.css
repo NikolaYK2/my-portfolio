@@ -56,7 +56,7 @@
 }
 
 .wrapper {
-  background: url(I_maloy.jpg) center/cover no-repeat fixed;
+  background: url(../../../assets/image/wrapper/I_maloy.jpg) center/cover no-repeat fixed;
   margin: 0 0 0 0;
   height: 100vh;
   z-index: 2;
