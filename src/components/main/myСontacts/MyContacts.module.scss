@@ -1,5 +1,5 @@
-@import "../../../assets/styleSCSS/style";
-@import "../../../assets/styleSCSS/fontColor";
+@import "assets/SCSS/style";
+@import "assets/SCSS/fontColor";
 
 .contact {
   position: relative;
@@ -47,7 +47,7 @@
         overflow: hidden;
         padding: 2% 4%;
         margin: 0 0 20px;
-        border: 1px solid $buttonsBorderColor;
+        border: 1px solid $colorH;
         background-color: $formBc;
         outline: none;
         @extend %fontSizePp;
@@ -62,7 +62,7 @@
           transition: all .4s linear;
         }
         &:focus {
-          border: 1px solid $formBorderColor;
+          border: 1px solid $colorP;
           color: $colorH;
           transition: all .4s linear;
         }
@@ -86,7 +86,7 @@
         padding: 2% 4%;
         @extend %fontSizePp;
         background-color: $formBc;
-        border: 1px solid $buttonsBorderColor;
+        border: 1px solid $colorH;
         color: $colorP;
         outline: none;
         resize: none;
@@ -98,7 +98,7 @@
           transition: all .4s linear;
         }
         &:focus {
-          border: 1px solid $formFoces;
+          border: 1px solid $colorP;
           color: $colorH;
           transition: all .4s linear;
         }

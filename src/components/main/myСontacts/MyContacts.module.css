@@ -1,160 +1,17 @@
-.contact {
-  padding: 5% 0;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "assets/SCSS/style";
+ *   |         ^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   MyContacts.module.scss 1:9  root stylesheet */
 
-.form .formMod .formTextarea textarea::placeholder, .form .formMod .formTextarea textarea, .form .formMod .formInput input::placeholder, .form .formMod .formInput input {
-  font-size: 1.4285714286rem;
-  text-transform: capitalize;
-  line-height: 1.3em;
-  color: #1DCB0A;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"assets/SCSS/style\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^\a   \2575 \a   MyContacts.module.scss 1:9  root stylesheet";
 }
-
-@keyframes borderTopRight {
-  0% {
-    width: 0;
-    border-top: 1px solid #1DCB0A;
-  }
-  33% {
-    width: 100%;
-    border-top: 1px solid #1DCB0A;
-  }
-  66% {
-    width: 100%;
-    height: 0;
-    border-top: 1px solid #1DCB0A;
-    border-right: 1px solid #1DCB0A;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    border-top: 1px solid #1DCB0A;
-    border-right: 1px solid #1DCB0A;
-  }
-}
-
-@keyframes borderBotLeft {
-  0% {
-    width: 0;
-    border-bottom: 1px solid #1DCB0A;
-  }
-  33% {
-    width: 100%;
-    border-bottom: 1px solid #1DCB0A;
-  }
-  66% {
-    width: 100%;
-    height: 0;
-    border-bottom: 1px solid #1DCB0A;
-    border-left: 1px solid #1DCB0A;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid #1DCB0A;
-    border-left: 1px solid #1DCB0A;
-  }
-}
-
-.contact:after {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  bottom: "";
-  right: "";
-  content: "";
-  width: 2px;
-  height: 50px;
-  background: #1DCB0A;
-}
-
-.contact {
-  position: relative;
-  flex: 1 1 auto;
-  /*background-color: #00909F;*/
-  scroll-behavior: smooth;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  margin: 5% auto 0;
-}
-.form .formMod {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -10px;
-  z-index: 2;
-}
-.form .formMod .formInput {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 50%;
-  padding: 0 10px;
-}
-.form .formMod .formInput input {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  padding: 2% 4%;
-  margin: 0 0 20px;
-  border: 1px solid #9da1a5;
-  background-color: #1a1a1a;
-  outline: none;
-  transition: all 0.4s linear;
-}
-.form .formMod .formInput input:nth-child(3) {
-  text-transform: none;
-}
-.form .formMod .formInput input::placeholder {
-  opacity: 0.5;
-  transition: all 0.4s linear;
-}
-.form .formMod .formInput input:focus {
-  border: 1px solid #1DCB0A;
-  color: #9da1a5;
-  transition: all 0.4s linear;
-}
-.form .formMod .formInput input:focus::placeholder {
-  color: #9da1a5;
-  transition: all 0.4s linear;
-}
-.form .formMod .formTextarea {
-  flex: 1 0 50%;
-  min-width: 220px;
-  padding: 0 10px;
-  margin: 0 0 20px;
-}
-.form .formMod .formTextarea textarea {
-  width: 100%;
-  height: 100%;
-  padding: 2% 4%;
-  background-color: #1a1a1a;
-  border: 1px solid #9da1a5;
-  color: #1DCB0A;
-  outline: none;
-  resize: none;
-  transition: all 1s linear;
-}
-.form .formMod .formTextarea textarea::placeholder {
-  opacity: 0.5;
-  transition: all 0.4s linear;
-}
-.form .formMod .formTextarea textarea:focus {
-  border: 1px solid #1DCB0A;
-  color: #9da1a5;
-  transition: all 0.4s linear;
-}
-.form .formMod .formTextarea textarea:focus::placeholder {
-  color: #9da1a5;
-  transition: all 0.4s linear;
-}
-.form Button {
-  background: #1a1a1a;
-}
-
-/*# sourceMappingURL=MyContacts.module.css.map */

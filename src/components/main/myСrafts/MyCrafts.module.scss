@@ -1,5 +1,5 @@
-@import '../../../assets/styleSCSS/style';
-@import "../../../assets/styleSCSS/fontColor";
+@import 'assets/SCSS/style';
+@import "assets/SCSS/fontColor";
 .craft {
   position: relative;
   flex: 1 1 auto;
@@ -32,11 +32,11 @@
   flex: 1 1 45%;
   align-self: start;
   max-width: 40%;
-  //border: 1px solid black;
   margin: 0 5% 5%;
   box-shadow: 0 9px 31px 6px $shadowSkill !important;
   overflow: hidden;
   transition: all 1s ease;
+
 
   @media (max-width: 690px) {
     max-width: 80%;
@@ -158,7 +158,7 @@
     }
   }
   animation: bor .3s ease forwards;
-  border-bottom: 3px solid $craftColorBorder;
+  border-bottom: 3px solid $colorH;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -176,7 +176,7 @@
     }
   }
   animation: bor1 .3s ease reverse;
-  border-bottom: 3px solid $craftColorBorder;
+  border-bottom: 3px solid $colorH;
   position: absolute;
   bottom: 0;
   left: 0;

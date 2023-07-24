@@ -1,5 +1,5 @@
-@import "../../assets/styleSCSS/style";
-@import "../../assets/styleSCSS/fontColor";
+@import "assets/SCSS/style";
+@import "assets/SCSS/fontColor";
 
 .header {
   position: fixed;
@@ -8,19 +8,17 @@
   display: block;
   width: 100%;
 
-  //background-color: transparent;
-  //box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   z-index: 40000;
+
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
-  transition: all .3s ease-in-out 0s;
+  transition: all .4s ease-in-out 0s;
 
-
-  scroll-behavior: $scroll;
+  //scroll-behavior: $scroll;
 
   &.down {
-    top: -10%;
+    top: -50%;
   }
 
   &.up {
@@ -46,6 +44,15 @@
   height: 60px;
   margin: 0 auto;
   padding: 0 10px;
+  >a{
+    cursor: pointer;
+    transition: all .3s ease 0s;
+    &:hover{
+      filter: drop-shadow(2px 2px 1px #9da1a5);
+      transform: rotate(-2deg);
+
+    }
+  }
 }
 
 .headerNav {
@@ -66,7 +73,12 @@
         @extend %fontSizeP;
         text-transform: capitalize;
         transition: all .6s ease;
+        color: rgb(157, 161, 165);
+        cursor: pointer;
 
+        &.active{
+          color: rgb(29, 203, 10);
+        }
         &:hover:before {
           @keyframes borderColor {
             0% {
@@ -82,8 +94,11 @@
           height: 2px;
           animation: borderColor .2s linear forwards;
         }
+
       }
+
     }
+
   }
 }
 
@@ -182,6 +197,5 @@
     }
   }
 }
-
 
 

@@ -1,4 +1,4 @@
-@import "../../../assets/styleSCSS/style";
+@import "assets/SCSS/style";
 
 .work {
   flex: 1 1 auto;
@@ -12,7 +12,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  //border: 1px solid black;
   max-width: 1200px;
   margin: 0 auto;
   min-height: 150px;

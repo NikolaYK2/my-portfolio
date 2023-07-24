@@ -1,23 +1,23 @@
 @keyframes borderTopRight {
   0% {
     width: 0;
-    border-top: 1px solid #1DCB0A;
+    border-top: 1px solid #9da1a5;
   }
   33% {
     width: 100%;
-    border-top: 1px solid #1DCB0A;
+    border-top: 1px solid #9da1a5;
   }
   66% {
     width: 100%;
     height: 0;
-    border-top: 1px solid #1DCB0A;
-    border-right: 1px solid #1DCB0A;
+    border-top: 1px solid #9da1a5;
+    border-right: 1px solid #9da1a5;
   }
   100% {
     width: 100%;
     height: 100%;
-    border-top: 1px solid #1DCB0A;
-    border-right: 1px solid #1DCB0A;
+    border-top: 1px solid #9da1a5;
+    border-right: 1px solid #9da1a5;
   }
 }
 

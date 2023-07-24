@@ -1,4 +1,4 @@
-@import '../../../assets/styleSCSS/style';
+@import '../../../assets/SCSS/style';
 
 .title {
   display: inline-block;
@@ -9,8 +9,8 @@
   margin: 0 0 3%;
   z-index: 1;
 
-  &:before, &:after {
-    background: $psevdoElemsPoloskiColor;
+  &:before, &:after {//полоска подчеркивания
+    background: $colorP;
     height: 4px;
     bottom: -10px;
   }

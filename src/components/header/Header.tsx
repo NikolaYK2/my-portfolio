@@ -1,21 +1,22 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import s from './Header.module.scss';
 import {Logo} from "common/components/logo/Logo";
+import {Link} from "react-scroll";
 
 
 export const Header = memo(() => {
     const [taskNav, setTaskNav] = useState([
-        {id: '1', link: '#wrap', title: 'Home', color: '#9da1a5'},
-        {id: '2', link: '#skills', title: 'Skills', color: '#9da1a5'},
-        {id: '3', link: '#crafts', title: 'Works', color: '#9da1a5'},
-        {id: '4', link: '#contact', title: 'Contacts', color: '#9da1a5'},
+        {id: '1', link: 'wrap', title: 'Home', color: '#9da1a5'},
+        {id: '2', link: 'skills', title: 'Skills', color: '#9da1a5'},
+        {id: '3', link: 'crafts', title: 'Works', color: '#9da1a5'},
+        {id: '4', link: 'contact', title: 'Contacts', color: '#9da1a5'},
     ])
     const [modNav, setStyleNav] = useState(s.headerNav);
     const [modBurger, setStyleBurger] = useState('');
     const [switchNav, setSwitchNav] = useState(true);
 
     const activeLi = useCallback((id: string) => {
-        setTaskNav(taskNav.map(e => e.id === id ? {...e, color: '#1DCB0A'} : e));
+        // setTaskNav(taskNav.map(e => e.id === id ? {...e, color: '#1DCB0A'} : e));
         setSwitchNav(true);
     }, []);
 
@@ -46,7 +47,7 @@ export const Header = memo(() => {
         const updateScrollDirection = () => {
             const scrollY = window.scrollY;
             const direction = scrollY > lastScrollY ? 'down' : 'up';
-            if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
+            if (direction !== scrollDirection && (scrollY - lastScrollY > 3 || scrollY - lastScrollY < -3)) {
                 setScrollDirection(direction);
             }
             lastScrollY = scrollY > 0 ? scrollY : 0;
@@ -54,6 +55,9 @@ export const Header = memo(() => {
                 setBackground(s.bcOff);//делаем прозрачным
             } else {
                 setBackground(s.bcOn);
+            }
+            if (scrollY === 250) {
+
             }
         };
         window.addEventListener("scroll", updateScrollDirection); // add event listener
@@ -66,7 +70,7 @@ export const Header = memo(() => {
     return (
         <section className={`${s.header} ${scrollDirection === "down" ? s.down : s.up} ${background}`}>
             <div className={s.headerContainer}>
-                <Logo title={'Nik.'}/>
+                <Link to="wrap"><Logo title={'Nik.'}/></Link>
                 <div className={`${s.menuBurger} ${modBurger}`} onClick={burgerClick}>
                     <span></span>
                 </div>
@@ -95,7 +99,9 @@ const Li = memo((props: LiType) => {
     console.log('render Nav')
     return (
         <li>
-            <a href={task.link} style={{color: task.color}} onClick={() => activeLi(task.id)}>{task.title}</a>
+            <Link to={task.link} smooth={true} spy={true} activeClass={s.active}
+                  onClick={() => activeLi(task.id)}>{task.title}</Link>
+            {/*<a href={task.link} style={{color: task.color}} onClick={() => activeLi(task.id)}>{task.title}</a>*/}
         </li>
     );
 });

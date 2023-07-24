@@ -1,4 +1,4 @@
-@import "../../assets/styleSCSS/style";
+@import "assets/SCSS/style";
 
 .footer {
   position: relative;
@@ -27,9 +27,9 @@
       }
     }
     animation: footGo 14s infinite linear;
-    background: $psevdoElemsPoloskiColor;
+    background: $colorP;
     opacity: 0.5;
-    box-shadow: 0 0 10px $psevdoElemsPoloskiColor;
+    box-shadow: 0 0 10px $colorP;
     height: 2px;
   }
 }
@@ -74,11 +74,11 @@
     height: 40px;
     transition: all .1s ease;
     border-radius: 50%;
-    border: 1px solid $footerBorderIcons;
+    border: 1px solid $colorH;
     margin: 0 5px;
 
     &:hover {
-      box-shadow: 0 0 5px $footerBorderIcons, inset 0 0 5px $footerBorderIcons;
+      box-shadow: 0 0 5px $colorH, inset 0 0 5px $headBurgerColor;
       transition: all .3s linear;
     }
 
@@ -86,7 +86,7 @@
       opacity: 0.7;
       transition: all .1s ease;
       >svg {
-        fill: $footerIconsColor;
+        fill: $colorP;
       }
 
       &:hover {

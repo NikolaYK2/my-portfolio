@@ -1,4 +1,4 @@
-@import '../../../assets/styleSCSS/style';
+@import '../../../assets/SCSS/style';
 
 .mySkills {
   position: relative;
@@ -31,6 +31,7 @@
   //border: 1px solid black;
   margin: 0 auto;
   overflow: hidden;
+  transition: all 1s ease 0s;
 
 
   .containerSkills {
@@ -39,6 +40,7 @@
     flex-wrap: wrap;
     overflow: hidden;
     margin: 50px -3% 0;
+    transition: all 1s ease 0s;
 
   }
 }
@@ -61,6 +63,9 @@
   z-index: 1;
   @extend %bcSkill;
   box-shadow: 0 9px 16px 6px $shadowSkill !important;
+  transition: all 1s ease 0s;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
 
   &:hover .containerImg {
     svg {
@@ -86,8 +91,21 @@
 
   &:hover {
     transition: all .3s ease 0.8s;
-    box-shadow: 0 9px 16px 6px $shadowSkillHover !important;
+    -webkit-transform: translate3d(0, 0, 0);
+
     opacity: 1;
+    @keyframes scal {
+      0% {
+        transform: scale(1);
+      }
+      50%{
+        transform: scale(0.95);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    animation: scal 0.3s ease 0s forwards;
   }
 
   &:hover:after {
@@ -101,13 +119,13 @@
   .containerImg {
     max-width: 100px;
     margin: 0 auto 10px;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 
     svg {
-      fill: $skillIconBc;
+      fill: $colorH;
 
       path {
-        fill: $skillIconBc;
+        fill: $colorH;
       }
     }
   }
@@ -123,7 +141,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
     p {
       @keyframes containerText {
@@ -136,10 +154,10 @@
           color: #9da1a5;
         }
       }
-      animation: containerText .7s ease-in-out forwards;
+      animation: containerText .5s ease-in-out forwards;
       @extend %fontSizeP;
       text-align: center;
-      transition: all 1s ease-in-out;
+      transition: all 0.5s ease-in-out;
 
     }
 
@@ -155,11 +173,11 @@
           transform: translate(0, 0);
         }
       }
-      animation: containerText1 0.7s ease-in-out;
+      animation: containerText1 0.5s ease-in-out;
       @extend %fontSizePp;
       text-align: center;
       margin: 0 0 0 0;
-      transition: all 1s ease-in-out;
+      transition: all 0.5s ease-in-out;
 
     }
 
@@ -181,7 +199,7 @@
 
       }
     }
-    animation: img 1s ease-in-out;
+    animation: img 0.5s ease-in-out;
   }
 
   p {
@@ -196,7 +214,7 @@
 
       }
     }
-    animation: p 1s ease-in-out;
+    animation: p 0.5s ease-in-out;
   }
 }
 

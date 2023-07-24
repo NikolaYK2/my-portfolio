@@ -1,4 +1,4 @@
-@import "../../../assets/styleSCSS/style";
+@import "../../../assets/SCSS/style";
 
 
 .button {
@@ -6,15 +6,15 @@
   z-index: 1;
   background: transparent;
   @extend %fontSizeP;
-  color: $buttonsColor;
-  border: 1px solid $buttonsBorderColor;
+  color: $colorP;
+  border: 1px solid $colorH;
   transition: all .3s linear;
   padding: 1% 4%;
 
   &:hover {
     @keyframes fontColor {
       0% {
-        color: $buttonsColor;
+        color: $colorP;
       }
       100% {
         color: $colorH;
@@ -38,7 +38,7 @@
       height: 100%;
       width: 100%;
       animation: bcZapolnenie .4s ease forwards;
-      background: $buttonsColor;
+      background: $colorP;
     }
 
     &:hover:after {
@@ -50,12 +50,12 @@
       height: 100%;
       width: 100%;
       animation: bcZapolnenie .4s ease forwards;
-      background: $buttonsColor;
+      background: $colorP;
     }
 
     position: relative;
     z-index: 3;
-    text-shadow: 1px 1px 3px $buttonsColor, 2px 2px 3px black;
+    text-shadow: 1px 1px 3px black, 2px 2px 3px black;
     transition: all .4s linear .4s;
     animation: fontColor .4s linear forwards .4s;
     //color: #9da1a5;
@@ -84,7 +84,7 @@
     height: 100%;
     width: 100%;
     animation: bcZapolnenie1 .4s ease reverse .3s forwards;
-    background: $buttonsColor;
+    background: $colorP;
   }
 
   &:after {
@@ -96,6 +96,6 @@
     height: 100%;
     width: 100%;
     animation: bcZapolnenie1 .4s ease reverse .3s forwards;
-    background: $buttonsColor;
+    background: $colorP;
   }
 }
