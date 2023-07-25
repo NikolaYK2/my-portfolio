@@ -5,7 +5,10 @@ import {TitleH2} from "common/components/titleH2/titleH2";
 import {IconSvg} from "../../iconSvg/IconSvg";
 import {animationOnScroll} from "common/utils/animateOnScroll";
 
-type Timeout = ReturnType<typeof setTimeout>
+
+// let stop: any = null;
+type Timout = ReturnType<typeof setTimeout>
+
 export const MySkills = () => {
     const [skills, setSkills] = useState(
         [
@@ -21,29 +24,39 @@ export const MySkills = () => {
             {id: v1(), title: 'REST API', icon: 'api', description: 'My react is lame somewhere'},
         ]
     )
-    const stop = useRef<Timeout | null>(null);
 
+    const timerId = useRef<Timout | null>(null)
+    // const timerId = useRef<any>(null)
     const on = useCallback((id: string) => {
-        if (stop.current !== null) {
-            clearTimeout(stop.current);
-            stop.current = setTimeout(() => {
-                setSkills(s => s.map(e => e.id === id ? {...e, icon: ''} : e)); // используем функциональное обновление
-            }, 800);
-        }
-    }, []) // не передаем skills в зависимости
+        if(timerId.current) clearTimeout(timerId.current);
+        timerId.current = setTimeout(() => {
+            setSkills(skills.map(e => e.id === id ? {...e, icon: ''} : e));
+        }, 800);
+    }, [])
 
     const off = useCallback(() => {
-        if (stop.current !== null) {
-            clearTimeout(stop.current);
-            stop.current = setTimeout(() => {
-                setSkills(skills);
-            }, 200);
-        }
-    }, []) // не передаем skills или setSkills в зависимости
+        if(timerId.current) clearTimeout(timerId.current);
+        timerId.current = setTimeout(() => {
+            setSkills(skills);
+        }, 200);
+    }, [])
+    // const on = useCallback((id: string) => {
+    //     clearTimeout(stop);
+    //     stop = setTimeout(() => {
+    //         setSkills(skills.map(e => e.id === id ? {...e, icon: ''} : e));
+    //     }, 800);
+    // }, [])
+    //
+    // const off = useCallback(() => {
+    //     clearTimeout(stop);
+    //     stop = setTimeout(() => {
+    //         setSkills(skills);
+    //     }, 200);
+    // }, [])
 
     useEffect(() => {
         animationOnScroll(`.${s.chapter}`, s.chapterActive)
-    }, []) // не передаем setSkills в зависимости
+    }, [])
 
     return (
         <section id={'skills'} className={s.mySkills}>
@@ -60,7 +73,7 @@ export const MySkills = () => {
             </div>
         </section>
     );
-}
+};
 
 //==========================================================================================
 type Type = {
@@ -76,15 +89,15 @@ type SkillType = {
 }
 const Skill = memo((props: SkillType) => {
     const {skill, switchOn, switchOff} = props;
-    const [animation, setAnimation] = useState('');
+    const [style, setStyle] = useState('');
 
     const on = (id: string) => {
         switchOn(id);
-        setAnimation(s.mod);
+        setStyle(s.mod);
     }
     const off = () => {
         switchOff();
-        setAnimation(s.modReverse);
+        setStyle(s.modReverse);
     }
     console.log('render')
 
@@ -101,7 +114,7 @@ const Skill = memo((props: SkillType) => {
                         <p>{skill.title}</p>
                     </div>
                     :
-                    <div className={`${s.containerText} ${animation}`}>
+                    <div className={`${s.containerText} ${style}`}>
                         <p>{skill.title}</p>
                         <p>{skill.description}</p>
                     </div>
