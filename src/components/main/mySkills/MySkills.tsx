@@ -1,13 +1,11 @@
-import React, {memo, useCallback, useEffect, useState} from 'react';
+import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import s from './MySkills.module.scss';
 import {v1} from "uuid";
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {IconSvg} from "../../iconSvg/IconSvg";
 import {animationOnScroll} from "common/utils/animateOnScroll";
 
-
-let stop: any = null;
-
+type Timeout = ReturnType<typeof setTimeout>
 export const MySkills = () => {
     const [skills, setSkills] = useState(
         [
@@ -23,36 +21,46 @@ export const MySkills = () => {
             {id: v1(), title: 'REST API', icon: 'api', description: 'My react is lame somewhere'},
         ]
     )
+    const stop = useRef<Timeout | null>(null);
+
     const on = useCallback((id: string) => {
-        clearTimeout(stop);
-        stop = setTimeout(() => {
-            setSkills(skills.map(e => e.id === id ? {...e, icon: ''} : e));
-        }, 800);
-    }, [skills])
+        if (stop.current !== null) {
+            clearTimeout(stop.current);
+            stop.current = setTimeout(() => {
+                setSkills(s => s.map(e => e.id === id ? {...e, icon: ''} : e)); // используем функциональное обновление
+            }, 800);
+        }
+    }, []) // не передаем skills в зависимости
 
     const off = useCallback(() => {
-        clearTimeout(stop);
-        stop = setTimeout(() => {
-            setSkills(skills);
-        }, 200);
-    }, [skills])
+        if (stop.current !== null) {
+            clearTimeout(stop.current);
+            stop.current = setTimeout(() => {
+                setSkills(skills);
+            }, 200);
+        }
+    }, []) // не передаем skills или setSkills в зависимости
 
+    useEffect(() => {
+        animationOnScroll(`.${s.chapter}`, s.chapterActive)
+    }, []) // не передаем setSkills в зависимости
 
     return (
         <section id={'skills'} className={s.mySkills}>
+            <div className={s.chapter}></div>
             <div className={s.container}>
                 <TitleH2 title={'My skills'}/>
                 <div className={s.containerSkills}>
-                    {skills.map((skill, index) => {
+                    {skills.map(skill => {
                         return (
-                            <Skill skill={skill} switchOn={on} switchOff={off} key={skill.id} index={index}/>
+                            <Skill skill={skill} switchOn={on} switchOff={off} key={skill.id}/>
                         );
                     })}
                 </div>
             </div>
         </section>
     );
-};
+}
 
 //==========================================================================================
 type Type = {
@@ -63,21 +71,20 @@ type Type = {
 }
 type SkillType = {
     skill: Type,
-    index: number,
     switchOn: (idSkill: string) => void,
     switchOff: () => void,
 }
 const Skill = memo((props: SkillType) => {
     const {skill, switchOn, switchOff} = props;
-    const [style, setStyle] = useState('');
+    const [animation, setAnimation] = useState('');
 
     const on = (id: string) => {
         switchOn(id);
-        setStyle(s.mod);
+        setAnimation(s.mod);
     }
     const off = () => {
         switchOff();
-        setStyle(s.modReverse);
+        setAnimation(s.modReverse);
     }
     console.log('render')
 
@@ -94,7 +101,7 @@ const Skill = memo((props: SkillType) => {
                         <p>{skill.title}</p>
                     </div>
                     :
-                    <div className={`${s.containerText} ${style}`}>
+                    <div className={`${s.containerText} ${animation}`}>
                         <p>{skill.title}</p>
                         <p>{skill.description}</p>
                     </div>

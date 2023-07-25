@@ -83,7 +83,7 @@
   }
 }
 
-.mySkills:after {
+.mySkills .chapter {
   position: absolute;
   top: 10px;
   left: 50%;
@@ -113,6 +113,14 @@
   background: linear-gradient(0deg, rgb(16, 16, 16) 5%, rgba(16, 16, 16, 0) 60%);
   z-index: 2;
 }
+.mySkills .chapter {
+  transition: all 0.3s ease;
+  transform: translateY(-200%);
+}
+.mySkills .chapterActive {
+  transform: translateY(0);
+}
+
 .container {
   position: relative;
   max-width: 1200px;
@@ -256,6 +264,11 @@
 }
 .shellContainerItem:nth-child(odd) {
   transition-delay: 200ms;
+}
+@media (prefers-reduced-motion) {
+  .shellContainerItem {
+    transform: none;
+  }
 }
 
 .shellAnim {
