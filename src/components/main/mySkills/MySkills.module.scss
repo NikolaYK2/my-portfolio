@@ -45,43 +45,41 @@
   }
 }
 
-.containerItem {
+//Оболочка для hover container ---------------------------------------------
+.shellContainerItem {
   position: relative;
   display: flex;
   flex-direction: column;
   align-self: start;
   justify-content: start;
   flex: 1 1 23%;
-  overflow: hidden;
+
   cursor: pointer;
+
   max-width: 320px;
   min-width: 200px;
   min-height: 170px;
-  border: 1px solid $footerBorderTopColor;
-  padding: 10px;
+
   margin: 0 4% 30px;
+
   z-index: 1;
-  @extend %bcSkill;
-  box-shadow: 0 9px 16px 6px $shadowSkill !important;
-  transition: all 1s ease 0s;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
 
   &:hover .containerImg {
     svg {
       @keyframes imgOff {
         100% {
-          transform: translate(0, -200px);
+          transform: scale(0);
         }
       }
-      animation: imgOff 1s ease-in-out forwards;
+      animation: imgOff .5s ease-in-out forwards;
       opacity: 1;
     }
 
     p {
       @keyframes imgOf {
         100% {
-          transform: translate(0, 200px);
+          transform: translate(0, -91px);
+          transform-origin: center;
         }
       }
       animation: imgOf 1s ease-in-out forwards;
@@ -89,7 +87,7 @@
     }
   }
 
-  &:hover {
+  &:hover .containerItem {
     transition: all .3s ease 0.8s;
     -webkit-transform: translate3d(0, 0, 0);
 
@@ -98,7 +96,7 @@
       0% {
         transform: scale(1);
       }
-      50%{
+      50% {
         transform: scale(0.95);
       }
       100% {
@@ -108,125 +106,152 @@
     animation: scal 0.3s ease 0s forwards;
   }
 
-  &:hover:after {
+  &:hover .containerItem::after {
     @extend %animationBorderTopRight;
   }
 
-  &:hover:before {
+  &:hover .containerItem:before {
     @extend %animationBorderBotLeft;
   }
 
-  .containerImg {
-    max-width: 100px;
-    margin: 0 auto 10px;
-    transition: all 0.5s ease;
+  //----------------------------------------------------------------
+  .containerItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    flex: 1 1 auto;
+    @extend %bcSkill;
+    overflow: hidden;
 
-    svg {
-      fill: $colorH;
+    border: 1px solid $footerBorderTopColor;
 
-      path {
+    box-shadow: 0 9px 16px 6px $shadowSkill !important;
+
+    transition: all 1s ease 0s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+
+    .containerImg {
+      max-width: 100px;
+      margin: 0 auto 10px;
+      transition: all 0.5s ease;
+
+      svg {
         fill: $colorH;
+
+        path {
+          fill: $colorH;
+        }
       }
     }
-  }
-
-  p {
-    @extend %fontSizePp;
-    text-align: center;
-    margin: 10px 0 0 0;
-  }
-
-  .containerText {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 0.5s ease-in-out;
 
     p {
-      @keyframes containerText {
-        0% {
-          transform: translate(0, 800%);
-          color: #1DCB0A;
-        }
-        100% {
-          transform: translate(0, 0);
-          color: #9da1a5;
-        }
-      }
-      animation: containerText .5s ease-in-out forwards;
-      @extend %fontSizeP;
-      text-align: center;
-      transition: all 0.5s ease-in-out;
-
-    }
-
-    p:last-child {
-      @keyframes containerText1 {
-        0% {
-          opacity: 0.1;
-          transform: translate(0, -300%);
-
-        }
-        100% {
-          opacity: 1;
-          transform: translate(0, 0);
-        }
-      }
-      animation: containerText1 0.5s ease-in-out;
       @extend %fontSizePp;
       text-align: center;
-      margin: 0 0 0 0;
-      transition: all 0.5s ease-in-out;
-
+      margin: 10px 0 0 0;
     }
 
+    // TEXT --------------------------------------------------------------
+    .containerText {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      margin: 0 auto;
+
+      transition: all 0.5s ease;
+
+      p {
+        @keyframes containerText {
+          0% {
+            transform: translate(0, -3px);
+            transform-origin: center;
+            color: #1DCB0A;
+          }
+          100% {
+            transform: translate(0, 0);
+            transform-origin: center;
+            color: #9da1a5;
+          }
+        }
+        animation: containerText .5s ease-in-out forwards;
+        @extend %fontSizeP;
+        text-align: center;
+        transition: all 0.5s ease-in-out;
+
+      }
+
+      p:last-child {
+        @keyframes containerText1 {
+          0% {
+            opacity: 0.1;
+            transform: translate(0, -100%);
+            transform-origin: center;
+          }
+          100% {
+            opacity: 1;
+            transform: translate(0, 0);
+            transform-origin: center;
+          }
+        }
+        animation: containerText1 0.4s ease-in-out;
+        @extend %fontSizePp;
+        text-align: center;
+        margin: 0 0 0 0;
+        transition: all 0.5s ease-in-out;
+      }
+    }
   }
 }
 
+//IMG mod ---------------------------------------------------------
 .mod {
   opacity: 1;
+  transform: scale(1);
+  transform-origin: center;
+
 
   svg {
     @keyframes img {
       0% {
         opacity: 0;
-        transform: translate(0, -300%);
+        transform: scale(0);
+          transform-origin: center;
+
       }
       100% {
         opacity: 1;
-        transform: translate(0, 0px);
+        transform: scale(1);
+          transform-origin: center;
 
       }
     }
-    animation: img 0.5s ease-in-out;
+    animation: img 0.5s ease;
   }
 
   p {
     @keyframes p {
       0% {
         opacity: 0;
-        transform: translate(0, 300%);
+        transform-origin: center;
+        transform: scale(5);
+
       }
       100% {
         opacity: 1;
-        transform: translate(0, 0px);
-
+        transform: scale(1);
+        transform-origin: center;
       }
     }
-    animation: p 0.5s ease-in-out;
+    animation: p 0.5s ease;
   }
 }
 
 .modReverse {
   opacity: 0;
-  transform: translate(0, 70%);
-
-  p:first-child {
-    transform: translate(0, -70%);
-  }
-
-  p:last-child {
-    transform: translate(0, -700%);
-  }
+  transform: scale(0);
+  transition: all .2s ease 0s;
 }

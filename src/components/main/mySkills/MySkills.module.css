@@ -2,25 +2,25 @@
   padding: 5% 0;
 }
 
-.containerItem .containerText p {
+.shellContainerItem .containerItem .containerText p {
   font-size: 1.4285714286rem;
   text-transform: uppercase;
   margin: 0 0 10px 0;
   color: #1DCB0A;
 }
 
-.containerItem .containerText p:last-child, .containerItem p {
+.shellContainerItem .containerItem .containerText p:last-child, .shellContainerItem .containerItem p {
   font-size: 1.4285714286rem;
   text-transform: capitalize;
   line-height: 1.3em;
   color: #1DCB0A;
 }
 
-.containerItem {
+.shellContainerItem .containerItem {
   background: rgb(26, 26, 26);
 }
 
-.containerItem:hover:after {
+.shellContainerItem:hover .containerItem::after {
   animation: borderTopRight 0.4s linear forwards;
   position: absolute;
   display: block;
@@ -52,7 +52,7 @@
   }
 }
 
-.containerItem:hover:before {
+.shellContainerItem:hover .containerItem:before {
   animation: borderBotLeft 0.4s linear 0.4s forwards;
   position: absolute;
   display: block;
@@ -129,46 +129,40 @@
   transition: all 1s ease 0s;
 }
 
-.containerItem {
+.shellContainerItem {
   position: relative;
   display: flex;
   flex-direction: column;
   align-self: start;
   justify-content: start;
   flex: 1 1 23%;
-  overflow: hidden;
   cursor: pointer;
   max-width: 320px;
   min-width: 200px;
   min-height: 170px;
-  border: 1px solid rgba(157, 161, 165, 0.35);
-  padding: 10px;
   margin: 0 4% 30px;
   z-index: 1;
-  box-shadow: 0 9px 16px 6px black !important;
-  transition: all 1s ease 0s;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
 }
-.containerItem:hover .containerImg svg {
-  animation: imgOff 1s ease-in-out forwards;
+.shellContainerItem:hover .containerImg svg {
+  animation: imgOff 0.5s ease-in-out forwards;
   opacity: 1;
 }
 @keyframes imgOff {
   100% {
-    transform: translate(0, -200px);
+    transform: scale(0);
   }
 }
-.containerItem:hover .containerImg p {
+.shellContainerItem:hover .containerImg p {
   animation: imgOf 1s ease-in-out forwards;
   opacity: 1;
 }
 @keyframes imgOf {
   100% {
-    transform: translate(0, 200px);
+    transform: translate(0, -91px);
+    transform-origin: center;
   }
 }
-.containerItem:hover {
+.shellContainerItem:hover .containerItem {
   transition: all 0.3s ease 0.8s;
   -webkit-transform: translate3d(0, 0, 0);
   opacity: 1;
@@ -185,45 +179,62 @@
     transform: scale(1);
   }
 }
-.containerItem .containerImg {
+.shellContainerItem .containerItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  flex: 1 1 auto;
+  overflow: hidden;
+  border: 1px solid rgba(157, 161, 165, 0.35);
+  box-shadow: 0 9px 16px 6px black !important;
+  transition: all 1s ease 0s;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+}
+.shellContainerItem .containerItem .containerImg {
   max-width: 100px;
   margin: 0 auto 10px;
   transition: all 0.5s ease;
 }
-.containerItem .containerImg svg {
+.shellContainerItem .containerItem .containerImg svg {
   fill: #9da1a5;
 }
-.containerItem .containerImg svg path {
+.shellContainerItem .containerItem .containerImg svg path {
   fill: #9da1a5;
 }
-.containerItem p {
+.shellContainerItem .containerItem p {
   text-align: center;
   margin: 10px 0 0 0;
 }
-.containerItem .containerText {
+.shellContainerItem .containerItem .containerText {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all 0.5s ease-in-out;
+  align-items: center;
+  margin: 0 auto;
+  transition: all 0.5s ease;
 }
-.containerItem .containerText p {
+.shellContainerItem .containerItem .containerText p {
   animation: containerText 0.5s ease-in-out forwards;
   text-align: center;
   transition: all 0.5s ease-in-out;
 }
 @keyframes containerText {
   0% {
-    transform: translate(0, 800%);
+    transform: translate(0, -3px);
+    transform-origin: center;
     color: #1DCB0A;
   }
   100% {
     transform: translate(0, 0);
+    transform-origin: center;
     color: #9da1a5;
   }
 }
-.containerItem .containerText p:last-child {
-  animation: containerText1 0.5s ease-in-out;
+.shellContainerItem .containerItem .containerText p:last-child {
+  animation: containerText1 0.4s ease-in-out;
   text-align: center;
   margin: 0 0 0 0;
   transition: all 0.5s ease-in-out;
@@ -231,53 +242,56 @@
 @keyframes containerText1 {
   0% {
     opacity: 0.1;
-    transform: translate(0, -300%);
+    transform: translate(0, -100%);
+    transform-origin: center;
   }
   100% {
     opacity: 1;
     transform: translate(0, 0);
+    transform-origin: center;
   }
 }
 
 .mod {
   opacity: 1;
+  transform: scale(1);
+  transform-origin: center;
 }
 .mod svg {
-  animation: img 0.5s ease-in-out;
+  animation: img 0.5s ease;
 }
 @keyframes img {
   0% {
     opacity: 0;
-    transform: translate(0, -300%);
+    transform: scale(0);
+    transform-origin: center;
   }
   100% {
     opacity: 1;
-    transform: translate(0, 0px);
+    transform: scale(1);
+    transform-origin: center;
   }
 }
 .mod p {
-  animation: p 0.5s ease-in-out;
+  animation: p 0.5s ease;
 }
 @keyframes p {
   0% {
     opacity: 0;
-    transform: translate(0, 300%);
+    transform-origin: center;
+    transform: scale(5);
   }
   100% {
     opacity: 1;
-    transform: translate(0, 0px);
+    transform: scale(1);
+    transform-origin: center;
   }
 }
 
 .modReverse {
   opacity: 0;
-  transform: translate(0, 70%);
-}
-.modReverse p:first-child {
-  transform: translate(0, -70%);
-}
-.modReverse p:last-child {
-  transform: translate(0, -700%);
+  transform: scale(0);
+  transition: all 0.2s ease 0s;
 }
 
 /*# sourceMappingURL=MySkills.module.css.map */

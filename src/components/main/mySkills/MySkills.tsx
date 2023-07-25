@@ -10,7 +10,7 @@ let stop: any = null;
 export const MySkills = () => {
     const [skills, setSkills] = useState(
         [
-            {id: v1(), title: 'HTML', icon: 'html5', description: 'Google translator rules' },
+            {id: v1(), title: 'HTML', icon: 'html5', description: 'Google translator rules'},
             {id: v1(), title: 'CSS', icon: 'css3', description: 'My react is lame somewhere'},
             {id: v1(), title: 'JAVASCRIPT', icon: 'js', description: 'I also translated this in google translator.'},
             {id: v1(), title: 'TYPESCRIPT', icon: 'typescript', description: 'My react is lame somewhere'},
@@ -22,7 +22,6 @@ export const MySkills = () => {
             {id: v1(), title: 'REST API', icon: 'api', description: 'My react is lame somewhere'},
         ]
     )
-
     const on = useCallback((id: string) => {
         clearTimeout(stop);
         stop = setTimeout(() => {
@@ -34,13 +33,14 @@ export const MySkills = () => {
         clearTimeout(stop);
         stop = setTimeout(() => {
             setSkills(skills);
-        }, 800);
+        }, 200);
     }, [])
+
 
     return (
         <section id={'skills'} className={s.mySkills}>
             <div className={s.container}>
-                <TitleH2 title={'My skills'}/>
+                    <TitleH2 title={'My skills'}/>
                 <div className={s.containerSkills}>
                     {skills.map(skill => {
                         return (
@@ -69,29 +69,31 @@ const Skill = memo((props: SkillType) => {
     const {skill, switchOn, switchOff} = props;
     const [style, setStyle] = useState('');
 
-   const on=(id:string)=>{
-       switchOn(id);
-       setStyle(s.mod);
-   }
-   const off=()=>{
-       switchOff();
-       setStyle(s.modReverse);
-   }
+    const on = (id: string) => {
+        switchOn(id);
+        setStyle(s.mod);
+    }
+    const off = () => {
+        switchOff();
+        setStyle(s.modReverse);
+    }
     console.log('render')
     return (
-        <div className={s.containerItem} onMouseOver={()=>on(skill.id)} onMouseOut={off}>
-            {skill.icon
-                ? <div className={`${s.containerImg} ${s.mod}`}>
-                    <IconSvg id={skill.icon}/>
-                    <p>{skill.title}</p>
-                </div>
-                : <>
+        <div className={s.shellContainerItem} onMouseOver={() => on(skill.id)} onMouseOut={off}>
+            <div className={s.containerItem}>
+                {skill.icon
+                    ? <div className={`${s.containerImg} ${s.mod}`}>
+                        <IconSvg id={skill.icon}/>
+                        <p>{skill.title}</p>
+                    </div>
+                    :
                     <div className={`${s.containerText} ${style}`}>
                         <p>{skill.title}</p>
                         <p>{skill.description}</p>
                     </div>
-                </>
-            }
+
+                }
+            </div>
         </div>
     );
 });
