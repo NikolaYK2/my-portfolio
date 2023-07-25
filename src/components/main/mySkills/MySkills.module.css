@@ -142,6 +142,9 @@
   min-height: 170px;
   margin: 0 4% 30px;
   z-index: 1;
+  transform: scale(0.5);
+  filter: blur(10px);
+  transition: all 0.7s;
 }
 .shellContainerItem:hover .containerImg svg {
   animation: imgOff 0.5s ease-in-out forwards;
@@ -250,6 +253,14 @@
     transform: translate(0, 0);
     transform-origin: center;
   }
+}
+.shellContainerItem:nth-child(odd) {
+  transition-delay: 200ms;
+}
+
+.shellAnim {
+  transform: scale(1);
+  filter: blur(0px);
 }
 
 .mod {

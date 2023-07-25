@@ -1,5 +1,6 @@
 @import '../../../assets/SCSS/style';
 
+
 .mySkills {
   position: relative;
   flex: 1 1 auto;
@@ -33,7 +34,6 @@
   overflow: hidden;
   transition: all 1s ease 0s;
 
-
   .containerSkills {
     display: flex;
     justify-content: center;
@@ -41,7 +41,6 @@
     overflow: hidden;
     margin: 50px -3% 0;
     transition: all 1s ease 0s;
-
   }
 }
 
@@ -205,6 +204,19 @@
       }
     }
   }
+
+  //SHELL ANIMATION -----------------------------------------
+  transform: scale(0.5);
+  filter: blur(10px);
+  transition: all .7s;
+  &:nth-child(odd){
+    transition-delay: 200ms;
+  }
+}
+
+.shellAnim {
+  transform: scale(1);
+  filter: blur(0px);
 }
 
 //IMG mod ---------------------------------------------------------
@@ -219,13 +231,13 @@
       0% {
         opacity: 0;
         transform: scale(0);
-          transform-origin: center;
+        transform-origin: center;
 
       }
       100% {
         opacity: 1;
         transform: scale(1);
-          transform-origin: center;
+        transform-origin: center;
 
       }
     }
