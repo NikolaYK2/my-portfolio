@@ -51,6 +51,25 @@
   }
 }
 
+@keyframes chapter {
+  0% {
+    transform: translateY(0);
+    height: 0;
+  }
+  33% {
+    transform: translateY(100px);
+    height: 15px;
+  }
+  77% {
+    transform: translateY(-50px);
+    height: 35px;
+  }
+  100% {
+    transform: translateY(0);
+    height: 50px;
+  }
+}
+
 .button {
   position: relative;
   z-index: 1;

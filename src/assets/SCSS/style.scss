@@ -105,12 +105,14 @@ $maxWidth: 1280;
       border-right: 1px solid $colorH;
     }
   }
-  animation: borderTopRight 0.4s linear forwards;
   position: absolute;
   display: block;
   content: '';
   top: 0;
   left: 0;
+
+  animation: borderTopRight 0.4s linear forwards;
+
   z-index: 1212222222;
 }
 
@@ -155,6 +157,14 @@ $maxWidth: 1280;
   height: 50px;
   background: $colorP;
 }
-
+%animPsevdo{
+  @keyframes chapter {
+    0%{transform: translateY(0); height: 0;}
+    33%{transform: translateY(100px); height: 15px;}
+    77%{transform: translateY(-50px); height: 35px;}
+    100%{transform: translateY(0); height: 50px;}
+  }
+  animation: chapter 1s ease forwards;
+}
 //-----------------------------------------
 

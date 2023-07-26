@@ -24,17 +24,12 @@
 
   .chapter {
     @extend %psevdo;
-    transition: all .3s ease;
-    transform: translateY(-200%);
+    transition: all 1s ease;
   }
 
   .chapterActive {
-    transform: translateY(0);
+    @extend %animPsevdo
   }
-
-  //&:after {
-  //  @extend %psevdo;
-  //}
 }
 
 
@@ -137,13 +132,7 @@
 
     border: 1px solid $footerBorderTopColor;
 
-    //box-shadow: 0 9px 16px 6px $shadowSkill !important;
-
     transition: all 1s ease 0s;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-
-
 
     .containerImg {
       max-width: 100px;
@@ -217,8 +206,10 @@
         transition: all 0.5s ease-in-out;
       }
     }
+//animation containerItem ---------------------
     filter: blur(10px);
-    transform: scale(0.5);
+    transform: scale3d(0.7,0.7,0.7);
+
     &:nth-child(odd) {
       transition-delay: 200ms;
     }
@@ -227,11 +218,12 @@
       transform: none;
     }
   }
+
   .shellAnim {
-    transform: scale(1);
+    will-change: transform;
+    transform: scale3d(1,1,1);
     filter: blur(0px);
     box-shadow: 0 9px 16px 6px $shadowSkill !important;
-
   }
 }
 
