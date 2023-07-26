@@ -205,7 +205,8 @@
       }
     }
 //animation containerItem ---------------------
-    filter: blur(10px);
+//    filter: blur(10px);
+//    filter: blur(10px);
     transform: scale3d(0.7,0.7,0.7);
 
     &:nth-child(odd) {
@@ -220,7 +221,7 @@
   .shellAnim {
     will-change: transform;
     transform: scale3d(1,1,1);
-    filter: blur(0px);
+    //filter: blur(0px);
     box-shadow: 0 9px 16px 6px $shadowSkill !important;
   }
 }

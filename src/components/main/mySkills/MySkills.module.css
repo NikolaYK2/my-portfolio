@@ -213,7 +213,6 @@
   overflow: hidden;
   border: 1px solid rgba(157, 161, 165, 0.35);
   transition: all 1s ease 0s;
-  filter: blur(10px);
   transform: scale3d(0.7, 0.7, 0.7);
 }
 .shellContainerItem .containerItem .containerImg {
@@ -284,7 +283,6 @@
 .shellContainerItem .shellAnim {
   will-change: transform;
   transform: scale3d(1, 1, 1);
-  filter: blur(0px);
   box-shadow: 0 9px 16px 6px black !important;
 }
 
