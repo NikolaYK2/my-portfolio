@@ -1,17 +1,176 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "assets/SCSS/style";
- *   |         ^^^^^^^^^^^^^^^^^^^
- *   '
- *   Footer.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"assets/SCSS/style\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Footer.module.scss 1:9  root stylesheet";
+.containerFooter p {
+  font-size: 1.4285714286rem;
+  text-transform: capitalize;
+  line-height: 1.3em;
+  color: #1DCB0A;
 }
+
+@keyframes borderTopRight {
+  0% {
+    width: 0;
+    border-top: 1px solid #9da1a5;
+  }
+  33% {
+    width: 100%;
+    border-top: 1px solid #9da1a5;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #9da1a5;
+    border-right: 1px solid #9da1a5;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #9da1a5;
+    border-right: 1px solid #9da1a5;
+  }
+}
+
+@keyframes borderBotLeft {
+  0% {
+    width: 0;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+}
+
+@keyframes chapter {
+  0% {
+    transform: translateY(0);
+    height: 0;
+  }
+  33% {
+    transform: translateY(100px);
+    height: 15px;
+  }
+  77% {
+    transform: translateY(-50px);
+    height: 35px;
+  }
+  100% {
+    transform: translateY(0);
+    height: 50px;
+  }
+}
+
+.footer {
+  position: relative;
+  z-index: 2;
+  background: rgba(26, 26, 26, 0.9);
+  border-top: 2px solid rgba(157, 161, 165, 0.35);
+}
+.footer:before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  bottom: "";
+  right: "";
+  content: "";
+  animation: footGo 14s infinite linear;
+  background: #1DCB0A;
+  opacity: 0.5;
+  box-shadow: 0 0 10px #1DCB0A;
+  height: 2px;
+}
+@keyframes footGo {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  6% {
+    left: 0;
+    width: 20%;
+  }
+  34% {
+    left: 100%;
+    width: 20%;
+  }
+  100% {
+    left: 100%;
+    width: 30%;
+  }
+}
+
+.ss {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.containerFooter {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 -12%;
+}
+.containerFooter > div {
+  padding: 0 10%;
+}
+.containerFooter p {
+  font-size: 17px;
+  padding: 0 10%;
+  text-align: right;
+}
+
+.containerSocial {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 150px;
+  margin: 3% 0;
+  padding: 0 10%;
+}
+.containerSocial .containerBlock {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  transition: all 0.1s ease;
+  border-radius: 50%;
+  border: 1px solid #9da1a5;
+  margin: 0 5px;
+}
+.containerSocial .containerBlock:hover {
+  box-shadow: 0 0 5px #9da1a5, inset 0 0 5px #9da1a5;
+  transition: all 0.3s linear;
+}
+.containerSocial .containerBlock a {
+  opacity: 0.7;
+  transition: all 1s ease;
+  transform: scale(0) rotate(180deg);
+}
+.containerSocial .containerBlock a > svg {
+  fill: #1DCB0A;
+}
+.containerSocial .containerBlock a:hover {
+  filter: drop-shadow(1px 2px 5px black);
+  transition: all 0.1s ease;
+  transform: rotate(-9deg) scale(1.4);
+  opacity: 1;
+}
+.containerSocial .containerBlock a img {
+  width: 100%;
+  height: 100%;
+}
+.containerSocial .containerBlock .aActive {
+  transform: scale(1) rotate(0deg);
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

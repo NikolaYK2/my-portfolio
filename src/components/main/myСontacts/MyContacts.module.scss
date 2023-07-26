@@ -1,5 +1,5 @@
-@import "assets/SCSS/style";
-@import "assets/SCSS/fontColor";
+@import "../../../assets/SCSS/style";
+@import "../../../assets/SCSS/fontColor";
 
 .contact {
   position: relative;
@@ -9,9 +9,15 @@
 
   scroll-behavior: $scroll;
 
-  &:after{
+  .chapters {
     @extend %psevdo;
+    transition: all 1s ease;
   }
+
+  .chapterActive {
+    @extend %animPsevdo
+  }
+
 }
 
 .container {
@@ -25,7 +31,6 @@
   display: flex;
   flex-direction: column;
   margin: 5% auto 0;
-
 
 
   .formMod {
@@ -52,20 +57,23 @@
         outline: none;
         @extend %fontSizePp;
         transition: all .4s linear;
-        &:nth-child(3){
+
+        &:nth-child(3) {
           text-transform: none;
         }
 
-        &::placeholder{
+        &::placeholder {
           @extend %fontSizePp;
           opacity: .5;
           transition: all .4s linear;
         }
+
         &:focus {
           border: 1px solid $colorP;
           color: $colorH;
           transition: all .4s linear;
         }
+
         &:focus::placeholder {
           color: $colorH;
           transition: all .4s linear;
@@ -92,16 +100,18 @@
         resize: none;
         transition: all 1s linear;
 
-        &::placeholder{
+        &::placeholder {
           @extend %fontSizePp;
           opacity: .5;
           transition: all .4s linear;
         }
+
         &:focus {
           border: 1px solid $colorP;
           color: $colorH;
           transition: all .4s linear;
         }
+
         &:focus::placeholder {
           color: $colorH;
           transition: all .4s linear;
@@ -109,7 +119,8 @@
       }
     }
   }
-Button{
-  background: $formBc;
-}
+
+  Button {
+    background: $formBc;
+  }
 }

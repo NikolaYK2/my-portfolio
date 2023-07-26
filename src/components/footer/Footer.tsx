@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './Footer.module.scss';
 import {Logo} from "common/components/logo/Logo";
 import {IconSvg} from "../iconSvg/IconSvg";
+import {animationOnScroll} from "common/utils/animateOnScroll";
 
 export const Footer = () => {
 
@@ -10,6 +11,11 @@ export const Footer = () => {
         {id: 'linkedin', link: 'https://www.linkedin.com/feed/'},
         {id: 'telegram', link: 'https://t.me/Nik_Kev'},
     ]
+
+    useEffect(() => {
+        animationOnScroll(`#a`, s.aActive)
+    }, [])
+
     return (
         <section className={s.footer}>
             <div className={s.ss}>
@@ -19,7 +25,7 @@ export const Footer = () => {
                         {social.map((social, index) => {
                             return (
                                 <div key={index} className={s.containerBlock}>
-                                    <a href={social.link}>
+                                    <a id='a' href={social.link}>
                                         <IconSvg id={social.id}/>
                                     </a>
                                 </div>

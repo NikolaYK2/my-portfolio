@@ -34,14 +34,19 @@
 
   margin: 50px -5% 0;
 
-  transform: rotateY(90deg) scale(0.9);
+  transform: scale(0.7);
+  opacity: 0.5;
+  filter: blur(10px);
+
   transition: all 1s ease 0s;
 
 }
-
+//Animations active observer --------------------------------
 .activeContainerCrafts {
   will-change: transform;
   transform: scale(1);
+  filter: blur(0);
+  opacity: 1;
 }
 
 .containerBlock {
