@@ -84,14 +84,14 @@
 
     a {
       opacity: 0.7;
-      transition: all 1s ease;
+      transition: all .5s ease;
 
       >svg {
         fill: $colorP;
       }
 
       &:hover {
-        filter: drop-shadow(1px 2px 5px black);
+        filter: drop-shadow(1px 2px 2px black);
         transition: all .1s ease;
         transform: rotate(-9deg) scale(1.4);
         opacity: 1;
