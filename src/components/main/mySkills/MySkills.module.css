@@ -150,9 +150,6 @@
   min-height: 170px;
   margin: 0 4% 30px;
   z-index: 1;
-  transform: scale(0.5);
-  filter: blur(10px);
-  transition: all 0.7s;
 }
 .shellContainerItem:hover .containerImg svg {
   animation: imgOff 0.5s ease-in-out forwards;
@@ -198,10 +195,11 @@
   flex: 1 1 auto;
   overflow: hidden;
   border: 1px solid rgba(157, 161, 165, 0.35);
-  box-shadow: 0 9px 16px 6px black !important;
   transition: all 1s ease 0s;
   -webkit-backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
+  filter: blur(10px);
+  transform: scale(0.5);
 }
 .shellContainerItem .containerItem .containerImg {
   max-width: 100px;
@@ -262,18 +260,18 @@
     transform-origin: center;
   }
 }
-.shellContainerItem:nth-child(odd) {
+.shellContainerItem .containerItem:nth-child(odd) {
   transition-delay: 200ms;
 }
 @media (prefers-reduced-motion) {
-  .shellContainerItem {
+  .shellContainerItem .containerItem {
     transform: none;
   }
 }
-
-.shellAnim {
+.shellContainerItem .shellAnim {
   transform: scale(1);
   filter: blur(0px);
+  box-shadow: 0 9px 16px 6px black !important;
 }
 
 .mod {

@@ -102,7 +102,7 @@ const Skill = memo((props: SkillType) => {
     console.log('render')
 
     useEffect(() => {
-        animationOnScroll(`.${s.shellContainerItem}`, s.shellAnim)
+        animationOnScroll(`.${s.containerItem}`, s.shellAnim)
     }, [])
 
     return (

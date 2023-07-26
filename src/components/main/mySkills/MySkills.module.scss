@@ -137,11 +137,13 @@
 
     border: 1px solid $footerBorderTopColor;
 
-    box-shadow: 0 9px 16px 6px $shadowSkill !important;
+    //box-shadow: 0 9px 16px 6px $shadowSkill !important;
 
     transition: all 1s ease 0s;
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
+
+
 
     .containerImg {
       max-width: 100px;
@@ -215,25 +217,22 @@
         transition: all 0.5s ease-in-out;
       }
     }
+    filter: blur(10px);
+    transform: scale(0.5);
+    &:nth-child(odd) {
+      transition-delay: 200ms;
+    }
+
+    @media (prefers-reduced-motion) {
+      transform: none;
+    }
   }
+  .shellAnim {
+    transform: scale(1);
+    filter: blur(0px);
+    box-shadow: 0 9px 16px 6px $shadowSkill !important;
 
-  //SHELL ANIMATION -----------------------------------------
-  transform: scale(0.5);
-  filter: blur(10px);
-  transition: all .7s;
-
-  &:nth-child(odd) {
-    transition-delay: 200ms;
   }
-  @media (prefers-reduced-motion) {
-    transform: none;
-  }
-
-}
-
-.shellAnim {
-  transform: scale(1);
-  filter: blur(0px);
 }
 
 //IMG mod ---------------------------------------------------------
