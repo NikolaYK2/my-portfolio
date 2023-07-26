@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './MyCrafts.module.scss';
 import {v1} from "uuid";
-import socialImg from './social.jpg';
-import appImg from './app.jpg';
+import socialImg from 'assets/image/myCraft/social.jpg';
+import appImg from 'assets/image/myCraft/app.jpg';
 import {TitleH2} from "common/components/titleH2/titleH2";
+import {animationOnScroll} from "common/utils/animateOnScroll";
 
 export const MyCrafts = () => {
 
@@ -23,8 +24,15 @@ export const MyCrafts = () => {
             link: 'https://nikolayk2.github.io/it-incubator-todolist-ts-01/',
         },
     ]
+
+    useEffect(()=>{
+        animationOnScroll(`.${s.chapter}`, s.chapterActive)
+        animationOnScroll(`.${s.containerCrafts}`, s.activeContainerCrafts)
+    },[])
+
     return (
         <section id={'crafts'} className={s.craft}>
+            <div className={s.chapter}></div>
             <div className={s.containerItem}>
                 <TitleH2 title={'My crafts'}/>
                 <div className={s.containerCrafts}>
@@ -52,13 +60,16 @@ type CraftType = {
 }
 export const Craft = (props: CraftType) => {
     const {crafts} = props
+
     let [style, setStyle] = useState<string>('')
+
     const on = () => {
         setStyle(s.active);
     }
     const off = () => {
         setStyle(s.off);
     }
+
     return (
         <div className={`${s.containerBlock} ${style}`} onMouseOver={on} onMouseOut={off}>
             <div className={s.containerBackground} style={{backgroundImage: `url(${crafts.background})`}}>

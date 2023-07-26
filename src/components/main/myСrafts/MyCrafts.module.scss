@@ -1,5 +1,6 @@
-@import 'assets/SCSS/style';
-@import "assets/SCSS/fontColor";
+@import '../../../assets/SCSS/style';
+@import "../../../assets/SCSS/fontColor";
+
 .craft {
   position: relative;
   flex: 1 1 auto;
@@ -7,8 +8,13 @@
 
   scroll-behavior: $scroll;
 
-  &:after{
+  .chapter {
     @extend %psevdo;
+    transition: all 1s ease;
+  }
+
+  .chapterActive {
+    @extend %animPsevdo
   }
 }
 
@@ -17,6 +23,7 @@
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
+  perspective: 3000px;
 }
 
 .containerCrafts {
@@ -24,16 +31,29 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
   margin: 50px -5% 0;
+
+  transform: rotateY(90deg) scale(0.9);
+  transition: all 1s ease 0s;
+
+}
+
+.activeContainerCrafts {
+  will-change: transform;
+  transform: scale(1);
 }
 
 .containerBlock {
   position: relative;
   flex: 1 1 45%;
   align-self: start;
+
   max-width: 40%;
+
   margin: 0 5% 5%;
-  box-shadow: 0 9px 31px 6px $shadowSkill !important;
+
+  box-shadow: 0 9px 31px 6px $shadowSkill;
   overflow: hidden;
   transition: all 1s ease;
 
@@ -45,19 +65,22 @@
   .containerBackground {
     position: relative;
     width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+
     padding: 28%;
+
     cursor: pointer;
     transform: scale(1);
     transition: all .4s ease;
     z-index: 2;
 
-    &:before{
+    &:before {
       position: absolute;
       top: 0;
       left: 0;
@@ -69,14 +92,16 @@
       opacity: 0;
       transition: all 1s ease;
     }
-    &:hover:before{
+
+    &:hover:before {
       opacity: 1;
       visibility: visible;
       transition: all 1s ease;
     }
-    &:hover{
+
+    &:hover {
       transform: scale(1.3);
-      filter: grayscale(.35);
+      filter: grayscale(.8);
       transition: all 1s ease;
     }
 
@@ -144,16 +169,16 @@
       @extend %fontSizePp
     }
   }
-
 }
+
 
 //Animats blocks ===============================
 .active:after {
   @keyframes bor {
-    0%{
+    0% {
       width: 0;
     }
-    100%{
+    100% {
       width: 100%;
     }
   }
@@ -166,12 +191,13 @@
   content: '';
   z-index: 30000;
 }
-.off:after{
+
+.off:after {
   @keyframes bor1 {
-    0%{
+    0% {
       width: 0;
     }
-    100%{
+    100% {
       width: 100%;
     }
   }

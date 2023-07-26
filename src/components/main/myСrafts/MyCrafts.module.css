@@ -1,17 +1,280 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import 'assets/SCSS/style';
- *   |         ^^^^^^^^^^^^^^^^^^^
- *   '
- *   MyCrafts.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import 'assets/SCSS/style';\d\a   \2502          ^^^^^^^^^^^^^^^^^^^\a   \2575 \a   MyCrafts.module.scss 1:9  root stylesheet";
+.craft {
+  padding: 5% 0;
 }
+
+.containerBlock .containerText p:first-child, .containerBlock .containerBackground button {
+  font-size: 2.8571428571rem;
+  color: #9da1a5;
+  font-weight: 700;
+  line-height: 1.06em;
+}
+
+.containerBlock .containerText p:last-child {
+  font-size: 1.4285714286rem;
+  text-transform: capitalize;
+  line-height: 1.3em;
+  color: #1DCB0A;
+}
+
+.containerBlock .containerBackground:hover button:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  animation: borderTopRight 0.4s linear forwards;
+  z-index: 1212222222;
+}
+@keyframes borderTopRight {
+  0% {
+    width: 0;
+    border-top: 1px solid #9da1a5;
+  }
+  33% {
+    width: 100%;
+    border-top: 1px solid #9da1a5;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #9da1a5;
+    border-right: 1px solid #9da1a5;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #9da1a5;
+    border-right: 1px solid #9da1a5;
+  }
+}
+
+.containerBlock .containerBackground:hover button:before {
+  animation: borderBotLeft 0.4s linear 0.4s forwards;
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 0;
+  right: 0;
+}
+@keyframes borderBotLeft {
+  0% {
+    width: 0;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  33% {
+    width: 100%;
+    border-bottom: 1px solid #1DCB0A;
+  }
+  66% {
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #1DCB0A;
+    border-left: 1px solid #1DCB0A;
+  }
+}
+
+.craft .chapter {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  bottom: "";
+  right: "";
+  content: "";
+  width: 2px;
+  height: 50px;
+  background: #1DCB0A;
+}
+
+.craft .chapterActive {
+  animation: chapter 1s ease forwards;
+}
+@keyframes chapter {
+  0% {
+    transform: translateY(0);
+    height: 0;
+  }
+  33% {
+    transform: translateY(100px);
+    height: 15px;
+  }
+  77% {
+    transform: translateY(-50px);
+    height: 35px;
+  }
+  100% {
+    transform: translateY(0);
+    height: 50px;
+  }
+}
+
+.craft {
+  position: relative;
+  flex: 1 1 auto;
+  scroll-behavior: smooth;
+}
+.craft .chapter {
+  transition: all 1s ease;
+}
+.containerItem {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  perspective: 3000px;
+}
+
+.containerCrafts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px -5% 0;
+  transform: rotateY(90deg) scale(0.9);
+  transition: all 1s ease 0s;
+}
+
+.activeContainerCrafts {
+  will-change: transform;
+  transform: scale(1);
+}
+
+.containerBlock {
+  position: relative;
+  flex: 1 1 45%;
+  align-self: start;
+  max-width: 40%;
+  margin: 0 5% 5%;
+  box-shadow: 0 9px 31px 6px black;
+  overflow: hidden;
+  transition: all 1s ease;
+}
+@media (max-width: 690px) {
+  .containerBlock {
+    max-width: 80%;
+  }
+}
+.containerBlock .containerBackground {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 28%;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+.containerBlock .containerBackground:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease;
+}
+.containerBlock .containerBackground:hover:before {
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease;
+}
+.containerBlock .containerBackground:hover {
+  transform: scale(1.3);
+  filter: grayscale(0.8);
+  transition: all 1s ease;
+}
+.containerBlock .containerBackground:hover a {
+  transform: scale(0.7);
+  transition: all 1s ease;
+  background-color: rgba(16, 16, 16, 0.8);
+}
+.containerBlock .containerBackground a {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.containerBlock .containerBackground button {
+  background: transparent;
+  font-size: 1.7857142857rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px 30px;
+}
+.containerBlock .containerBackground:hover a {
+  transition: all 0.5s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+.containerBlock .containerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-self: end;
+  align-content: end;
+  position: relative;
+  background: #1a1a1a;
+  padding: 20px;
+  overflow: hidden;
+  z-index: 11111;
+}
+.containerBlock .containerText p:first-child {
+  display: inline-flex;
+  font-size: 1.7857142857rem;
+  margin: 5px 0;
+}
+.containerBlock .containerText p:last-child {
+  display: block;
+  text-align: start;
+}
+
+.active:after {
+  animation: bor 0.3s ease forwards;
+  border-bottom: 3px solid #9da1a5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  z-index: 30000;
+}
+@keyframes bor {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.off:after {
+  animation: bor1 0.3s ease reverse;
+  border-bottom: 3px solid #9da1a5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  z-index: 30000;
+}
+@keyframes bor1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=MyCrafts.module.css.map */
