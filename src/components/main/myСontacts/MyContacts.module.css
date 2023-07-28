@@ -55,7 +55,7 @@
   }
 }
 
-.contact .chapters {
+.contact:after {
   position: absolute;
   top: 10px;
   left: 50%;
@@ -67,9 +67,6 @@
   background: #1DCB0A;
 }
 
-.contact .chapterActive {
-  animation: chapter 1s ease forwards;
-}
 @keyframes chapter {
   0% {
     transform: translateY(0);
@@ -94,9 +91,6 @@
   flex: 1 1 auto;
   /*background-color: #00909F;*/
   scroll-behavior: smooth;
-}
-.contact .chapters {
-  transition: all 1s ease;
 }
 .container {
   max-width: 1200px;

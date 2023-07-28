@@ -8,6 +8,9 @@
   @extend %padding;
   padding-bottom: 0;
   scroll-behavior: $scroll;
+  &:after {
+    @extend %psevdo;
+  }
 
   &:before {
     pointer-events: none;
@@ -20,15 +23,6 @@
     transform: translate(0px, -100%);
     background: linear-gradient(0deg, rgb(16, 16, 16) 5%, rgba(16, 16, 16, 0) 60%);
     z-index: 2;
-  }
-
-  .chapter {
-    @extend %psevdo;
-    transition: all 1s ease;
-  }
-
-  .chapterActive {
-    @extend %animPsevdo
   }
 }
 
@@ -204,24 +198,18 @@
         transition: all 0.5s ease-in-out;
       }
     }
-//animation containerItem ---------------------
-//    filter: blur(10px);
-//    filter: blur(10px);
-    transform: scale3d(0.7,0.7,0.7);
-
-    &:nth-child(odd) {
-      transition-delay: 200ms;
-    }
-
+    //animation containerItem ---------------------
+    opacity: 0.3;
+    transform: scale3d(0.7, 0.7, 0.7);
     @media (prefers-reduced-motion) {
       transform: none;
     }
   }
 
   .shellAnim {
+    opacity: 1;
     will-change: transform;
-    transform: scale3d(1,1,1);
-    //filter: blur(0px);
+    transform: scale3d(1, 1, 1);
     box-shadow: 0 9px 16px 6px $shadowSkill !important;
   }
 }

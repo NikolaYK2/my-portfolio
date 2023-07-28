@@ -1,6 +1,21 @@
+@import "../../assets/SCSS/fontColor";
 .main {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  scroll-snap-type: y mandatory;
   /*background-color: #804f4f;*/
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    //height: 50px;
+    background: $colorP;
+    opacity: 0.3;
+    z-index: 1;
+    transition: all 1s;
+    scroll-snap-align: start;
+  }
+
 }

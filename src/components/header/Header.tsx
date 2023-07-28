@@ -56,9 +56,7 @@ export const Header = memo(() => {
             } else {
                 setBackground(s.bcOn);
             }
-            if (scrollY === 250) {
 
-            }
         };
         window.addEventListener("scroll", updateScrollDirection); // add event listener
         return () => {

@@ -1,18 +1,15 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import s from './MyContacts.module.scss';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {Button} from "common/components/button/Button";
-import {animationOnScroll} from "common/utils/animateOnScroll";
+type MyContactsType={
+    id:string
+}
 
-export const MyContacts = () => {
-
-    useEffect(() => {
-        animationOnScroll(`.${s.chapters}`, s.chapterActive)
-    }, [])
+export const MyContacts = (props:MyContactsType) => {
 
     return (
-        <section id={'contact'} className={s.contact}>
-            <div className={s.chapters}></div>
+        <section id={props.id} className={s.contact}>
             <div className={s.container}>
                 <TitleH2 title={'Contacts'}/>
                 <form action="#" encType='#' method='#' className={s.form}>

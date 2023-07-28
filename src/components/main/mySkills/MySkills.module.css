@@ -83,7 +83,7 @@
   }
 }
 
-.mySkills .chapter {
+.mySkills:after {
   position: absolute;
   top: 10px;
   left: 50%;
@@ -95,9 +95,6 @@
   background: #1DCB0A;
 }
 
-.mySkills .chapterActive {
-  animation: chapter 1s ease forwards;
-}
 @keyframes chapter {
   0% {
     transform: translateY(0);
@@ -135,9 +132,7 @@
   background: linear-gradient(0deg, rgb(16, 16, 16) 5%, rgba(16, 16, 16, 0) 60%);
   z-index: 2;
 }
-.mySkills .chapter {
-  transition: all 1s ease;
-}
+
 .container {
   position: relative;
   max-width: 1200px;
@@ -213,6 +208,7 @@
   overflow: hidden;
   border: 1px solid rgba(157, 161, 165, 0.35);
   transition: all 1s ease 0s;
+  opacity: 0.3;
   transform: scale3d(0.7, 0.7, 0.7);
 }
 .shellContainerItem .containerItem .containerImg {
@@ -272,15 +268,13 @@
     transform-origin: center;
   }
 }
-.shellContainerItem .containerItem:nth-child(odd) {
-  transition-delay: 200ms;
-}
 @media (prefers-reduced-motion) {
   .shellContainerItem .containerItem {
     transform: none;
   }
 }
 .shellContainerItem .shellAnim {
+  opacity: 1;
   will-change: transform;
   transform: scale3d(1, 1, 1);
   box-shadow: 0 9px 16px 6px black !important;

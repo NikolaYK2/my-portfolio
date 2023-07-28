@@ -5,11 +5,13 @@ import {TitleH2} from "common/components/titleH2/titleH2";
 import {IconSvg} from "../../iconSvg/IconSvg";
 import {animationOnScroll} from "common/utils/animateOnScroll";
 
-
 // let stop: any = null;
 type Timout = ReturnType<typeof setTimeout>
+type MySkillsType={
+    id:string
+}
 
-export const MySkills = () => {
+export const MySkills = memo((props:MySkillsType) => {
     const [skills, setSkills] = useState(
         [
             {id: v1(), title: 'HTML', icon: 'html5', description: 'Google translator rules'},
@@ -28,14 +30,14 @@ export const MySkills = () => {
     const timerId = useRef<Timout | null>(null)
     // const timerId = useRef<any>(null)
     const on = useCallback((id: string) => {
-        if(timerId.current) clearTimeout(timerId.current);
+        if (timerId.current) clearTimeout(timerId.current);
         timerId.current = setTimeout(() => {
             setSkills(skills.map(e => e.id === id ? {...e, icon: ''} : e));
         }, 800);
     }, [])
 
     const off = useCallback(() => {
-        if(timerId.current) clearTimeout(timerId.current);
+        if (timerId.current) clearTimeout(timerId.current);
         timerId.current = setTimeout(() => {
             setSkills(skills);
         }, 200);
@@ -54,13 +56,9 @@ export const MySkills = () => {
     //     }, 200);
     // }, [])
 
-    useEffect(() => {
-        animationOnScroll(`.${s.chapter}`, s.chapterActive)
-    }, [])
 
     return (
-        <section id={'skills'} className={s.mySkills}>
-            <div className={s.chapter}></div>
+        <section id={props.id} className={s.mySkills}>
             <div className={s.container}>
                 <TitleH2 title={'My skills'}/>
                 <div className={s.containerSkills}>
@@ -73,7 +71,7 @@ export const MySkills = () => {
             </div>
         </section>
     );
-};
+});
 
 //==========================================================================================
 type Type = {

@@ -84,5 +84,14 @@
   background: rgba(157, 161, 165, 0.1);
   z-index: 0;
 }
+.App .slider {
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 50px;
+  left: 50%;
+  background: red;
+  z-index: 0;
+}
 
 /*# sourceMappingURL=App.module.css.map */

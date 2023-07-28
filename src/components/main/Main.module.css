@@ -2,7 +2,19 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  scroll-snap-type: y mandatory;
   /*background-color: #804f4f;*/
+}
+.main .slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  background: #1DCB0A;
+  opacity: 0.3;
+  z-index: 1;
+  transition: all 1s;
+  scroll-snap-align: start;
 }
 
 /*# sourceMappingURL=Main.module.css.map */

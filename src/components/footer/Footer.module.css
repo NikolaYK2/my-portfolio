@@ -170,6 +170,7 @@
   height: 100%;
 }
 .containerSocial .containerBlock .aActive {
+  will-change: transform;
   transform: scale(1) rotate(0deg);
 }
 

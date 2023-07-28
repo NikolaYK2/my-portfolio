@@ -6,14 +6,17 @@ import s from './App.module.scss';
 
 
 function App() {
-    const [isRead, setIsReady] = useState(false);
+    const [isRead, setIsReady] = useState(false);//Загрузка шрифтов
 
+//Загрузка шрифтов -----------------------------------
     useEffect(() => {
         Promise.all([
             document.fonts.load("1rem Jost"),
             document.fonts.load("bold 12px Jost"),
         ]).then(() => setIsReady(true))
     }, [])
+
+    //скрол ползунка ------------------------------------------------
 
     return (
         <>
@@ -26,7 +29,6 @@ function App() {
             }
         </>
     );
-
 }
 
 export default App;

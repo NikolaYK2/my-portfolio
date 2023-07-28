@@ -79,7 +79,7 @@
   }
 }
 
-.craft .chapter {
+.craft:after {
   position: absolute;
   top: 10px;
   left: 50%;
@@ -91,9 +91,6 @@
   background: #1DCB0A;
 }
 
-.craft .chapterActive {
-  animation: chapter 1s ease forwards;
-}
 @keyframes chapter {
   0% {
     transform: translateY(0);
@@ -117,9 +114,7 @@
   position: relative;
   flex: 1 1 auto;
   scroll-behavior: smooth;
-}
-.craft .chapter {
-  transition: all 1s ease;
+  z-index: 2;
 }
 .containerItem {
   max-width: 1200px;
@@ -133,17 +128,8 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: 50px -5% 0;
-  transform: scale(0.7);
-  opacity: 0.5;
-  filter: blur(10px);
+  z-index: 3000;
   transition: all 1s ease 0s;
-}
-
-.activeContainerCrafts {
-  will-change: transform;
-  transform: scale(1);
-  filter: blur(0);
-  opacity: 1;
 }
 
 .containerBlock {
@@ -155,6 +141,7 @@
   box-shadow: 0 9px 31px 6px black;
   overflow: hidden;
   transition: all 1s ease;
+  z-index: 30000;
 }
 @media (max-width: 690px) {
   .containerBlock {

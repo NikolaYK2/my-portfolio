@@ -6,7 +6,7 @@
   flex-direction: column;
   min-height: 100%;
   overflow: hidden;
-  background: url("./15.png") center center/cover no-repeat, rgb(16, 16, 16);
+  background: url("./15.png") center center/cover no-repeat , rgb(16, 16, 16);
   font-family: Jost, sans-serif;
 
   &:after {
@@ -14,6 +14,17 @@
     width: 2px;
     height: 100%;
     background: rgba(157, 161, 165, 0.1);
+    z-index: 0;
+  }
+
+  .slider{
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 50px;
+    //top: 25%;
+    left: 50%;
+    background: red;
     z-index: 0;
   }
 }

@@ -105,6 +105,7 @@
       transform: scale(0) rotate(180deg);
     }
     .aActive{
+      will-change: transform;// - ставим на конечном результате, предотвраща скачки(обычно этого хватает)
       transform: scale(1) rotate(0deg);
 
     }

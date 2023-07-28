@@ -9,15 +9,9 @@
 
   scroll-behavior: $scroll;
 
-  .chapters {
+  &:after {
     @extend %psevdo;
-    transition: all 1s ease;
   }
-
-  .chapterActive {
-    @extend %animPsevdo
-  }
-
 }
 
 .container {

@@ -1,12 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import s from './MyCrafts.module.scss';
 import {v1} from "uuid";
 import socialImg from 'assets/image/myCraft/social.jpg';
 import appImg from 'assets/image/myCraft/app.jpg';
 import {TitleH2} from "common/components/titleH2/titleH2";
-import {animationOnScroll} from "common/utils/animateOnScroll";
 
-export const MyCrafts = () => {
+type MyCraftsType={
+    id:string
+}
+
+export const MyCrafts = (props:MyCraftsType) => {
 
     const crafts = [
         {
@@ -25,14 +28,9 @@ export const MyCrafts = () => {
         },
     ]
 
-    useEffect(()=>{
-        animationOnScroll(`.${s.chapter}`, s.chapterActive)
-        animationOnScroll(`.${s.containerCrafts}`, s.activeContainerCrafts)
-    },[])
 
     return (
-        <section id={'crafts'} className={s.craft}>
-            <div className={s.chapter}></div>
+        <section id={props.id} className={s.craft}>
             <div className={s.containerItem}>
                 <TitleH2 title={'My crafts'}/>
                 <div className={s.containerCrafts}>

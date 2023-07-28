@@ -1,8 +1,11 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import s from './Wrapper.module.scss';
 import fonPhoto from 'assets/image/wrapper/I_maloy.jpg'
+type WrapperType={
+    id:string
+}
 
-export const Wrapper = () => {
+export const Wrapper = (props:WrapperType) => {
     const paralaxWrapper = useRef<HTMLDivElement>(null);
 
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -22,7 +25,7 @@ export const Wrapper = () => {
     }, [scrollPosition])
 
     return (
-        <div id='wrap' className={s.wrapper} style={{backgroundImage: `url(${fonPhoto})`}}>
+        <div id={props.id} className={s.wrapper} style={{backgroundImage: `url(${fonPhoto})`}}>
             <div  className={s.wrapperContainer}>
                 <div id='wrapperName' className={s.wrapperName} ref={paralaxWrapper}>
                     <h1><span>N</span>ikolaj Kevlich<span>.</span></h1>
