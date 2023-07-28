@@ -83,18 +83,6 @@
   }
 }
 
-.mySkills:after {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  bottom: "";
-  right: "";
-  content: "";
-  width: 2px;
-  height: 50px;
-  background: #1DCB0A;
-}
-
 @keyframes chapter {
   0% {
     transform: translateY(0);
@@ -177,8 +165,16 @@
   opacity: 1;
 }
 @keyframes imgOf {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
+  }
+  50% {
+    transform: translate(0, -31px) scale(1.9);
+    transform-origin: center;
+  }
   100% {
-    transform: translate(0, -91px);
+    transform: translate(0, -91px) scale(1);
     transform-origin: center;
   }
 }
@@ -186,7 +182,7 @@
   transition: all 0.3s ease 0.8s;
   -webkit-transform: translate3d(0, 0, 0);
   opacity: 1;
-  animation: scal 0.3s ease 0s forwards;
+  animation: scal 0.5s ease 0s forwards;
 }
 @keyframes scal {
   0% {
@@ -234,19 +230,20 @@
   transition: all 0.5s ease;
 }
 .shellContainerItem .containerItem .containerText p {
-  animation: containerText 0.5s ease-in-out forwards;
+  animation: containerText 0.5s ease forwards;
   text-align: center;
-  transition: all 0.5s ease-in-out;
 }
 @keyframes containerText {
   0% {
-    transform: translate(0, -3px);
+    transform: translateY(-3px) scale(0.8);
     transform-origin: center;
+    opacity: 0.3;
     color: #1DCB0A;
   }
   100% {
-    transform: translate(0, 0);
+    transform: scale(1);
     transform-origin: center;
+    opacity: 1;
     color: #9da1a5;
   }
 }
@@ -259,7 +256,7 @@
 @keyframes containerText1 {
   0% {
     opacity: 0.1;
-    transform: translate(0, -100%);
+    transform: translate(0, -140%);
     transform-origin: center;
   }
   100% {

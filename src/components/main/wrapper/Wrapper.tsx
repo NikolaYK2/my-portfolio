@@ -20,7 +20,7 @@ export const Wrapper = (props:WrapperType) => {
     }, [])
 
     useLayoutEffect(() => {
-        const parallaxSpeed = 0.40;
+        const parallaxSpeed = 0.30;
         paralaxWrapper.current!.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
     }, [scrollPosition])
 

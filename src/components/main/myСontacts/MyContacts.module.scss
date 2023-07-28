@@ -9,9 +9,9 @@
 
   scroll-behavior: $scroll;
 
-  &:after {
-    @extend %psevdo;
-  }
+  //&:after {
+  //  @extend %psevdo;
+  //}
 }
 
 .container {

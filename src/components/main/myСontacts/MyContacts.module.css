@@ -55,18 +55,6 @@
   }
 }
 
-.contact:after {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  bottom: "";
-  right: "";
-  content: "";
-  width: 2px;
-  height: 50px;
-  background: #1DCB0A;
-}
-
 @keyframes chapter {
   0% {
     transform: translateY(0);
@@ -92,6 +80,7 @@
   /*background-color: #00909F;*/
   scroll-behavior: smooth;
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

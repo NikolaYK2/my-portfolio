@@ -8,9 +8,9 @@
   @extend %padding;
   padding-bottom: 0;
   scroll-behavior: $scroll;
-  &:after {
-    @extend %psevdo;
-  }
+  //&:after {
+  //  @extend %psevdo;
+  //}
 
   &:before {
     pointer-events: none;
@@ -77,8 +77,15 @@
 
     p {
       @keyframes imgOf {
+        0%{ transform: scale(1);
+          transform-origin: center;
+        }
+        50%{ transform: translate(0, -31px) scale(1.9);
+          transform-origin: center;
+        }
+
         100% {
-          transform: translate(0, -91px);
+          transform: translate(0, -91px) scale(1);
           transform-origin: center;
         }
       }
@@ -95,15 +102,17 @@
     @keyframes scal {
       0% {
         transform: scale(1);
+
       }
       50% {
         transform: scale(0.95);
       }
       100% {
         transform: scale(1);
+
       }
     }
-    animation: scal 0.3s ease 0s forwards;
+    animation: scal .5s ease 0s forwards;
   }
 
   &:hover .containerItem::after {
@@ -161,20 +170,22 @@
       p {
         @keyframes containerText {
           0% {
-            transform: translate(0, -3px);
+            transform: translateY(-3px) scale(0.8);
             transform-origin: center;
+            opacity: 0.3;
             color: #1DCB0A;
           }
           100% {
-            transform: translate(0, 0);
+            transform: scale(1);
             transform-origin: center;
+            opacity: 1;
             color: #9da1a5;
           }
         }
-        animation: containerText .5s ease-in-out forwards;
+        animation: containerText .5s ease forwards;
         @extend %fontSizeP;
         text-align: center;
-        transition: all 0.5s ease-in-out;
+        //transition: all 0.5s ease-in-out;
 
       }
 
@@ -182,7 +193,7 @@
         @keyframes containerText1 {
           0% {
             opacity: 0.1;
-            transform: translate(0, -100%);
+            transform: translate(0, -140%);
             transform-origin: center;
           }
           100% {

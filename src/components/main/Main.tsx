@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {LegacyRef, memo} from 'react';
 import s from './Main.module.scss';
 import {Wrapper} from "./wrapper/Wrapper";
 import {MySkills} from "./mySkills/MySkills";
@@ -6,39 +6,12 @@ import {MyCrafts} from "./myСrafts/MyCrafts";
 import {Work} from "./work/Work";
 import {MyContacts} from "./myСontacts/MyContacts";
 
-// export const PATH = {
-//     home: '/home',
-//     skills: '/skills',
-//     works: '/works',
-//     contacts: '/contacts',
-// }
-export const Main = memo(() => {
-    // const [sk, setSk] = useState(0)
-    // const [refs, setRefs] = useState(0)
-    // const [doc, setDoc] = useState(0)
-    // const ref = useRef<HTMLDivElement>(null)
-    //
-    // const hadl = useCallback(() => {
-    //     if (ref.current) setRefs(Math.ceil(ref.current.scrollHeight))
-    //     setSk(Math.ceil(window.scrollY))
-    //     setDoc(Math.ceil(document.documentElement.clientHeight))
-    //
-    // },[])
-    //
-    // useLayoutEffect(() => {
-    //     requestAnimationFrame(()=>{
-    //         document.addEventListener('scroll', hadl)
-    //     })
-    //     return () => {
-    //         document.removeEventListener('scroll', hadl)
-    //     }
-    // }, []);
-
-
-    // const style = {height: `${sk > refs - doc ? 100 : sk / (refs / 100) + 10}%`}
+type MainType = {
+    refMain: LegacyRef<HTMLDivElement> | undefined,
+}
+export const Main = memo((props: MainType) => {
     return (
-        <div className={s.main}>
-            <div className={s.slider}></div>
+        <div className={s.main} ref={props.refMain}>
             <Wrapper id={'wrap'}/>
             <MySkills id={'skills'}/>
             <MyCrafts id={'crafts'}/>

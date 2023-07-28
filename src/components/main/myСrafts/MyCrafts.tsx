@@ -28,7 +28,6 @@ export const MyCrafts = (props:MyCraftsType) => {
         },
     ]
 
-
     return (
         <section id={props.id} className={s.craft}>
             <div className={s.containerItem}>

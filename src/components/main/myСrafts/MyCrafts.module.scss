@@ -9,9 +9,9 @@
   scroll-behavior: $scroll;
 
   z-index: 2;
-  &:after {
-    @extend %psevdo;
-  }
+  //&:after {
+  //  @extend %psevdo;
+  //}
 
 }
 

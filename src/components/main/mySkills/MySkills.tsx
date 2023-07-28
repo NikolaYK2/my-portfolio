@@ -7,11 +7,11 @@ import {animationOnScroll} from "common/utils/animateOnScroll";
 
 // let stop: any = null;
 type Timout = ReturnType<typeof setTimeout>
-type MySkillsType={
-    id:string
+type MySkillsType = {
+    id: string
 }
 
-export const MySkills = memo((props:MySkillsType) => {
+export const MySkills = memo((props: MySkillsType) => {
     const [skills, setSkills] = useState(
         [
             {id: v1(), title: 'HTML', icon: 'html5', description: 'Google translator rules'},
@@ -33,7 +33,7 @@ export const MySkills = memo((props:MySkillsType) => {
         if (timerId.current) clearTimeout(timerId.current);
         timerId.current = setTimeout(() => {
             setSkills(skills.map(e => e.id === id ? {...e, icon: ''} : e));
-        }, 800);
+        }, 790);
     }, [])
 
     const off = useCallback(() => {
@@ -89,14 +89,14 @@ const Skill = memo((props: SkillType) => {
     const {skill, switchOn, switchOff} = props;
     const [style, setStyle] = useState('');
 
-    const on = (id: string) => {
+    const on = useCallback((id: string) => {
         switchOn(id);
         setStyle(s.mod);
-    }
-    const off = () => {
+    }, [])
+    const off = useCallback(() => {
         switchOff();
         setStyle(s.modReverse);
-    }
+    }, [])
     console.log('render')
 
     useEffect(() => {
