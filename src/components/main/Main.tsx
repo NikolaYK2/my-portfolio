@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef, useState} from 'react';
+import React, {memo} from 'react';
 import s from './Main.module.scss';
 import {Wrapper} from "./wrapper/Wrapper";
 import {MySkills} from "./mySkills/MySkills";
@@ -12,32 +12,33 @@ import {MyContacts} from "./myСontacts/MyContacts";
 //     works: '/works',
 //     contacts: '/contacts',
 // }
-export const Main = () => {
-    const [sk, setSk] = useState(0)
-    const [refs, setRefs] = useState(0)
-    const [doc, setDoc] = useState(0)
-    const ref = useRef<HTMLDivElement>(null)
-    const hadl = () => {
-        if (ref.current) setRefs(Math.ceil(ref.current.scrollHeight))
-        setSk(Math.ceil(window.scrollY))
-        setDoc(Math.ceil(document.documentElement.clientHeight))
+export const Main = memo(() => {
+    // const [sk, setSk] = useState(0)
+    // const [refs, setRefs] = useState(0)
+    // const [doc, setDoc] = useState(0)
+    // const ref = useRef<HTMLDivElement>(null)
+    //
+    // const hadl = useCallback(() => {
+    //     if (ref.current) setRefs(Math.ceil(ref.current.scrollHeight))
+    //     setSk(Math.ceil(window.scrollY))
+    //     setDoc(Math.ceil(document.documentElement.clientHeight))
+    //
+    // },[])
+    //
+    // useLayoutEffect(() => {
+    //     requestAnimationFrame(()=>{
+    //         document.addEventListener('scroll', hadl)
+    //     })
+    //     return () => {
+    //         document.removeEventListener('scroll', hadl)
+    //     }
+    // }, []);
 
-    }
 
-    useLayoutEffect(() => {
-        requestAnimationFrame(()=>{
-            document.addEventListener('scroll', hadl)
-        })
-        return () => {
-            document.removeEventListener('scroll', hadl)
-        }
-    }, []);
-
-
-    const style = {height: `${sk > refs - doc ? 100 : sk / (refs / 100) + 10}%`}
+    // const style = {height: `${sk > refs - doc ? 100 : sk / (refs / 100) + 10}%`}
     return (
-        <div className={s.main} ref={ref}>
-            <div className={s.slider} style={style}></div>
+        <div className={s.main}>
+            <div className={s.slider}></div>
             <Wrapper id={'wrap'}/>
             <MySkills id={'skills'}/>
             <MyCrafts id={'crafts'}/>
@@ -45,5 +46,5 @@ export const Main = () => {
             <MyContacts id={'contact'}/>
         </div>
     );
-};
+});
 
