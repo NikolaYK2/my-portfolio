@@ -6,11 +6,11 @@
   flex-direction: column;
   min-height: 100%;
   overflow: hidden;
-  background: url("./15.png") center center/cover no-repeat , rgb(16, 16, 16);
+  background: url("./15.png") center center/cover no-repeat, rgb(16, 16, 16);
   font-family: Jost, sans-serif;
 
   &:after {
-    @include psdEl(0, 50%, '', '','');
+    @include psdEl(0, 50%, '', '', '');
     width: 2px;
     height: 100%;
     background: rgba(157, 161, 165, 0.1);
@@ -32,3 +32,58 @@
   }
 }
 
+
+.containerLoading {
+  display: flex;
+  justify-content: center;
+  background: $headBcColor;
+  height: 100%;
+  width: 100%;
+
+  .loading {
+    width: 200px;
+    height: auto;
+
+    svg {
+      g {
+
+        @keyframes dash {
+          0% {
+            stroke: #9da1a5;
+            stroke-dasharray: 4000;
+
+          }
+          50% {
+            stroke: #1DCB0A;
+            stroke-dasharray: 40000;
+          }
+          100% {
+            stroke: #9da1a5;
+            stroke-dasharray: 4000;
+
+          }
+        }
+
+        path {
+          fill: none;
+          stroke-width: 100px;
+
+          &:nth-child(1) {
+            animation: dash 3s ease 2s  infinite;
+
+          }
+
+          &:nth-child(2) {
+            animation: dash 6s ease  2s infinite;
+
+          }
+
+          &:nth-child(3) {
+            animation: dash 4s ease  4s infinite;
+
+          }
+        }
+      }
+    }
+  }
+}

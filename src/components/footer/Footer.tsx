@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import s from './Footer.module.scss';
 import {Logo} from "common/components/logo/Logo";
-import {IconSvg} from "../iconSvg/IconSvg";
+import {IconSvg} from "common/components/iconSvg/IconSvg";
 import {animationOnScroll} from "common/utils/animateOnScroll";
 
 export const Footer = () => {

@@ -3,6 +3,7 @@ import {Header} from "components/header/Header";
 import {Main} from "components/main/Main";
 import {Footer} from "components/footer/Footer";
 import s from './App.module.scss';
+import {IconSvg} from "common/components/iconSvg/IconSvg";
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     //скрол ползунка ------------------------------------------------
     const [height, setWeight] = useState(0);
     //эта ссылка будет использоваться для связи с основным разделом контента
-    const contentRef = useRef<HTMLDivElement  | null>(null);
+    const contentRef = useRef<HTMLDivElement | null>(null);
 
     const scrollProgress = () => {
         // как далеко пользователь прокрутил вниз
@@ -50,10 +51,15 @@ function App() {
     }, []);
 
     return (
+        //!isRead = false значит показываем загрузку
         <>
-            {isRead &&
+            {!isRead ? <div className={s.containerLoading}>
+                    <div className={s.loading}>
+                        <IconSvg id={'loading'}/>
+                    </div>
+                </div> :
                 <div className={s.App}>
-                    <div className={s.slider} style={{height:`${height}%`}}></div>
+                    <div className={s.slider} style={{height: `${height}%`}}></div>
                     <Header/>
                     <Main refMain={contentRef}/>
                     <Footer/>

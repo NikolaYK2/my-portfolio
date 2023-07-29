@@ -2,7 +2,7 @@ import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import s from './MySkills.module.scss';
 import {v1} from "uuid";
 import {TitleH2} from "common/components/titleH2/titleH2";
-import {IconSvg} from "../../iconSvg/IconSvg";
+import {IconSvg} from "common/components/iconSvg/IconSvg";
 import {animationOnScroll} from "common/utils/animateOnScroll";
 
 // let stop: any = null;
