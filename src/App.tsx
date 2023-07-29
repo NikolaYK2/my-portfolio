@@ -3,7 +3,7 @@ import {Header} from "components/header/Header";
 import {Main} from "components/main/Main";
 import {Footer} from "components/footer/Footer";
 import s from './App.module.scss';
-import {IconSvg} from "common/components/iconSvg/IconSvg";
+import {Loading} from "common/components/loading/Loading";
 
 
 function App() {
@@ -53,11 +53,7 @@ function App() {
     return (
         //!isRead = false значит показываем загрузку
         <>
-            {!isRead ? <div className={s.containerLoading}>
-                    <div className={s.loading}>
-                        <IconSvg id={'loading'}/>
-                    </div>
-                </div> :
+            {!isRead ? <Loading/> :
                 <div className={s.App}>
                     <div className={s.slider} style={{height: `${height}%`}}></div>
                     <Header/>

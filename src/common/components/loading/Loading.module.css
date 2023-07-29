@@ -63,37 +63,43 @@
   }
 }
 
-.App {
-  position: relative;
+.containerLoading {
   display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  overflow: hidden;
-  background: url("./15.png") center center/cover no-repeat, rgb(16, 16, 16);
-  font-family: Jost, sans-serif;
-}
-.App:after {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  bottom: "";
-  right: "";
-  content: "";
-  width: 2px;
+  justify-content: center;
+  background: #101010;
   height: 100%;
-  background: rgba(157, 161, 165, 0.1);
-  z-index: 0;
+  width: 100%;
 }
-.App .slider {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  background: #1DCB0A;
-  box-shadow: 0 0 5px #9da1a5;
-  opacity: 0.4;
-  z-index: 1;
-  transition: all 1s;
+.containerLoading .loading {
+  width: 200px;
+  height: auto;
+}
+@keyframes dash {
+  0% {
+    stroke: #9da1a5;
+    stroke-dasharray: 4000;
+  }
+  50% {
+    stroke: #1DCB0A;
+    stroke-dasharray: 40000;
+  }
+  100% {
+    stroke: #9da1a5;
+    stroke-dasharray: 4000;
+  }
+}
+.containerLoading .loading svg g path {
+  fill: none;
+  stroke-width: 100px;
+}
+.containerLoading .loading svg g path:nth-child(1) {
+  animation: dash 3s ease 2s infinite;
+}
+.containerLoading .loading svg g path:nth-child(2) {
+  animation: dash 6s ease 2s infinite;
+}
+.containerLoading .loading svg g path:nth-child(3) {
+  animation: dash 4s ease 4s infinite;
 }
 
-/*# sourceMappingURL=App.module.css.map */
+/*# sourceMappingURL=Loading.module.css.map */

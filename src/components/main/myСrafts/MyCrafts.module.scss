@@ -94,13 +94,15 @@
     }
 
     &:hover {
-      transform: scale(1.3);
+      transform: scale3d(1.3,1.3,1.3);
       filter: grayscale(.8);
-      transition: all 1s ease;
+      will-change: transform; // - ставим на конечном результате, предотвраща скачки(обычно этого хватает)
+      Transition: transform 1s ease 0s, fillter 1s ease .3s;
     }
 
     &:hover a {
       transform: scale(0.7);
+      will-change: transform; // - ставим на конечном результате, предотвраща скачки(обычно этого хватает)
       transition: all 1s ease;
       background-color: $craftBcA;
     }
