@@ -1,5 +1,5 @@
-@import "assets/SCSS/style";
-@import "assets/SCSS/fontColor";
+@import "../../assets/SCSS/style";
+@import "../../assets/SCSS/fontColor";
 
 .header {
   position: fixed;
@@ -16,12 +16,25 @@
   transition: all .4s ease-in-out 0s;
 
   //scroll-behavior: $scroll;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: $headBcColor;
+    box-shadow: 0 1px 3px black;
+    //opacity: 0.8;
+    z-index: 3;
+  }
 
   &.down {
     top: -50%;
   }
 
   &.up {
+    content: '';
     top: 0;
   }
 
@@ -32,7 +45,10 @@
 
   &.bcOff {
     background: transparent;
-
+    &:before{
+      background: transparent;
+      box-shadow: none;
+    }
   }
 }
 
@@ -44,9 +60,11 @@
   height: 60px;
   margin: 0 auto;
   padding: 0 10px;
+  z-index: 30000000000000;
   >a{
     cursor: pointer;
     transition: all .3s ease 0s;
+    z-index: 3;
     &:hover{
       filter: drop-shadow(2px 2px 1px #9da1a5);
       transform: rotate(-2deg);
