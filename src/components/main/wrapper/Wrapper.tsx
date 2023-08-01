@@ -1,6 +1,7 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import s from './Wrapper.module.scss';
 import fonPhoto from 'assets/image/wrapper/I_maloy.jpg'
+
 type WrapperType={
     id:string
 }

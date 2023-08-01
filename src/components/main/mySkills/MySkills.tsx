@@ -4,6 +4,7 @@ import {v1} from "uuid";
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {IconSvg} from "common/components/iconSvg/IconSvg";
 import {animationOnScroll} from "common/utils/animateOnScroll";
+import {debounce} from "common/utils/debounce";
 
 // let stop: any = null;
 type Timout = ReturnType<typeof setTimeout>
@@ -100,7 +101,7 @@ const Skill = memo((props: SkillType) => {
     console.log('render')
 
     useEffect(() => {
-        animationOnScroll(`.${s.containerItem}`, s.shellAnim)
+        animationOnScroll(`.${s.containerItem}`, s.shellAnim);
     }, [])
 
     return (

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "assets/SCSS/style";
 
 @font-face {
   font-family: 'Jost';
@@ -103,7 +104,33 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  //полоска прокрутки -----------------
+  /* Работает в Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: $headBcColor $colorH ;
+
+  /* Работает в Chrome, Edge и Safari */
+  &::-webkit-scrollbar {
+    background-color: $colorH;
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: $headBcColor;
+      border-radius: 20px;
+      border: 1px solid $colorH;
+
+      &:hover{
+        background-color: $colorP;
+      }
+  }
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -114,3 +141,4 @@ code {
 }
 
 /*# sourceMappingURL=index.css.map */
+

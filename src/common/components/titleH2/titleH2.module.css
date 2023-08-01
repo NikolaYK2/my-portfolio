@@ -77,6 +77,7 @@
   padding: 0 0 0 20px;
   margin: 0 0 3%;
   z-index: 1;
+  transform: translateX(0);
 }
 .title:before, .title:after {
   background: #1DCB0A;

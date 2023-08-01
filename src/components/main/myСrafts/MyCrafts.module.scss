@@ -9,14 +9,9 @@
   scroll-behavior: $scroll;
 
   z-index: 2;
-  //&:after {
-  //  @extend %psevdo;
-  //}
-
 }
 
 .containerItem {
-  //border: 1px solid black;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
@@ -24,7 +19,6 @@
 }
 
 .containerCrafts {
-  //border: 1px solid black;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

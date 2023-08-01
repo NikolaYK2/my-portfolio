@@ -9,27 +9,27 @@
   background: url("./15.png") center center/cover no-repeat, rgb(16, 16, 16);
   font-family: Jost, sans-serif;
 
-  &:after {
-    @include psdEl(0, 50%, '', '', '');
-    width: 2px;
-    height: 100%;
-    background: rgba(157, 161, 165, 0.1);
-    z-index: 0;
-  }
+    &:after {
+      @include psdEl(0, 50%, '', '', '');
+      width: 2px;
+      height: 100%;
+      background: rgba(157, 161, 165, 0.1);
+      z-index: 0;
+    }
 
 
-  .slider {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    //height: 10px;
-    background: $colorP;
-    box-shadow: 0 0 5px $colorH;
-    opacity: 0.4;
-    z-index: 1;
-    transition: all 1s;
+    .slider {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      //height: 10px;
+      background: $colorP;
+      box-shadow: 0 0 5px $colorH;
+      opacity: 0.4;
+      z-index: 1;
+      transition: all 1s;
+    }
   }
-}
 
 
