@@ -25,24 +25,40 @@
   padding: 0 5px;
   //border: 1px solid black;
 }
+
 .wrapperName {
   flex: 1 1 33%;
   max-width: 500px;
-  transform: translate(0px,0px);
+  transform: translate(0px, 0px);
   //overflow: auto;
 
   h1 {
+    //display: flex;
     font-family: 'Jost', sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 60/14 + 0rem;
     font-weight: 700;
     color: $colorH;
     line-height: 1.5em;
+    @keyframes color {
+      0% {
+        color: transparent
+      }
+      100% {
+        color: $colorP
+      }
+    }
+
+    span {
+      &:nth-child(1){color: $colorP}
+      &:nth-child(2) {
+        //color: $colorP;
+        animation: color .65s ease infinite alternate;
+      }
+    }
+
   }
 
-  span {
-    color: $colorP;
-  }
 
   p {
     font-family: 'Jost', sans-serif;
@@ -50,5 +66,35 @@
     color: $colorP;
     @extend %fontSizeP;
     text-transform: capitalize;
+
+    > span {
+      color: $colorH;
+    }
+
+    &:nth-child(1) {
+      color: $colorH;
+      height: 20px;
+      margin: 0;
+    }
+
+    //&:nth-child(3) {
+    //  display: inline-block;
+    //  max-width: 195px;
+    //  overflow: hidden; /* Ensures the content is not revealed until the animation */
+    //  border-right: .15em solid orange; /* The typwriter cursor */
+    //  white-space: nowrap; /* Keeps the content on a single line */
+    //  animation:
+    //          typing 3.5s steps(40, end) infinite alternate,
+    //          blink-caret .75s step-end infinite ;
+    //}
   }
 }
+
+//@keyframes typing {
+//  from { width: 0 }
+//  to { width: 100% }
+//}
+//@keyframes blink-caret {
+//  from, to { border-color: transparent }
+//  50% { border-color: $colorH; }
+//}

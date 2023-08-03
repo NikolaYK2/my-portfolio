@@ -53,16 +53,18 @@ function App() {
         }
     }, []);
 
+    //scroll bar ------------------------------
+
     return (
         //!isRead = false значит показываем загрузку
         <>
             {!isRead ? <Loading/> :
-                    <div className={s.App}>
-                        <div className={s.slider} style={{height: `${height}%`}}></div>
-                        <Header/>
-                        <Main refMain={contentRef}/>
-                        <Footer/>
-                    </div>
+                <div className={s.App}>
+                    <div className={s.slider} style={{height: `${height}%`}}></div>
+                    <Header/>
+                    <Main refMain={contentRef}/>
+                    <Footer/>
+                </div>
             }
         </>
     );

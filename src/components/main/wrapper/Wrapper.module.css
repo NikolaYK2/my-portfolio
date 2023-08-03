@@ -107,14 +107,33 @@
   color: #9da1a5;
   line-height: 1.5em;
 }
-.wrapperName span {
+@keyframes color {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: #1DCB0A;
+  }
+}
+.wrapperName h1 span:nth-child(1) {
   color: #1DCB0A;
+}
+.wrapperName h1 span:nth-child(2) {
+  animation: color 0.65s ease infinite alternate;
 }
 .wrapperName p {
   font-family: "Jost", sans-serif;
   font-weight: 400;
   color: #1DCB0A;
   text-transform: capitalize;
+}
+.wrapperName p > span {
+  color: #9da1a5;
+}
+.wrapperName p:nth-child(1) {
+  color: #9da1a5;
+  height: 20px;
+  margin: 0;
 }
 
 /*# sourceMappingURL=Wrapper.module.css.map */

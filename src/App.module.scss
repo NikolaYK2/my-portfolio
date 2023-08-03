@@ -9,6 +9,7 @@
   background: url("./15.png") center center/cover no-repeat, rgb(16, 16, 16);
   font-family: Jost, sans-serif;
 
+
     &:after {
       @include psdEl(0, 50%, '', '', '');
       width: 2px;
