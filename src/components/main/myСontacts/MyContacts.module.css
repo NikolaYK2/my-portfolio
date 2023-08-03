@@ -131,6 +131,9 @@
   color: #9da1a5;
   transition: all 0.4s linear;
 }
+.form .formMod .formInput input:-webkit-autofill {
+  transition: all 5000s ease-in-out 0s;
+}
 .form .formMod .formTextarea {
   flex: 1 0 50%;
   min-width: 220px;
@@ -160,6 +163,9 @@
 .form .formMod .formTextarea textarea:focus::placeholder {
   color: #9da1a5;
   transition: all 0.4s linear;
+}
+.form .formMod .formTextarea textarea:-webkit-autofill {
+  transition: all 5000s ease-in-out 0s;
 }
 .form Button {
   background: #1a1a1a;

@@ -73,6 +73,10 @@
           transition: all .4s linear;
 
         }
+
+        &:-webkit-autofill {// - убираем фон default
+          transition: all 5000s ease-in-out 0s;
+        }
       }
     }
 
@@ -110,6 +114,10 @@
           color: $colorH;
           transition: all .4s linear;
         }
+        &:-webkit-autofill {// - убираем фон default
+          transition: all 5000s ease-in-out 0s;
+        }
+
       }
     }
   }
