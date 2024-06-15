@@ -62,6 +62,18 @@
   }
 }
 
+.disabled {
+  color: var(--color-medium-opasity);
+
+  &:after,
+  &:before, {
+    display: none;
+  }
+
+  &:hover {
+    animation: none;
+  }
+}
 
 //===============================================
 .modOff {
