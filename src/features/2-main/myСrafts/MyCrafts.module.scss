@@ -42,9 +42,22 @@
 
   box-shadow: 0 9px 31px 6px $shadowSkill;
   overflow: hidden;
-  transition: all 1s ease;
 
   z-index: 30000;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: var(--color-darck-100);
+    transition: width .6s ease 0s;
+  }
+
+  &:hover:after {
+    width: 100%;
+    transition: width .6s ease 0s;
+  }
 
   @media (max-width: 690px) {
     max-width: 80%;
@@ -88,7 +101,7 @@
     }
 
     &:hover {
-      transform: scale3d(1.3,1.3,1.3);
+      transform: scale3d(1.3, 1.3, 1.3);
       filter: grayscale(.8);
       will-change: transform; // - ставим на конечном результате, предотвраща скачки(обычно этого хватает)
       Transition: transform 1s ease 0s, fillter 1s ease .3s;
@@ -161,42 +174,5 @@
   }
 }
 
-//Animats blocks ===============================
-.active:after {
-  @keyframes bor {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  animation: bor .3s ease forwards;
-  border-bottom: 3px solid $colorH;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: block;
-  content: '';
-  z-index: 30000;
-}
 
-.off:after {
-  @keyframes bor1 {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  animation: bor1 .3s ease reverse;
-  border-bottom: 3px solid $colorH;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: block;
-  content: '';
-  z-index: 30000;
-}
 

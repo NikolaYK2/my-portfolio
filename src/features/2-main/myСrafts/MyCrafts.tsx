@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './MyCrafts.module.scss';
 import {v1} from "uuid";
 import socialImg from 'assets/image/myCraft/social.jpg';
@@ -58,17 +58,9 @@ type CraftType = {
 export const Craft = (props: CraftType) => {
     const {crafts} = props
 
-    let [style, setStyle] = useState<string>('')
-
-    const on = () => {
-        setStyle(s.active);
-    }
-    const off = () => {
-        setStyle(s.off);
-    }
 
     return (
-        <div className={`${s.containerBlock} ${style}`} onMouseOver={on} onMouseOut={off}>
+        <div className={`${s.containerBlock}`}>
             <div className={s.containerBackground} style={{backgroundImage: `url(${crafts.background})`}}>
                 <a href={crafts.link}>
                     <button>watch</button>
