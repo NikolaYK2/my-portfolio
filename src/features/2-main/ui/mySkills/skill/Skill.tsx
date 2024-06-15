@@ -22,11 +22,11 @@ export const Skill = memo((props: SkillType) => {
     switchOn(id);
     setStyle(s.mod);
   }, [])
+
   const off = useCallback(() => {
     switchOff();
     setStyle(s.modReverse);
   }, [])
-  console.log('render')
 
   useEffect(() => {
     animationOnScroll(`.${s.containerItem}`, s.shellAnim);

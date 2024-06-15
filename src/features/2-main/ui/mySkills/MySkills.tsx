@@ -3,7 +3,7 @@ import s from './MySkills.module.scss';
 import {v1} from "uuid";
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {IconSvgType} from "common/components/iconSvg/IconSvg";
-import {Skill} from "features/2-main/mySkills/skill/Skill";
+import {Skill} from "features/2-main/ui/mySkills/skill/Skill";
 
 type Timout = ReturnType<typeof setTimeout>
 type MySkillsType = {

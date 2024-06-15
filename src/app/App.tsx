@@ -3,8 +3,8 @@ import s from './App.module.scss';
 import {Loading} from "common/components/loading/Loading";
 import {debounce} from "common/utils/debounce";
 import {Header} from "features/1-header/Header";
-import {Main} from "features/2-main/Main";
 import {Footer} from "features/3-footer/Footer";
+import {Main} from "features/2-main/ui/Main";
 
 
 function App() {
