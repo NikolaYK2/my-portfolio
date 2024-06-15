@@ -6,7 +6,7 @@ export const Loading = () => {
     return (
         <div className={s.containerLoading}>
             <div className={s.loading}>
-                <IconSvg id={'loading'}/>
+                <IconSvg name={'loading'}/>
             </div>
         </div>
     );
