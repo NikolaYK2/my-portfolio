@@ -4,18 +4,11 @@
 .contact {
   position: relative;
   flex: 1 1 auto;
-  /*background-color: #00909F;*/
   @extend %padding;
-
   scroll-behavior: $scroll;
-
-  //&:after {
-  //  @extend %psevdo;
-  //}
 }
 
 .container {
-  //border: 1px solid black;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 5px;
@@ -39,45 +32,66 @@
       flex: 1 1 50%;
       padding: 0 10px;
 
-
-      input {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        padding: 2% 4%;
+      .labelInput {
         margin: 0 0 20px;
-        border: 1px solid $colorH;
-        background-color: $formBc;
-        outline: none;
-        @extend %fontSizePp;
-        transition: all .4s linear;
+        border: 1px solid var(--color-darck-100);
+        color: var(--color-darck-100);
+        transition: all .2s linear;
 
-        &:nth-child(3) {
-          text-transform: none;
-        }
-
-        &::placeholder {
+        input {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          padding: 2% 4%;
+          background-color: $formBc;
+          outline: none;
           @extend %fontSizePp;
-          opacity: .5;
-          transition: all .4s linear;
+          border: none;
+          color: var(--color-darck-100);
+
+
+          &:nth-child(3) {
+            text-transform: none;
+          }
+
+          &::placeholder {
+            @extend %fontSizePp;
+            opacity: .5;
+            transition: all .2s linear;
+          }
+
+          &:focus {
+            color: var(--color-darck-100);
+          }
+
+          &:focus::placeholder {
+            color: var(--color-darck-100);
+            transition: color .2s ease 0s;
+          }
+
+
+          &:-webkit-autofill { // - убираем фон default
+            transition: all 5000s ease-in-out 0s;
+          }
         }
 
-        &:focus {
-          border: 1px solid $colorP;
-          color: $colorH;
-          transition: all .4s linear;
-        }
-
-        &:focus::placeholder {
-          color: $colorH;
-          transition: all .4s linear;
-
-        }
-
-        &:-webkit-autofill {// - убираем фон default
-          transition: all 5000s ease-in-out 0s;
-        }
       }
+
+      .activeInput {
+        border: 1px solid var(--color-medium);
+        transition: border .3s ease 0s;
+      }
+
+      .errorInput {
+        border: 1px solid var(--color-error);
+        color: var(--color-error);
+
+        > input::placeholder {
+          color: var(--color-error);
+        }
+
+      }
+
     }
 
     .formTextarea {
@@ -96,7 +110,7 @@
         color: $colorP;
         outline: none;
         resize: none;
-        transition: all 1s linear;
+        transition: all .3s linear;
 
         &::placeholder {
           @extend %fontSizePp;
@@ -114,7 +128,8 @@
           color: $colorH;
           transition: all .4s linear;
         }
-        &:-webkit-autofill {// - убираем фон default
+
+        &:-webkit-autofill { // - убираем фон default
           transition: all 5000s ease-in-out 0s;
         }
 

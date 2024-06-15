@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '../../../../assets/SCSS/style';
 
 .wrapper {
@@ -36,7 +38,7 @@
     //display: flex;
     font-family: 'Jost', sans-serif;
     -webkit-font-smoothing: antialiased;
-    font-size: 60/14 + 0rem;
+    font-size: math.div(60, 14) + 0rem;
     font-weight: 700;
     color: $colorH;
     line-height: 1.5em;

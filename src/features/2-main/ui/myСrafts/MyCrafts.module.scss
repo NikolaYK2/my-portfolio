@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '../../../../assets/SCSS/style';
 @import "../../../../assets/SCSS/fontColor";
 
@@ -132,7 +134,7 @@
     button {
       background: transparent;
       @extend %fontSizeH2;
-      font-size: 25/14+0rem;
+      font-size: math.div(25, 14)+0rem;
       text-transform: uppercase;
       margin: 0;
       padding: 20px 30px;
@@ -162,7 +164,7 @@
     p:first-child {
       display: inline-flex;
       @extend %fontSizeH2;
-      font-size: 25/14+0rem;;
+      font-size: math.div(25, 14)+0rem;;
       margin: 5px 0;
     }
 

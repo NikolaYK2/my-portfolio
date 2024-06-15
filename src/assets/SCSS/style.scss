@@ -1,4 +1,6 @@
 //padding Для всех блоков
+@use "sass:math";
+
 @import "fontColor";
 
 %padding {
@@ -8,7 +10,7 @@
 
 //H and параграфы(описание) размер шрифта
 %fontSizeH2 {
-  font-size: 40/14+0rem;
+  font-size: math.div(40, 14)+0rem;
   //font-size: calc(17.1px + 14 * ((100vw - 320px) / (1280 - 320)));
   color: $colorH;
   font-weight: 700;
@@ -16,14 +18,14 @@
 }
 
 %fontSizeP {
-  font-size: 20/14+0rem;
+  font-size: math.div(20, 14)+0rem;
   text-transform: uppercase;
   margin: 0 0 10px 0;
   color: $colorP;
 }
 
 %fontSizePp {
-  font-size: 20/14+0rem;
+  font-size: math.div(20, 14)+0rem;
   text-transform: capitalize;
   line-height: 1.3em;
   color: $colorP;
