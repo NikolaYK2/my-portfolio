@@ -17,12 +17,33 @@ export type IconSvgType =
   | 'storybook'
   | 'typescript'
   | 'loading'
+  | 'ok'
+  | 'message'
 
 export type IconSvgProps = {
   name: IconSvgType
 }
 export const IconSvg = ({name}: IconSvgProps) => {
   switch (name) {
+    case 'ok':
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="100%" height="100%">
+          <path
+            d="M43.171,10.925L24.085,33.446l-9.667-9.015l1.363-1.463l8.134,7.585L41.861,9.378C37.657,4.844,31.656,2,25,2 C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23C48,19.701,46.194,14.818,43.171,10.925z"/>
+        </svg>);
+    case 'message':
+      return (
+        <svg width="100%" height="100%" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9.00977 21.39H19.0098C20.0706 21.39 21.0881 20.9685 21.8382 20.2184C22.5883 19.4682 23.0098 18.4509 23.0098 17.39V7.39001C23.0098 6.32915 22.5883 5.31167 21.8382 4.56152C21.0881 3.81138 20.0706 3.39001 19.0098 3.39001H7.00977C5.9489 3.39001 4.93148 3.81138 4.18134 4.56152C3.43119 5.31167 3.00977 6.32915 3.00977 7.39001V12.39"
+            stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M1.00977 18.39H11.0098" stroke="#000000" strokeWidth="1.5" strokeLinecap="round"
+                strokeLinejoin="round"/>
+          <path d="M1.00977 15.39H5.00977" stroke="#000000" strokeWidth="1.5" strokeLinecap="round"
+                strokeLinejoin="round"/>
+          <path d="M22.209 5.41992C16.599 16.0599 9.39906 16.0499 3.78906 5.41992" stroke="#000000" strokeWidth="1.5"
+                strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>);
     case 'github':
       return (
         <svg fill="#1DCB0A" width="100%" height="100%" viewBox="-2.5 0 19 19"
