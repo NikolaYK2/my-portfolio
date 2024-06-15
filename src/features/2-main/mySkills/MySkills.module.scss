@@ -8,9 +8,6 @@
   @extend %padding;
   padding-bottom: 0;
   scroll-behavior: $scroll;
-  //&:after {
-  //  @extend %psevdo;
-  //}
 
   &:before {
     pointer-events: none;
@@ -30,7 +27,6 @@
 .container {
   position: relative;
   max-width: 1200px;
-  //border: 1px solid black;
   margin: 0 auto;
   overflow: hidden;
   transition: all 1s ease 0s;
