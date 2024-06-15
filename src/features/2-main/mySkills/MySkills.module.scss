@@ -1,0 +1,48 @@
+@import '../../../assets/SCSS/style';
+@import '../../../assets/SCSS/fontColor';
+
+
+.mySkills {
+  position: relative;
+  flex: 1 1 auto;
+  @extend %padding;
+  padding-bottom: 0;
+  scroll-behavior: $scroll;
+  //&:after {
+  //  @extend %psevdo;
+  //}
+
+  &:before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    transform: translate(0px, -100%);
+    background: linear-gradient(0deg, rgb(16, 16, 16) 5%, rgba(16, 16, 16, 0) 60%);
+    z-index: 2;
+  }
+}
+
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  //border: 1px solid black;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: all 1s ease 0s;
+
+  .containerSkills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 50px -3% 0;
+    transition: all 1s ease 0s;
+  }
+}
+
+

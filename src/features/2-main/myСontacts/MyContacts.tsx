@@ -2,12 +2,14 @@ import React from 'react';
 import s from './MyContacts.module.scss';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {Button} from "common/components/button/Button";
-import useScrollPosition from "common/utils/UseScrollPosition";
+
 type MyContactsType={
     id:string
 }
 
 export const MyContacts = (props:MyContactsType) => {
+
+
 
     return (
         <section id={props.id} className={s.contact}>

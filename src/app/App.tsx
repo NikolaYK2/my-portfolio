@@ -1,10 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Header} from "components/header/Header";
-import {Main} from "components/main/Main";
-import {Footer} from "components/footer/Footer";
 import s from './App.module.scss';
 import {Loading} from "common/components/loading/Loading";
 import {debounce} from "common/utils/debounce";
+import {Header} from "features/1-header/Header";
+import {Main} from "features/2-main/Main";
+import {Footer} from "features/3-footer/Footer";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
     //скрол ползунка ------------------------------------------------
     const [height, setWeight] = useState(0);
-    console.log(height)
+
     //эта ссылка будет использоваться для связи с основным разделом контента
     const contentRef = useRef<HTMLDivElement | null>(null);
 
@@ -56,7 +56,6 @@ function App() {
     //scroll bar ------------------------------
 
     return (
-        //!isRead = false значит показываем загрузку
         <>
             {!isRead ? <Loading/> :
                 <div className={s.App}>

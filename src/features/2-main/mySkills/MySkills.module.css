@@ -1,3 +1,7 @@
+.mySkills {
+  padding: 5% 0;
+}
+
 @keyframes borderTopRight {
   0% {
     width: 0;
@@ -63,37 +67,39 @@
   }
 }
 
-.App {
+.mySkills {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  overflow: hidden;
-  background: url("./15.png") center center/cover no-repeat, rgb(16, 16, 16);
-  font-family: Jost, sans-serif;
+  flex: 1 1 auto;
+  padding-bottom: 0;
+  scroll-behavior: smooth;
 }
-.App:after {
+.mySkills:before {
+  pointer-events: none;
+  content: "";
   position: absolute;
   top: 0;
-  left: 50%;
-  bottom: "";
-  right: "";
-  content: "";
-  width: 2px;
-  height: 100%;
-  background: rgba(157, 161, 165, 0.1);
-  z-index: 0;
-}
-.App .slider {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  background: #1DCB0A;
-  box-shadow: 0 0 5px #9da1a5;
-  opacity: 0.4;
-  z-index: 1;
-  transition: all 1s;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  transform: translate(0px, -100%);
+  background: linear-gradient(0deg, rgb(16, 16, 16) 5%, rgba(16, 16, 16, 0) 60%);
+  z-index: 2;
 }
 
-/*# sourceMappingURL=App.module.css.map */
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: all 1s ease 0s;
+}
+.container .containerSkills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin: 50px -3% 0;
+  transition: all 1s ease 0s;
+}
+
+/*# sourceMappingURL=MySkills.module.css.map */

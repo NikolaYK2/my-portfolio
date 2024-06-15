@@ -1,22 +1,21 @@
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import s from './Header.module.scss';
-import {Logo} from "common/components/logo/Logo";
 import {Link} from "react-scroll";
+import {Logo} from "common/components/logo/Logo";
 
 
 export const Header = memo(() => {
-    const [taskNav, setTaskNav] = useState([
+    const taskNav = [
         {id: '1', link: 'wrap', title: 'Home', color: '#9da1a5'},
         {id: '2', link: 'skills', title: 'Skills', color: '#9da1a5'},
         {id: '3', link: 'crafts', title: 'Works', color: '#9da1a5'},
         {id: '4', link: 'contact', title: 'Contacts', color: '#9da1a5'},
-    ])
+    ]
     const [modNav, setStyleNav] = useState(s.headerNav);
     const [modBurger, setStyleBurger] = useState('');
     const [switchNav, setSwitchNav] = useState(true);
 
-    const activeLi = useCallback((id: string) => {
-        // setTaskNav(taskNav.map(e => e.id === id ? {...e, color: '#1DCB0A'} : e));
+    const activeLi = useCallback(() => {
         setSwitchNav(true);
     }, []);
 

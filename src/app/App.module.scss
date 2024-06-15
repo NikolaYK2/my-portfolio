@@ -1,4 +1,4 @@
-@import "assets/SCSS/style";
+@import "../assets/SCSS/style";
 
 .App {
   position: relative;
@@ -6,7 +6,7 @@
   flex-direction: column;
   min-height: 100%;
   overflow: hidden;
-  background: url("./15.png") center center/cover no-repeat, rgb(16, 16, 16);
+  background: url("../assets/image/app/15.png") center center/cover no-repeat, rgb(16, 16, 16);
   font-family: Jost, sans-serif;
 
 
