@@ -31,12 +31,10 @@ export const Wrapper = (props: WrapperType) => {
                 <div id='wrapperName' className={s.wrapperName} ref={paralaxWrapper}>
                     <p>I am</p>
                     <h1><span>N</span>ik<TypingEffect text={'olaj Kevlich'}/><span>.</span></h1>
-                    {/*<h1><span>N</span>ikolaj Kevlich<span>.</span></h1>*/}
                     <p><span>a fro</span>nt-end developer</p>
                 </div>
             </div>
         </div>
-    )
-        ;
+    );
 };
 
