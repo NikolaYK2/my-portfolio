@@ -93,12 +93,11 @@ type LiType = {
 }
 const Li = memo((props: LiType) => {
     const {task, activeLi} = props;
-    console.log('render Nav')
+
     return (
         <li>
             <Link to={task.link} smooth={true} spy={true} activeClass={s.active} offset={-50}
                   onClick={() => activeLi(task.id)}>{task.title}</Link>
-            {/*<a href={task.link} style={{color: task.color}} onClick={() => activeLi(task.id)}>{task.title}</a>*/}
         </li>
     );
 });
