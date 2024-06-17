@@ -8,9 +8,12 @@ export const apiContacts = {
   async sendMessage({text, tel, name, email}: FormType) {
     try {
       let res = await instance.post<SendMessageType>('/sendMessage', {text, tel, name, email});
+
+      console.log(res)
       return res.data.message;
     } catch (e: any) {
-      return e.data.message
+      console.log(e.response.data.message)
+      return e.response.data.message;
     }
   }
 }

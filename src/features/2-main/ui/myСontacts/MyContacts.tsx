@@ -13,7 +13,7 @@ const messageSchema = z.object({
   name: z.string().trim().min(3, {message: 'name должен быть min 3 to max 10 litters'}).max(10),
   email: z.string().trim().email({message: 'Invalid email address'}),
   tel: z.string().regex(phoneValidation, {message: 'Invalid phone number'}).optional().or(z.literal('')),
-  text: z.string().trim().max(500, 'max message 500 litters')
+  text: z.string().trim().max(3000, 'max message 500 litters')
 })
 
 type NameType = "name" | "tel" | "email" | "text"
@@ -57,8 +57,7 @@ export const MyContacts = (props: MyContactsType) => {
       const res = await apiContacts.sendMessage(data)
       setMessage(res)
       reset()
-    } catch (e) {
-
+    } catch (e:any) {
     } finally {
       setIsDisabled(false)
     }
