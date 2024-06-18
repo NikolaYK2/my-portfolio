@@ -24,8 +24,9 @@
   font-display: swap;
 }
 :root {
-  --font-size-p: clamp(1rem, 5vw, 1.4285rem);
-  --font-size-H2: clamp(var(--font-size-p), 5vw, 2.8571rem)
+  --font-size-p: clamp(1rem, 5vw, 1.4285rem);//20
+  --font-size-H2: clamp(1.4285rem, 5vw, 2.8571rem);//40
+  --font-size-H1: clamp(2.8571rem, 5vw, 4.2857rem);//60
 }
 //HEADER-----------------------------------------
 $headBcColor: #101010;

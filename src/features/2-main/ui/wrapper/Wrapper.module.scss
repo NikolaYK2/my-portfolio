@@ -34,10 +34,9 @@
   //overflow: auto;
 
   h1 {
-    //display: flex;
     font-family: 'Jost', sans-serif;
     -webkit-font-smoothing: antialiased;
-    font-size: var(--font-size-H2);
+    font-size: var(--font-size-H1);
     font-weight: 700;
     color: var(--color-darck-100);
     line-height: 1.5em;
@@ -51,7 +50,10 @@
     }
 
     span {
-      &:nth-child(1){color: var(--color-medium)}
+      &:nth-child(1) {
+        color: var(--color-medium)
+      }
+
       &:nth-child(2) {
         //color: $colorP;
         animation: color .65s ease infinite alternate;
