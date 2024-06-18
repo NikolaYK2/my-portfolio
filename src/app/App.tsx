@@ -57,7 +57,7 @@ function App() {
 
     return (
         <>
-            {!isRead ? <Loading/> :
+            {!isRead ? <Loading name={'loading'}/> :
                 <div className={s.App}>
                     <div className={s.slider} style={{height: `${height}%`}}></div>
                     <Header/>
