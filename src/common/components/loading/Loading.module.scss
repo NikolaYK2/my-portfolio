@@ -1,53 +1,79 @@
-@import "../../../assets/SCSS/style";
+@import "../../../assets/SCSS/animations";
+
 .containerLoading {
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: center;
-  background: $headBcColor;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
   height: 100%;
   width: 100%;
+  z-index: 3;
+  animation: isActiveLoading 1s ease 0s;
+}
 
-  .loading {
-    width: 200px;
-    height: auto;
+.loading {
 
-    svg {
-      g {
-        @keyframes dash {
-          0% {
-            stroke: #9da1a5;
-            stroke-dasharray: 4000;
+  svg {
+    g {
+      @keyframes dash {
+        0% {
+          stroke: #9da1a5;
+          stroke-dasharray: 4000;
 
-          }
-          50% {
-            stroke: #1DCB0A;
-            stroke-dasharray: 40000;
-          }
-          100% {
-            stroke: #9da1a5;
-            stroke-dasharray: 4000;
+        }
+        50% {
+          stroke: #1DCB0A;
+          stroke-dasharray: 40000;
+        }
+        100% {
+          stroke: #9da1a5;
+          stroke-dasharray: 4000;
 
-          }
+        }
+      }
+
+      path {
+        fill: none;
+        stroke-width: 100px;
+
+        &:nth-child(1) {
+          animation: dash 3s ease 2s  infinite;
+
         }
 
-        path {
-          fill: none;
-          stroke-width: 100px;
+        &:nth-child(2) {
+          animation: dash 6s ease  2s infinite;
 
-          &:nth-child(1) {
-            animation: dash 3s ease 2s  infinite;
-
-          }
-
-          &:nth-child(2) {
-            animation: dash 6s ease  2s infinite;
-
-          }
-
-          &:nth-child(3) {
-            animation: dash 4s ease  4s infinite;
-
-          }
         }
+
+        &:nth-child(3) {
+          animation: dash 4s ease  4s infinite;
+
+        }
+      }
+    }
+  }
+}
+
+.message {
+  width: 20%;
+  height: 20%;
+  animation: isActiveLoading 1s infinite alternate;
+
+
+  > svg {
+
+    path {
+      fill: var(--color-medium);
+
+      &:nth-child(-n+3) {
+        stroke: var(--color-darck-100);
+      }
+
+      &:first-child {
+        stroke: var(--color-darck-900);
       }
     }
   }

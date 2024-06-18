@@ -1,23 +1,22 @@
 @import "../../../assets/SCSS/style";
 
-
 .button {
   position: relative;
   z-index: 1;
   background: transparent;
   @extend %fontSizeP;
-  color: $colorP;
-  border: 1px solid $colorH;
+  color: var(--color-medium);
+  border: 1px solid var(--color-darck-100);
   transition: all .3s linear;
   padding: 1% 4%;
 
   &:hover {
     @keyframes fontColor {
       0% {
-        color: $colorP;
+        color: var(--color-medium);
       }
       100% {
-        color: $colorH;
+        border: 1px solid var(--color-darck-100);
       }
     }
 
@@ -38,7 +37,7 @@
       height: 100%;
       width: 100%;
       animation: bcZapolnenie .4s ease forwards;
-      background: $colorP;
+      background: var(--color-medium);
     }
 
     &:hover:after {
@@ -50,7 +49,7 @@
       height: 100%;
       width: 100%;
       animation: bcZapolnenie .4s ease forwards;
-      background: $colorP;
+      background: var(--color-medium);
     }
 
     position: relative;
@@ -96,7 +95,7 @@
     height: 100%;
     width: 100%;
     animation: bcZapolnenie1 .4s ease reverse .3s forwards;
-    background: $colorP;
+    background: var(--color-medium);
   }
 
   &:after {
@@ -108,6 +107,6 @@
     height: 100%;
     width: 100%;
     animation: bcZapolnenie1 .4s ease reverse .3s forwards;
-    background: $colorP;
+    background: var(--color-medium);
   }
 }

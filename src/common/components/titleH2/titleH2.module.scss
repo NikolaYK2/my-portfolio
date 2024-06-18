@@ -1,4 +1,4 @@
-@import '../../../assets/SCSS/style';
+@import '../../../assets/SCSS/font';
 
 .title {
   display: inline-block;
@@ -11,7 +11,7 @@
   transform: translateX(0);
 
   &:before, &:after {//полоска подчеркивания
-    background: $colorP;
+    background: var(--color-medium);
     height: 4px;
     bottom: -10px;
   }

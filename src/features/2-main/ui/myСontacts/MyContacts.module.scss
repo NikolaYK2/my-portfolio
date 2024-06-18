@@ -1,5 +1,5 @@
+@import "../../../../assets/SCSS/font";
 @import "../../../../assets/SCSS/style";
-@import "../../../../assets/SCSS/fontColor";
 
 .contact {
   position: relative;
@@ -106,8 +106,8 @@
         padding: 2% 4%;
         @extend %fontSizePp;
         background-color: $formBc;
-        border: 1px solid $colorH;
-        color: $colorP;
+        border: 1px solid var(--color-darck-100);
+        color: var(--color-medium);
         outline: none;
         resize: none;
         transition: all .3s linear;
@@ -119,13 +119,13 @@
         }
 
         &:focus {
-          border: 1px solid $colorP;
-          color: $colorH;
+          border: 1px solid var(--color-medium);
+          color: var(--color-darck-100);
           transition: all .4s linear;
         }
 
         &:focus::placeholder {
-          color: $colorH;
+          color: var(--color-darck-100);
           transition: all .4s linear;
         }
 

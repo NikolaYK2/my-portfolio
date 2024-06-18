@@ -1,5 +1,4 @@
-@import "assets/SCSS/fontColor";
-@import "assets/SCSS/style";
+@import "../../../assets/SCSS/font";
 
 .logo{
   z-index: 4;
@@ -7,6 +6,6 @@
     @extend %fontSizeH2;
   }
   span{
-    color: $colorP;
+    color: var(--color-medium);
   }
 }

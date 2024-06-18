@@ -1,5 +1,5 @@
 @import '../../../../../assets/SCSS/style';
-@import '../../../../../assets/SCSS/fontColor';
+@import '../../../../../assets/SCSS/font';
 
 .shellContainerItem {
   position: relative;
@@ -92,7 +92,7 @@
     @extend %bcSkill;
     overflow: hidden;
 
-    border: 1px solid $footerBorderTopColor;
+    border: 1px solid var(--color-darck-900-opacity);
 
     transition: all 1s ease 0s;
 
@@ -102,10 +102,10 @@
       transition: all 0.5s ease;
 
       svg {
-        fill: $colorH;
+        fill: var(--color-darck-100);
 
         path {
-          fill: $colorH;
+          fill: var(--color-darck-100);
         }
       }
     }
@@ -144,7 +144,6 @@
         animation: containerText .5s ease forwards;
         @extend %fontSizeP;
         text-align: center;
-        //transition: all 0.5s ease-in-out;
 
       }
 

@@ -1,7 +1,5 @@
-@use "sass:math";
-
+@import '../../../../assets/SCSS/font';
 @import '../../../../assets/SCSS/style';
-@import "../../../../assets/SCSS/fontColor";
 
 .craft {
   position: relative;
@@ -134,7 +132,7 @@
     button {
       background: transparent;
       @extend %fontSizeH2;
-      font-size: math.div(25, 14)+0rem;
+      font-size: var(--font-size-p);
       text-transform: uppercase;
       margin: 0;
       padding: 20px 30px;
@@ -164,7 +162,7 @@
     p:first-child {
       display: inline-flex;
       @extend %fontSizeH2;
-      font-size: math.div(25, 14)+0rem;;
+      font-size: var(--font-size-p);
       margin: 5px 0;
     }
 

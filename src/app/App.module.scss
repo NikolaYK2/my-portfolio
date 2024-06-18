@@ -25,8 +25,8 @@
       left: 50%;
       width: 2px;
       //height: 10px;
-      background: $colorP;
-      box-shadow: 0 0 5px $colorH;
+      background: var(--color-medium);
+      box-shadow: 0 0 5px var(--color-darck-100);
       opacity: 0.4;
       z-index: 1;
       transition: all 1s;

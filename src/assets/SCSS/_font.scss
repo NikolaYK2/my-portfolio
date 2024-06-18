@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Jost';
+  src: local('../../assets/fonts/Jost-Regular.eot');
+  src: url('../../assets/fonts/Jost-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/fonts/Jost-Regular.woff2') format('woff2'),
+  url('../../assets/fonts/Jost-Regular.woff') format('woff'),
+  url('../../assets/fonts/Jost-Regular.ttf') format('truetype'),
+  url('../../assets/fonts/Jost-Regular.svg#Jost-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: local('../../assets/fonts/Jost-Bold.eot');
+  src: url('../../assets/fonts/Jost-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/fonts/Jost-Bold.woff2') format('woff2'),
+  url('../../assets/fonts/Jost-Bold.woff') format('woff'),
+  url('../../assets/fonts/Jost-Bold.ttf') format('truetype'),
+  url('../../assets/fonts/Jost-Bold.svg#Jost-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font-size-p: clamp(1rem, 5vw, 1.4285rem);
+  --font-size-H2: clamp(var(--font-size-p), 5vw, 2.8571rem)
+}
+//HEADER-----------------------------------------
+$headBcColor: #101010;
+$headGradientBc1: #101010FF;
+$headGradientBc2: #101010E5;
+$headGradientBc3: #1DCB0A19;
+$headBurgerColor: #9da1a5;
+
+//SKILL-----------------------------------------
+$shadowSkill: #000000FF;
+$shadowSkillHover: #1DCB0A0C;
+
+//CRAFT-----------------------------------------------
+$craftBcPsevd: rgba(0, 0, 0, 0.45);
+$craftBcA: rgba(16, 16, 16, 0.8);
+
+//CONTACTS------------------------------------------------
+$formBc: #1a1a1a;
+
+//footer--------------------------------
+$footerBorderTopColor: rgba(157, 161, 165, 0.35);
+
+//Прокурутка --------------------------
+$scroll: smooth;
+
+//H and параграфы(описание) размер шрифта
+%fontSizeH2 {
+  font-size: var(--font-size-H2);
+  color: var(--color-darck-100);
+  font-weight: 700;
+  line-height: 1.06em;
+}
+
+%fontSizeP {
+  font-size: var(--font-size-p);
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  color: var(--color-medium);
+}
+
+%fontSizePp {
+  font-size: var(--font-size-p);
+  text-transform: capitalize;
+  line-height: 1.3em;
+  color: var(--color-medium);
+}
+
