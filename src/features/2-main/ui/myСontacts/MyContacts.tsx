@@ -12,7 +12,7 @@ import {useFetchSendMessage} from "../../lib/useFetchSendMessage";
 
 const phoneValidation = /^(?:\+?\d{1,3})?(?:[-\s()]|\d){10,}$/;
 const messageSchema = z.object({
-  name: z.string().trim().min(3, {message: 'the name must be between 3 and 10 litters'}).max(10),
+  name: z.string().trim().min(3, {message: '3-10 letters'}).max(10),
   email: z.string().trim().email({message: 'Invalid email address'}),
   tel: z.string().regex(phoneValidation, {message: 'Invalid phone number'}).optional().or(z.literal('')),
   text: z.string().trim().max(3000, 'max message 500 litters')
