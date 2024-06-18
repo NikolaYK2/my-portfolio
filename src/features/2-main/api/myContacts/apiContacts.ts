@@ -1,19 +1,16 @@
 import {instance} from "common/api/instance";
 import {FormType} from "features/2-main/ui/myСontacts/MyContacts";
 
-type SendMessageType = {
+export type SendMessageResponse = {
   message: string;
 }
 export const apiContacts = {
   async sendMessage({text, tel, name, email}: FormType) {
     try {
-      let res = await instance.post<SendMessageType>('/sendMessage', {text, tel, name, email});
-
-      console.log(res)
+      let res = await instance.post<SendMessageResponse>('/sendMessage', {text, tel, name, email});
       return res.data.message;
     } catch (e: any) {
-      console.log(e.response.data.message)
-      return e.response.data.message;
+      throw new Error(e.message || e.response.data.message || 'Unexpected error occurred');
     }
   }
 }
