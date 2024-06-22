@@ -12,7 +12,7 @@ import {useFetchSendMessage} from "../../lib/useFetchSendMessage";
 
 const phoneValidation = /^(?:\+?\d{1,3})?(?:[-\s()]|\d){10,}$/;
 const messageSchema = z.object({
-  name: z.string().trim().min(3, {message: '3-10 letters'}).max(10),
+  name: z.string().trim().min(3, {message: 'min 3 letters'}),
   email: z.string().trim().email({message: 'Invalid email address'}),
   tel: z.string().regex(phoneValidation, {message: 'Invalid phone number'}).optional().or(z.literal('')),
   text: z.string().trim().max(3000, 'max message 500 litters')
@@ -95,7 +95,7 @@ export const MyContacts = (props: MyContactsType) => {
                 </label>
               )}
             </div>
-            <div className={s.formTextarea}>
+            <div className={`${s.formTextarea} ${watch().text && s.textareaActive}`}>
               <textarea {...register("text")} placeholder='You message'></textarea>
             </div>
           </div>

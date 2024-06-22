@@ -1,7 +1,7 @@
 export const animationOnScroll = (selector: string, className: string) => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            const element = entry.target as HTMLElement // приводим тип к HTMLElement
+            const element = entry.target as HTMLElement
             if (entry.isIntersecting) {
                 element.classList.add(className);
             } else {
