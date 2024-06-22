@@ -1,234 +1,75 @@
-@import '../../../../../assets/SCSS/style';
-@import '../../../../../assets/SCSS/font';
 
-.shellContainerItem {
-  position: relative;
+.containerSkill {
   display: flex;
   flex-direction: column;
-  align-self: start;
-  justify-content: start;
-  flex: 1 1 23%;
+  justify-content: center;
+  align-items: center;
+  max-width: 165px;
+  margin: 10px;
+  border-radius: 5px;
+  z-index: 2;
 
-  cursor: pointer;
-
-  max-width: 320px;
-  min-width: 200px;
-  min-height: 170px;
-
-  margin: 0 4% 30px;
-
-  z-index: 1;
-
-  &:hover .containerImg {
-    svg {
-      @keyframes imgOff {
-        100% {
-          transform: scale(0);
-        }
-      }
-      animation: imgOff .5s ease-in-out forwards;
-      opacity: 1;
-    }
-
-    p {
-      @keyframes imgOf {
-        0% {
-          transform: scale(1);
-          transform-origin: center;
-        }
-        50% {
-          transform: translate(0, -31px) scale(1.9);
-          transform-origin: center;
-        }
-
-        100% {
-          transform: translate(0, -91px) scale(1);
-          transform-origin: center;
-        }
-      }
-      animation: imgOf 1s ease-in-out forwards;
-      opacity: 1;
-    }
-  }
-
-  &:hover .containerItem {
-    transition: all .3s ease 0.8s;
-    -webkit-transform: translate3d(0, 0, 0);
-
-    opacity: 1;
-
-
-    @keyframes scal {
-      0% {
-        transform: scale(1);
-
-      }
-      50% {
-        transform: scale(0.95);
-      }
-      100% {
-        transform: scale(1);
-
-      }
-    }
-    animation: scal .5s ease 0s forwards;
-  }
-
-  &:hover .containerItem::after {
-    @extend %animationBorderTopRight;
-  }
-
-  &:hover .containerItem:before {
-    @extend %animationBorderBotLeft;
-  }
-
-  //----------------------------------------------------------------
-  .containerItem {
+  .icon {
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 10px;
-    width: 100%;
-    flex: 1 1 auto;
-    @extend %bcSkill;
+    padding: 0 20% 10%;
     overflow: hidden;
 
-    border: 1px solid var(--color-darck-900-opacity);
+    .hoverIcon {
+      position: absolute;
+      left: -42%;
+      width: 100%;
+      height: 65%;
+      z-index: 1;
 
-    transition: all 1s ease 0s;
+      > svg path {
+        stroke-dasharray: 0 500;
+        fill: transparent;
+        stroke: var(--color-medium);
+        transition: all 1s ease 0s;
+      }
 
-    .containerImg {
-      max-width: 100px;
-      margin: 0 auto 10px;
-      transition: all 0.5s ease;
-
-      svg {
-        fill: var(--color-darck-100);
-
-        path {
-          fill: var(--color-darck-100);
-        }
+      &:nth-child(2) {
+        transform: rotate(180deg);
+        left: 42%;
       }
     }
 
-    p {
-      @extend %fontSizePp;
-      text-align: center;
-      margin: 10px 0 0 0;
+    &:hover .hoverIcon svg path {
+      stroke-dasharray: 500 100;
+      fill: var(--color-medium);
+      transition: stroke-dasharray 1s ease 0s, fill 1s ease .3s;
     }
 
-    // TEXT --------------------------------------------------------------
-    .containerText {
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
 
-      margin: auto;
-
-      transition: all 0.5s ease;
-
-      p {
-        @keyframes containerText {
-          0% {
-            transform: translateY(-3px) scale(0.8);
-            transform-origin: center;
-            opacity: 0.3;
-            color: #1DCB0A;
-          }
-          100% {
-            transform: scale(1);
-            transform-origin: center;
-            opacity: 1;
-            color: #9da1a5;
-          }
-        }
-        animation: containerText .5s ease forwards;
-        @extend %fontSizeP;
-        text-align: center;
-
-      }
-
-      p:last-child {
-        @keyframes containerText1 {
-          0% {
-            opacity: 0.1;
-            transform: translate(0, -140%);
-            transform-origin: center;
-          }
-          100% {
-            opacity: 1;
-            transform: translate(0, 0);
-            transform-origin: center;
-          }
-        }
-        animation: containerText1 0.4s ease-in-out;
-        @extend %fontSizePp;
-        text-align: center;
-        margin: 0 0 0 0;
-        transition: all 0.5s ease-in-out;
-      }
-    }
-
-    //animation containerItem ---------------------
-    opacity: 0.3;
-    transform: scale3d(0.7, 0.7, 0.7);
-    @media (prefers-reduced-motion) {
-      transform: none;
+    > svg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
     }
   }
 
-  .shellAnim {
-    opacity: 1;
-    will-change: transform;
-    transform: scale3d(1, 1, 1);
-    box-shadow: 0 9px 16px 6px $shadowSkill !important;
+  > p {
+    color: var(--color-medium);
+    font-size: var(--font-size-p);
+  }
+
+  @media (max-width: 523px) {
+    width: 40px;
+    height: 40px;
+
+    .hoverIcon {
+      display: none;
+    }
+
+    > p {
+      font-size: var(--font-size-mobile);
+    }
   }
 }
 
-//IMG mod ---------------------------------------------------------
-.mod {
-  opacity: 1;
-  transform: scale(1);
-  transform-origin: bottom;
 
 
-  svg {
-    @keyframes img {
-      0% {
-        opacity: 0;
-        transform: scale(0);
-        transform-origin: center;
 
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-        transform-origin: center;
-
-      }
-    }
-    animation: img 0.5s ease;
-  }
-
-  p {
-    @keyframes p {
-      0% {
-        opacity: 0;
-        transform-origin: bottom;
-        transform: scale(5);
-
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-        transform-origin: bottom;
-      }
-    }
-    animation: p 0.5s ease;
-  }
-}
-
-.modReverse {
-  opacity: 0;
-  transform: scale(0);
-  transition: all .2s ease 0s;
-}

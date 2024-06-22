@@ -20,12 +20,27 @@ export type IconSvgType =
   | 'ok'
   | 'message'
   | 'close'
+  | 'bracket{'
 
 export type IconSvgProps = {
   name: IconSvgType
 }
 export const IconSvg = ({name}: IconSvgProps) => {
   switch (name) {
+    case 'bracket{':
+      return (
+        <svg height="100%" id="Layer_1" version="1.1" viewBox="0 0 128 128"
+             width="100%" xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill='none'
+            strokeDasharray='10 10'
+            strokeDashoffset={2}
+            stroke={'red'}
+            d="M45.368,60.328  c9.837,0,13.99-5.403,13.99-10.253c0-3.875,0.272-19.254,0.272-23.135c0-12.741,8.314-18.144,20.09-18.144h2.911v7.62h-2.494  c-8.178,0-11.366,4.012-11.366,11.491c0,3.187-0.13,17.042-0.13,20.786c0.141,8.866-6.513,13.299-12.749,14.957v0.282  c6.236,1.522,12.89,6.232,12.749,15.098c0,3.739,0.13,16.759,0.13,20.081c0,7.76,3.606,12.473,11.366,12.473h2.494v7.619h-2.911  c-11.499,0-20.09-4.986-20.09-18.979c0-3.739-0.272-18.843-0.272-22.581c0-4.293-4.153-10.248-13.99-10.248V60.328z"
+          />
+        </svg>
+      );
     case 'close':
       return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
