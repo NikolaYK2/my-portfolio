@@ -8,13 +8,14 @@ type SocialType = {
   id: IconSvgType;
   link: string;
 }
+const social: SocialType[] = [
+  {id: 'github', link: 'https://github.com/NikolaYK2'},
+  {id: 'linkedin', link: 'https://www.linkedin.com/in/nikolaj-kevlich-6a4423263/'},
+  {id: 'telegram', link: 'https://t.me/Nik_Kev'},
+]
+
 export const Footer = () => {
 
-  const social: SocialType[] = [
-    {id: 'github', link: 'https://github.com/NikolaYK2'},
-    {id: 'linkedin', link: 'https://www.linkedin.com/in/nikolaj-kevlich-6a4423263/'},
-    {id: 'telegram', link: 'https://t.me/Nik_Kev'},
-  ]
 
   useEffect(() => {
     animationOnScroll(`#a`, s.aActive)

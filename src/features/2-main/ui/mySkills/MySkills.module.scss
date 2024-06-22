@@ -28,15 +28,14 @@
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
-  transition: all 1s ease 0s;
 
   .containerSkills {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     overflow: hidden;
-    margin: 50px -3% 0;
-    transition: all 1s ease 0s;
+    margin-left: -3%;
+    margin-right: -3%;
   }
 }
 

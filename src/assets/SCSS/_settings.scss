@@ -1,16 +1,21 @@
 //Обнуление всего
-*{
+* {
   padding: 0;
   margin: 0;
   border: 0;
 }
-*,*:before,*:after { /*- ширины блока для удобства*/
+
+*, *:before, *:after { /*- ширины блока для удобства*/
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-nav,footer,header,aside{display: block;}
-html,body{ /*- запрещает самовольное изменение шрифта*/
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body { /*- запрещает самовольное изменение шрифта*/
   height: 100%;
   width: 100%;
   /*font-size: 100%;*/
@@ -20,18 +25,52 @@ html,body{ /*- запрещает самовольное изменение шр
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 /*Просим унаследовать семейство шрифта*/
-input,button,textarea{font-family: inherit;} /*– будет тот шрифт который устанавливаем в “body”*/
+input, button, textarea {
+  font-family: inherit;
+}
+
+/*– будет тот шрифт который устанавливаем в “body”*/
 /*Убираем по умолчанию стили в некоторых браузерах*/
-input::-ms-clear{display: none;} /*– убираем крестик в form в браузере от MS */
-button{cursor: pointer;}
-button::-moz-focus-inner{padding: 0;border: 0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}/*	 – убирает элементы списка*/
-img{vertical-align: top;}
+input::-ms-clear {
+  display: none;
+}
+
+/*– убираем крестик в form в браузере от MS */
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/*	 – убирает элементы списка*/
+img {
+  vertical-align: top;
+}
+
 /*Обнуление заголовков*/
-h1,h2,h3,h4,h5,h6{font-size: inherit/*(значение наследует от родительского элемента)*/; font-weight: 400; margin: 0;}
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit /*(значение наследует от родительского элемента)*/
+;
+  font-weight: 400;
+  margin: 0;
+}
 
 
 body {
@@ -41,39 +80,38 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  //полоска прокрутки -----------------
-  /* Работает в Firefox */
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-darck-900-opacity) var(--color-darck-100) ;
-
-  /* Работает в Chrome, Edge и Safari */
-  &::-webkit-scrollbar {
-    background-color: var(--color-darck-100);
-    width: 15px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-darck-900-opacity);
-    border-radius: 20px;
-    border: 1px solid var(--color-darck-100);
-
-    &:hover{
-      background-color: var(--color-medium);
-    }
-  }
-
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
-#root{
+
+#root {
   height: 100%;
+}
+
+* {
+  // полоска прокрутки -----------------
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-darck-900-opacity) var(--color-darck-100);
+}
+
+*::-webkit-scrollbar {
+  background-color: var(--color-darck-100);
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-darck-900-opacity);
+  border-radius: 40px;
+  border: 1px solid var(--color-darck-100);
+
+  &:hover {
+    background-color: var(--color-medium);
+  }
 }
