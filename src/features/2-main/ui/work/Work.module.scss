@@ -15,7 +15,6 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 150px;
 
   > h2 {
     @extend %fontSizeH2;
@@ -35,11 +34,10 @@
 
   > p {
     @extend %fontSizePp;
-    margin: 0 0 10% 0;
     opacity: 0;
 
     transform: translateY(100%);
-    transition: all .4s ease-in-out 0s;
+    transition: opacity .4s ease-in-out .5s, transform .4s ease-in-out .5s;
   }
   .activeP{
     opacity: 1;
