@@ -2,9 +2,8 @@ import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import s from './Wrapper.module.scss';
 import fonPhoto from 'assets/image/wrapper/I_maloy.jpg'
 import {TypingEffect} from "common/components/typingEffect/TypingEffect";
-import {Button} from "common/components/button/Button";
-import {IconSvg} from "common/components/iconSvg/IconSvg";
 import {Messengers} from "common/components/messegers/Messengers";
+import {DownloadCV} from "common/components/downloadCV/DownloadCV";
 
 type WrapperType = {
   id: string
@@ -37,10 +36,7 @@ export const Wrapper = (props: WrapperType) => {
           <p><span>a fro</span>nt-end developer</p>
 
           <div className={s.btnAndItem}>
-            <Button>
-              Download CV
-              <IconSvg name={"download"}/>
-            </Button>
+            <DownloadCV/>
             <Messengers variant={"circle"}/>
           </div>
         </div>

@@ -80,10 +80,14 @@
   }
 }
 
-.btnAndItem{
+.btnAndItem {
   display: flex;
   align-items: center;
   justify-content: start;
   flex-wrap: wrap;
+
+  > a {
+    margin: 0 5px 0 0;
+  }
 }
 

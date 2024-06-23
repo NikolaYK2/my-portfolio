@@ -2,21 +2,18 @@
 @import "../../../assets/SCSS/font";
 
 .containerSocial {
-  display: flex;
-  justify-content: end;
+  display: inline-flex;
+  justify-content: center;
   flex-wrap: wrap;
-  max-width: 100%;
-  min-width: 150px;
   margin: 3% 0;
-  padding: 0 10%;
 
   .containerBlock {
     display: flex;
     width: 40px;
     height: 40px;
-    transition: all .1s ease;
     border: 1px solid var(--color-darck-100);
     margin: 0 5px;
+    transition: all .1s ease;
 
     &:hover {
       box-shadow: 0 0 5px var(--color-darck-100), inset 0 0 5px $headBurgerColor;
