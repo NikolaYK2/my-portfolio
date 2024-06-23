@@ -69,15 +69,11 @@ export const Header = memo(() => {
       <div className={s.headerContainer}>
         <Link to="wrap"><Logo title={'Nik.'}/></Link>
         <div className={`${s.menuBurger} ${modBurger}`} onClick={burgerClick}>
-          <span></span>
+          <span/>
         </div>
         <nav className={`${s.headerNav} ${modNav}`}>
           <ul>
-            {taskNav.map(e => {
-              return (
-                <Li task={e} activeLi={activeLi} key={e.id}/>
-              );
-            })}
+            {taskNav.map(e => <Li task={e} activeLi={activeLi} key={e.id}/>)}
           </ul>
         </nav>
       </div>
