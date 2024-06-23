@@ -22,12 +22,22 @@ export type IconSvgType =
   | 'close'
   | 'bracket{'
   | 'description'
+  | 'download'
 
 export type IconSvgProps = {
   name: IconSvgType
 }
 export const IconSvg = ({name}: IconSvgProps) => {
   switch (name) {
+    case 'download':
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width='100%' height='100%'>
+          <path
+            d="M90 54a5.997 5.997 0 00-6 6v18H12V60a6 6 0 00-12 0v24a5.997 5.997 0 006 6h84a5.997 5.997 0 006-6V60a5.997 5.997 0 00-6-6z"></path>
+          <path
+            d="M43.758 64.242a5.998 5.998 0 008.484 0l18-18a6 6 0 00-8.484-8.484L54 45.516V12a6 6 0 00-12 0v33.516l-7.758-7.758a6 6 0 00-8.484 8.484z"></path>
+        </svg>
+      );
     case 'description':
       return (
         <svg
