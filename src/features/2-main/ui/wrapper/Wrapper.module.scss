@@ -2,7 +2,6 @@
 @import '../../../../assets/SCSS/font';
 
 .wrapper {
-  //background: url(I_maloy.jpg) center/cover no-repeat fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,7 +11,7 @@
   height: 100vh;
   z-index: 2;
   scroll-behavior: $scroll;
-  transition: all .5s ease 0s;
+  overflow: hidden;
 }
 
 .wrapperContainer {
@@ -24,14 +23,12 @@
   height: 100%;
   margin: 0 auto;
   padding: 0 5px;
-  //border: 1px solid black;
 }
 
 .wrapperName {
   flex: 1 1 33%;
   max-width: 500px;
   transform: translate(0px, 0px);
-  //overflow: auto;
 
   h1 {
     font-family: 'Jost', sans-serif;
@@ -55,7 +52,6 @@
       }
 
       &:nth-child(2) {
-        //color: $colorP;
         animation: color .65s ease infinite alternate;
       }
     }
