@@ -4,8 +4,10 @@ import {v1} from "uuid";
 import socialImg from 'assets/image/myCraft/social.jpg';
 import appImg from 'assets/image/myCraft/app.jpg';
 import {TitleH2} from "common/components/titleH2/titleH2";
-import {m, LazyMotion, domAnimation} from 'framer-motion';
+import {domAnimation, LazyMotion, m} from 'framer-motion';
 import {Craft} from "./craft/Craft";
+import {Waypoint} from "react-waypoint";
+import {useWaypoint} from "../../../../common/hooks/useWaypoint";
 
 const crafts = [
   {
@@ -28,7 +30,7 @@ type MyCraftsType = {
   id: string
 }
 export const MyCrafts = (props: MyCraftsType) => {
-
+  const {visible, waypointHandler} = useWaypoint()
   const container = {
     visible: {
       transition: {
@@ -43,7 +45,11 @@ export const MyCrafts = (props: MyCraftsType) => {
       <div className={s.containerItem}>
         <TitleH2 title={'My crafts'}/>
         <LazyMotion features={domAnimation}>
-          <m.div className={`${s.containerCrafts} paddingBlock`} variants={container} initial="hidden" animate={'visible'}>
+          <m.div className={`${s.containerCrafts} paddingBlock`}
+                 variants={container}
+                 initial="hidden"
+                 animate={visible ? 'visible': "hidden"}>
+            <Waypoint onEnter={waypointHandler}/>
             {crafts.map(craft => <Craft key={craft.id} crafts={craft}/>)}
           </m.div>
         </LazyMotion>
