@@ -121,11 +121,13 @@ export const MyContacts = (props: MyContactsType) => {
 
           </div>
           <LazyMotion features={domAnimation}>
-              <Button title={'send'}
-                      disabled={isDisabled}
-                      variantsAnimation={MyContactsAnimation.button}
-                      visible={visible}
-              />
+            <Button
+              disabled={isDisabled}
+              variantsAnimation={MyContactsAnimation.button}
+              visible={visible}
+            >
+              Send
+            </Button>
           </LazyMotion>
         </form>
       </div>
