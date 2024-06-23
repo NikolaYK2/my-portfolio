@@ -5,7 +5,7 @@ import s from './DownloadCV.module.scss'
 
 export const DownloadCV = () => {
   return (
-    <a className={s.containerDownloadCV} href={`${process.env.PUBLIC_URL}/cv.pdf`} download="My_CV.pdf">
+    <a className={s.containerDownloadCV} href={`${process.env.PUBLIC_URL}/cv.pdf`} download="Nikolaj_CV.pdf">
       <Button>
         Download CV
         <IconSvg name={"download"}/>
