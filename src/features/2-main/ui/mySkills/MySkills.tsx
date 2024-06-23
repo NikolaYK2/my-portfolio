@@ -1,8 +1,10 @@
-import React, {memo} from 'react';
+import React, {memo, useState} from 'react';
 import s from './MySkills.module.scss';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {IconSvgType} from "common/components/iconSvg/IconSvg";
 import {Skill} from "features/2-main/ui/mySkills/skill/Skill";
+import {Waypoint} from "react-waypoint";
+import {domAnimation, LazyMotion, m} from 'framer-motion';
 
 type MySkillsType = {
   id: string
@@ -22,22 +24,40 @@ const skills: SkillsType[] = [
   {title: 'REDUX', icon: 'redux',},
   {title: 'STORYBOOK', icon: 'storybook'},
   {title: 'TDD-JEST', icon: 'jest'},
-  {title: 'REST API', icon: 'api'},
+  {title: 'REST-API', icon: 'api'},
 ]
 
 export const MySkills = memo((props: MySkillsType) => {
+  const [visible, setVisible] = useState(false)
+
+  const handleWaypointEnter = () => {
+    setVisible(true)
+  }
+
+  const container = {
+    visible: {
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
 
   return (
     <section id={props.id} className={s.mySkills}>
       <div className={s.container}>
         <TitleH2 title={'My skills'}/>
-        <div className={`${s.containerSkills} paddingBlock`}>
-          {skills.map(skill => {
-            return (
-              <Skill skill={skill} key={skill.title}/>
-            );
-          })}
-        </div>
+        <LazyMotion features={domAnimation}>
+          <m.div
+            className={`${s.containerSkills} paddingBlock`}
+            variants={container}
+            initial="hidden"
+            animate={visible ? 'visible' : 'hidden'}
+          >
+            <Waypoint onEnter={handleWaypointEnter}/>
+            {skills.map((skill) => <Skill skill={skill} key={skill.title}/>)}
+          </m.div>
+        </LazyMotion>
       </div>
     </section>
   );
