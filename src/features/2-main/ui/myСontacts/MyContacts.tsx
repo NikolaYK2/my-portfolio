@@ -7,8 +7,12 @@ import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {apiContacts} from "features/2-main/api/myContacts/apiContacts";
 import {Snackbar} from "common/components/snackbar/Snackbar";
-import {Loading} from "../../../../common/components/loading/Loading";
 import {useFetchSendMessage} from "../../lib/useFetchSendMessage";
+import {useWaypoint} from "common/hooks/useWaypoint";
+import {Waypoint} from "react-waypoint";
+import {m, LazyMotion, domAnimation} from 'framer-motion';
+import {Loading} from "common/components/loading/Loading";
+import {MyContactsAnimation} from "features/2-main/ui/myСontacts/MyContactsAnimation";
 
 const phoneValidation = /^(?:\+?\d{1,3})?(?:[-\s()]|\d){10,}$/;
 const messageSchema = z.object({
@@ -36,6 +40,7 @@ type MyContactsType = {
   id: string
 }
 export const MyContacts = (props: MyContactsType) => {
+  const {visible, waypointHandler} = useWaypoint()
 
   const {
     logic,
@@ -74,34 +79,57 @@ export const MyContacts = (props: MyContactsType) => {
         <TitleH2 title={'Contacts'}/>
         <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
           <div className={s.formMod}>
-            <div className={s.formInput}>
-              {input.map(input => <label
-                  key={input.name}
-                  id={input.name}
-                  className={`
+            <LazyMotion features={domAnimation}>
+              <m.div className={s.formInput}
+                     variants={MyContactsAnimation.containerInput}
+                     initial="hidden"
+                     animate={visible ? "visible" : 'hidden'}>
+
+                {input.map(input => <m.label
+                    key={input.name}
+                    id={input.name}
+
+                    className={`
                   ${s.labelInput}
                   ${errors[input.name] && s.errorInput}
                   ${watch()[input.name] && s.activeInput}
-                  `}>
+                  `}
+                    variants={MyContactsAnimation.inputItem}
+                  >
 
-                  <input
-                    id={input.name}
-                    type={input.type}
-                    placeholder={errors[input.name]?.message || input.placeholder}
-                    {...register(input.name)}
-                    autoComplete={input.name}
-                  />
+                    <input
+                      id={input.name}
+                      type={input.type}
+                      placeholder={errors[input.name]?.message || input.placeholder}
+                      {...register(input.name)}
+                      autoComplete={input.name}
+                    />
 
-                </label>
-              )}
-            </div>
-            <div className={`${s.formTextarea} ${watch().text && s.textareaActive}`}>
-              <textarea {...register("text")} placeholder='You message'></textarea>
-            </div>
+                  </m.label>
+                )}
+              </m.div>
+            </LazyMotion>
+            <LazyMotion features={domAnimation}>
+              <m.div className={`${s.formTextarea} ${watch().text && s.textareaActive}`}
+                     variants={MyContactsAnimation.textareaItem}
+                     initial="hidden"
+                     animate={visible ? "visible" : 'hidden'}
+              >
+                <textarea {...register("text")} placeholder='You message'></textarea>
+              </m.div>
+            </LazyMotion>
+
           </div>
-          <Button title={'send'} disabled={isDisabled}/>
+          <LazyMotion features={domAnimation}>
+              <Button title={'send'}
+                      disabled={isDisabled}
+                      variantsAnimation={MyContactsAnimation.button}
+                      visible={visible}
+              />
+          </LazyMotion>
         </form>
       </div>
+      <Waypoint onEnter={waypointHandler}/>
     </section>
   );
 };
