@@ -1,6 +1,7 @@
 import {m, LazyMotion, domAnimation} from "framer-motion";
 import s from "./Craft.module.scss";
 import React from "react";
+import {IconSvg} from "common/components/iconSvg/IconSvg";
 
 type Type = {
   id: string,
@@ -12,11 +13,10 @@ type Type = {
 type CraftType = {
   crafts: Type,
 }
-export const Craft = (props: CraftType) => {
-  const {crafts} = props
+export const Craft = ({crafts}: CraftType) => {
 
   const item = {
-    hidden: { scale: 0, opacity: 0 },
+    hidden: {scale: 0, opacity: 0},
     visible: {
       scale: 1,
       opacity: 1
@@ -31,8 +31,15 @@ export const Craft = (props: CraftType) => {
           </a>
         </div>
         <div className={s.containerText}>
-          <p className='appGeneralTitle'>{crafts.title}</p>
-          <p className='appGeneralDescription'>{crafts.description}</p>
+          <div className={s.blockItem}>
+            <div className={s.craftName}>
+              <p>{crafts.title}</p>
+              <div className={s.icon}>
+                <IconSvg name={'description'}/>
+              </div>
+            </div>
+            <p>{crafts.description}</p>
+          </div>
         </div>
       </m.div>
     </LazyMotion>

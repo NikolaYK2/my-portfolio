@@ -5,7 +5,7 @@ import {IconSvgType} from "common/components/iconSvg/IconSvg";
 import {Skill} from "features/2-main/ui/mySkills/skill/Skill";
 import {Waypoint} from "react-waypoint";
 import {domAnimation, LazyMotion, m} from 'framer-motion';
-import {useWaypoint} from "../../../../common/hooks/useWaypoint";
+import {useWaypoint} from "common/hooks/useWaypoint";
 
 type MySkillsType = {
   id: string
