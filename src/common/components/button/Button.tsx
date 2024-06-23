@@ -1,32 +1,27 @@
 import {m, Variant} from 'framer-motion';
-import React, {useState} from 'react';
+import React, {ReactNode} from 'react';
 import s from "./Button.module.scss";
 
 type ButtonType = {
-  title: string,
+  children: ReactNode;
   disabled?: boolean,
-  variantsAnimation?:Variant | {}
-  visible?:boolean,
+  variantsAnimation?: Variant | {}
+  visible?: boolean,
 }
-export const Button = ({title, disabled, visible=true, variantsAnimation}: ButtonType) => {
-  const [style, setStyle] = useState('')
+export const Button = ({ disabled, visible = true, variantsAnimation, children}: ButtonType) => {
 
-  const off = () => {
-    setStyle(s.modOff)
-  }
 
   return (
     <>
       <m.button
-        className={`${s.button} ${style} ${disabled && s.disabled}`}
-        onMouseOut={off}
+        className={`${s.button}  ${disabled && s.disabled}`}
         disabled={disabled}
         variants={variantsAnimation ? variantsAnimation : {}}
         initial="hidden"
         animate={visible ? "visible" : 'hidden'}
 
       >
-        {title}
+        {children}
       </m.button>
     </>
   );
