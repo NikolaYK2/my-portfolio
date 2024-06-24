@@ -2,10 +2,12 @@ import {useState} from "react";
 
 export const useWaypoint = () => {
   const [visible, setVisible] = useState(false);
-
-  const waypointHandler = () => {
+  const waypointHandlerEnter = () => {
     setVisible(true)
   }
+  const waypointHandlerLeave = () => {
+    setVisible(false)
+  }
 
-  return {visible, waypointHandler}
+  return {visible, waypointHandlerEnter, waypointHandlerLeave}
 };

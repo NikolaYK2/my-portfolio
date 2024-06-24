@@ -7,17 +7,18 @@ import {MyContacts} from "./myСontacts/MyContacts";
 import {MyCrafts} from "features/2-main/ui/myCrafts/MyCrafts";
 
 type MainType = {
-    refMain: LegacyRef<HTMLDivElement> | undefined,
+  refMain: LegacyRef<HTMLDivElement> | undefined,
 }
-export const Main = memo((props: MainType) => {
-    return (
-        <div className={s.main} ref={props.refMain}>
-            <Wrapper id={'wrap'}/>
-            <MySkills id={'skills'}/>
-            <MyCrafts id={'crafts'}/>
-            <Work/>
-            <MyContacts id={'contact'}/>
-        </div>
-    );
+export const Main = memo(({refMain}: MainType) => {
+
+  return (
+    <div className={s.main} ref={refMain}>
+      <Wrapper id={'wrap'}/>
+      <MySkills id={'skills'}/>
+      <MyCrafts id={'crafts'}/>
+      <Work/>
+      <MyContacts id={'contact'}/>
+    </div>
+  );
 });
 

@@ -34,7 +34,7 @@ type MyCraftsType = {
   id: string
 }
 export const MyCrafts = ({id}: MyCraftsType) => {
-  const {visible, waypointHandler} = useWaypoint()
+  const {visible, waypointHandlerEnter} = useWaypoint()
 
   //animation
   const container = {
@@ -55,7 +55,7 @@ export const MyCrafts = ({id}: MyCraftsType) => {
                  variants={container}
                  initial="hidden"
                  animate={visible ? 'visible' : "hidden"}>
-            <Waypoint onEnter={waypointHandler}/>
+            <Waypoint onEnter={waypointHandlerEnter}/>
             {crafts.map(craft => <Craft key={craft.id} crafts={craft}/>)}
           </m.div>
         </LazyMotion>
