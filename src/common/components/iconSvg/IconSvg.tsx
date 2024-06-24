@@ -24,12 +24,28 @@ export type IconSvgType =
   | 'description'
   | 'download'
   | 'backToTop'
+  | 'hi'
 
 export type IconSvgProps = {
   name: IconSvgType
 }
 export const IconSvg = ({name}: IconSvgProps) => {
   switch (name) {
+    case 'hi':
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="553.333"
+          height="520"
+          version="1"
+          viewBox="0 0 415 390"
+        >
+          <path
+            d="M3481 3819c-117-21-253-113-321-218-133-209-108-472 63-645 141-143 348-183 551-106 74 28 156 102 218 195 156 238 96 545-140 707-89 61-246 90-371 67zM88 3503c-2-5-1-224 3-488s10-1035 13-1714 7-1235 8-1236c2-2 193 0 424 3l421 5 7 81c3 45 6 330 6 634v552l393-2 392-3 5-630 5-630 423-3 422-2 2 1265c2 696 3 1468 3 1717v452h-85c-47 1-242 0-434-2l-349-2 4-677 4-678-392-2c-216-1-394-1-394 0-1 1-5 305-8 674-4 370-9 674-12 676-8 8-858 17-861 10zM3314 2513l-202-3 5-1218c3-669 6-1218 7-1218 0-1 207-4 459-8l457-7v2461l-262-2c-145-2-354-4-464-5z"
+            transform="matrix(.1 0 0 -.1 0 390)"
+          ></path>
+        </svg>
+      );
     case 'backToTop':
       return (
         <svg

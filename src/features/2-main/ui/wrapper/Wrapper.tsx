@@ -4,12 +4,16 @@ import fonPhoto from 'assets/image/wrapper/I_maloy.jpg'
 import {TypingEffect} from "common/components/typingEffect/TypingEffect";
 import {Messengers} from "common/components/messegers/Messengers";
 import {DownloadCV} from "common/components/downloadCV/DownloadCV";
+import {IconSvg} from "common/components/iconSvg/IconSvg";
+import {useWaypoint} from "common/hooks/useWaypoint";
+import {Waypoint} from "react-waypoint";
 
 type WrapperType = {
   id: string
 }
 
 export const Wrapper = (props: WrapperType) => {
+  const {visible, waypointHandlerEnter} = useWaypoint()
   const paralaxWrapper = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -29,6 +33,8 @@ export const Wrapper = (props: WrapperType) => {
 
   return (
     <div id={props.id} className={s.wrapper} style={{backgroundImage: `url(${fonPhoto})`}}>
+      <Waypoint onEnter={waypointHandlerEnter}/>
+
       <div className={s.wrapperContainer}>
         <div id='wrapperName' className={s.wrapperName} ref={paralaxWrapper}>
           <p>I am</p>
@@ -38,6 +44,9 @@ export const Wrapper = (props: WrapperType) => {
           <div className={s.btnAndItem}>
             <DownloadCV/>
             <Messengers variant={"circle"}/>
+          </div>
+          <div className={`${s.backgroundHi} ${visible ? s.activeBackgroundHi : ''}`}>
+            <IconSvg name={'hi'}/>
           </div>
         </div>
       </div>
