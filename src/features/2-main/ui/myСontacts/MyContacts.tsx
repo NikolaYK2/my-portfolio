@@ -19,7 +19,7 @@ const messageSchema = z.object({
   name: z.string().trim().min(3, {message: 'min 3 letters'}),
   email: z.string().trim().email({message: 'Invalid email address'}),
   tel: z.string().regex(phoneValidation, {message: 'Invalid phone number'}).optional().or(z.literal('')),
-  text: z.string().trim().max(3000, 'max message 500 litters')
+  text: z.string().trim().min(1).max(3000, 'max message 500 litters')
 })
 
 type NameType = "name" | "tel" | "email" | "text"
@@ -55,7 +55,7 @@ export const MyContacts = (props: MyContactsType) => {
     handleSubmit,
     watch,
     reset,
-    formState: {errors,}
+    formState: {errors, touchedFields}
   } = useForm<FormType>({
     resolver: zodResolver(messageSchema),
     defaultValues: {
@@ -100,22 +100,33 @@ export const MyContacts = (props: MyContactsType) => {
                     <input
                       id={input.name}
                       type={input.type}
-                      placeholder={errors[input.name]?.message || input.placeholder}
+                      placeholder={errors[input.name] ? 'field cannot be empty' : input.placeholder}
                       {...register(input.name)}
                       autoComplete={input.name}
                     />
-
+                    <span className={s.errorSpan}>
+                      {touchedFields[input.name] && errors[input.name]?.message}
+                    </span>
                   </m.label>
                 )}
               </m.div>
             </LazyMotion>
             <LazyMotion features={domAnimation}>
-              <m.div className={`${s.formTextarea} ${watch().text && s.textareaActive}`}
+              <m.div className={`
+              ${s.formTextarea} 
+              ${watch().text && s.textareaActive}
+              ${errors.text && s.errorInput}
+              `}
                      variants={MyContactsAnimation.textareaItem}
                      initial="hidden"
                      animate={visible ? "visible" : 'hidden'}
               >
-                <textarea {...register("text")} placeholder='You message'></textarea>
+                <textarea
+                  {...register("text")}
+                  placeholder={errors.text ? 'field cannot be empty' : 'You message'}
+
+                />
+
               </m.div>
             </LazyMotion>
 
