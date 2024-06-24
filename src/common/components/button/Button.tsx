@@ -7,9 +7,9 @@ type ButtonType = {
   disabled?: boolean,
   variantsAnimation?: Variant | {}
   visible?: boolean,
+  onClick?: () => void
 }
-export const Button = ({ disabled, visible = true, variantsAnimation, children}: ButtonType) => {
-
+export const Button = ({ disabled, visible = true, variantsAnimation, children, onClick}: ButtonType) => {
 
   return (
     <>
@@ -19,7 +19,7 @@ export const Button = ({ disabled, visible = true, variantsAnimation, children}:
         variants={variantsAnimation ? variantsAnimation : {}}
         initial="hidden"
         animate={visible ? "visible" : 'hidden'}
-
+        onClick={onClick}
       >
         {children}
       </m.button>
