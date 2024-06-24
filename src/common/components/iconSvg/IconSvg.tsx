@@ -23,12 +23,27 @@ export type IconSvgType =
   | 'bracket{'
   | 'description'
   | 'download'
+  | 'backToTop'
 
 export type IconSvgProps = {
   name: IconSvgType
 }
 export const IconSvg = ({name}: IconSvgProps) => {
   switch (name) {
+    case 'backToTop':
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fillRule="evenodd"
+            d="M8 6.414L2.707 11.707 1.293 10.293 8 3.586 14.707 10.293 13.293 11.707z"
+          ></path>
+        </svg>
+      );
     case 'download':
       return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width='100%' height='100%'>
