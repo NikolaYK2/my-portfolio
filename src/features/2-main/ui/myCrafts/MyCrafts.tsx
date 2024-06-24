@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './MyCrafts.module.scss';
 import {v1} from "uuid";
-import socialImg from 'assets/image/myCraft/social.jpg';
+import socialImg from 'assets/image/myCraft/social.png';
 import appImg from 'assets/image/myCraft/app.jpg';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {domAnimation, LazyMotion, m} from 'framer-motion';
