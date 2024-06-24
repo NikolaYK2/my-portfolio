@@ -2,6 +2,7 @@
 
 .logo{
   z-index: 4;
+  user-select: none;
   h3{
     @extend %fontSizeH2;
   }
