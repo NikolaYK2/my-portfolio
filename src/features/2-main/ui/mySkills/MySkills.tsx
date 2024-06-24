@@ -30,7 +30,7 @@ const skills: SkillsType[] = [
 
 export const MySkills = memo((props: MySkillsType) => {
 
-  const {visible, waypointHandler} = useWaypoint()
+  const {visible, waypointHandlerEnter} = useWaypoint()
 
   const container = {
     visible: {
@@ -52,7 +52,7 @@ export const MySkills = memo((props: MySkillsType) => {
             initial="hidden"
             animate={visible ? 'visible' : 'hidden'}
           >
-            <Waypoint onEnter={waypointHandler}/>
+            <Waypoint onEnter={waypointHandlerEnter}/>
             {skills.map((skill) => <Skill skill={skill} key={skill.title}/>)}
           </m.div>
         </LazyMotion>

@@ -88,6 +88,12 @@
 
   > a {
     margin: 0 5px 0 0;
+
+    > button {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-right: 10px;
+    }
   }
 }
 
