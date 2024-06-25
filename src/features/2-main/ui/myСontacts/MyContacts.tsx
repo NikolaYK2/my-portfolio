@@ -76,7 +76,7 @@ export const MyContacts = (props: MyContactsType) => {
 
       {message && <Snackbar message={message} isError={isError} setMessage={setMessage}/>}
       <div className={s.container}>
-        <TitleH2 title={'Contacts'}/>
+        <TitleH2 title={'My Contacts'}/>
         <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
           <div className={s.formMod}>
             <LazyMotion features={domAnimation}>
@@ -100,7 +100,7 @@ export const MyContacts = (props: MyContactsType) => {
                     <input
                       id={input.name}
                       type={input.type}
-                      placeholder={errors[input.name] ? 'field cannot be empty' : input.placeholder}
+                      placeholder={errors[input.name] ? 'Required' : input.placeholder}
                       {...register(input.name)}
                       autoComplete={input.name}
                     />

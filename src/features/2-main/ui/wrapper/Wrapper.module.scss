@@ -108,8 +108,8 @@
 
 .backgroundHi {
   position: absolute;
-  top: -40%;
-  right: 30%;
+  top: -10%;
+  left: 7%;
   z-index: 1;
   max-width: 300px;
 
@@ -132,12 +132,12 @@
 .activeBackgroundHi svg {
   will-change: transform;
   transform: scale(1) rotate(-10deg);
-  animation:  pulse 3s infinite alternate 5s;
+  animation:  pulse 3s infinite alternate 3s;
 
   path {
     stroke-dasharray: 4000 0;
     stroke-dashoffset: 0;
-    transition: stroke-dasharray 5s ease 0s;
+    transition: stroke-dasharray 3s ease 0s;
   }
 }
 
