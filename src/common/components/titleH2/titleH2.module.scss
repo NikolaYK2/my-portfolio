@@ -1,16 +1,22 @@
 @import '../../../assets/SCSS/font';
 
-.title {
-  display: inline-block;
+.containerTitleH2 {
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.title {
+  display: flex;
   -webkit-font-smoothing: antialiased;
   @extend %fontSizeH2;
   padding: 0 0 0 20px;
-  margin: 0 0 3%;
   z-index: 1;
   transform: translateX(0);
 
-  &:before, &:after {//полоска подчеркивания
+  &:before, &:after {
     background: var(--color-medium);
     height: 4px;
     bottom: -10px;
@@ -33,4 +39,20 @@
     width: 15px;
     border-radius: 0 100px 0 0;
   }
+}
+
+.backgroundTitleH2{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 0 20px;
+  font-size: var(--font-size-Big);
+  text-transform: uppercase;
+  font-weight: 900;
+  color:var(--color-darck-900);
+  text-shadow: 0 0 2px var(--color-darck-100);
 }
