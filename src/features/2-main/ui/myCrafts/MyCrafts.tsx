@@ -2,7 +2,7 @@ import React from 'react';
 import s from './MyCrafts.module.scss';
 import {v1} from "uuid";
 import socialImg from 'assets/image/myCraft/social.png';
-import appImg from 'assets/image/myCraft/app.jpg';
+import taskFlow from 'assets/image/myCraft/task.png';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {domAnimation, LazyMotion, m} from 'framer-motion';
 import {Craft} from "./craft/Craft";
@@ -21,8 +21,8 @@ const crafts = [
   },
   {
     id: v1(),
-    title: 'Application',
-    background: appImg,
+    title: 'Task Flow',
+    background: taskFlow,
     description:
       'A simple and intuitive application that helps you manage your tasks efficiently. ' +
       'Add, edit and delete tasks, set priorities and stay organised.',
@@ -55,10 +55,10 @@ export const MyCrafts = ({id}: MyCraftsType) => {
                  variants={container}
                  initial="hidden"
                  animate={visible ? 'visible' : "hidden"}>
-            <Waypoint onEnter={waypointHandlerEnter}/>
             {crafts.map(craft => <Craft key={craft.id} crafts={craft}/>)}
           </m.div>
         </LazyMotion>
+        <Waypoint onEnter={waypointHandlerEnter}/>
       </div>
     </section>
   );
