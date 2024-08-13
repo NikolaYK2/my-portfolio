@@ -3,6 +3,7 @@ import s from './MyCrafts.module.scss';
 import {v1} from "uuid";
 import socialImg from 'assets/image/myCraft/social.png';
 import taskFlow from 'assets/image/myCraft/task.png';
+import trainingComplex from 'assets/image/myCraft/cards.png';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {domAnimation, LazyMotion, m} from 'framer-motion';
 import {Craft} from "./craft/Craft";
@@ -27,6 +28,14 @@ const crafts = [
       'A simple and intuitive application that helps you manage your tasks efficiently. ' +
       'Add, edit and delete tasks, set priorities and stay organised.',
     link: 'https://nikolayk2.github.io/it-incubator-todolist-ts-01/',
+  },
+  {
+    id: v1(),
+    title: 'Training Complex',
+    background: trainingComplex,
+    description: 'The application is for creating and studying flashcards. It allows users to organize information into' +
+      ' decks, add text, images and practice to improve memory. Developed with React and TypeScript.',
+    link: 'https://training-complex.vercel.app/',
   },
 ]
 
