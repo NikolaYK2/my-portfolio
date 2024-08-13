@@ -1,6 +1,6 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import s from './Wrapper.module.scss';
-import fonPhoto from 'assets/image/wrapper/I_maloy.jpg'
+import fonPhoto from 'assets/image/wrapper/portfolio.png'
 import {TypingEffect} from "common/components/typingEffect/TypingEffect";
 import {Messengers} from "common/components/messegers/Messengers";
 import {DownloadCV} from "common/components/downloadCV/DownloadCV";
