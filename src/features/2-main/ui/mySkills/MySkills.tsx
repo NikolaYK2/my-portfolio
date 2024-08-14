@@ -30,7 +30,7 @@ const skills: SkillsType[] = [
 
 export const MySkills = memo((props: MySkillsType) => {
 
-  const {visible, waypointHandlerEnter} = useWaypoint()
+  const {isVisible, waypointHandlerEnter} = useWaypoint()
 
   const container = {
     visible: {
@@ -50,7 +50,7 @@ export const MySkills = memo((props: MySkillsType) => {
             className={`${s.containerSkills} paddingBlock`}
             variants={container}
             initial="hidden"
-            animate={visible ? 'visible' : 'hidden'}
+            animate={isVisible ? 'visible' : 'hidden'}
           >
             <Waypoint onEnter={waypointHandlerEnter}/>
             {skills.map((skill) => <Skill skill={skill} key={skill.title}/>)}

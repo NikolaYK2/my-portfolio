@@ -13,7 +13,7 @@ type WrapperType = {
 }
 
 export const Wrapper = (props: WrapperType) => {
-  const {visible, waypointHandlerEnter} = useWaypoint()
+  const {isVisible, waypointHandlerEnter} = useWaypoint()
   const paralaxWrapper = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -45,7 +45,7 @@ export const Wrapper = (props: WrapperType) => {
             <DownloadCV/>
             <Messengers variant={"circle"}/>
           </div>
-          <div className={`${s.backgroundHi} ${visible ? s.activeBackgroundHi : ''}`}>
+          <div className={`${s.backgroundHi} ${isVisible ? s.activeBackgroundHi : ''}`}>
             <IconSvg name={'hi'}/>
           </div>
         </div>

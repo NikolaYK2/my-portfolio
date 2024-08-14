@@ -5,10 +5,7 @@ import socialImg from 'assets/image/myCraft/social.png';
 import taskFlow from 'assets/image/myCraft/task.png';
 import trainingComplex from 'assets/image/myCraft/cards.png';
 import {TitleH2} from "common/components/titleH2/titleH2";
-import {domAnimation, LazyMotion, m} from 'framer-motion';
 import {Craft} from "./craft/Craft";
-import {Waypoint} from "react-waypoint";
-import {useWaypoint} from "common/hooks/useWaypoint";
 
 const crafts = [
   {
@@ -43,31 +40,14 @@ type MyCraftsType = {
   id: string
 }
 export const MyCrafts = ({id}: MyCraftsType) => {
-  const {visible, waypointHandlerEnter} = useWaypoint()
-
-  //animation
-  const container = {
-    visible: {
-      transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.4
-      }
-    }
-  };
-
   return (
     <section id={id} className={s.craft}>
       <div className={s.containerItem}>
         <TitleH2 title={'My crafts'}/>
-        <LazyMotion features={domAnimation}>
-          <m.div className={`${s.containerCrafts} paddingBlock`}
-                 variants={container}
-                 initial="hidden"
-                 animate={visible ? 'visible' : "hidden"}>
-            {crafts.map(craft => <Craft key={craft.id} crafts={craft}/>)}
-          </m.div>
-        </LazyMotion>
-        <Waypoint onEnter={waypointHandlerEnter}/>
+        <div className={`${s.containerCrafts} paddingBlock`}>
+          {crafts.map((craft, index) => <Craft key={craft.id} crafts={craft} index={index}/>)}
+        </div>
+
       </div>
     </section>
   );

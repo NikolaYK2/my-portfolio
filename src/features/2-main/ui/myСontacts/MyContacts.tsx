@@ -40,7 +40,7 @@ type MyContactsType = {
   id: string
 }
 export const MyContacts = (props: MyContactsType) => {
-  const {visible, waypointHandlerEnter} = useWaypoint()
+  const {isVisible, waypointHandlerEnter} = useWaypoint()
 
   const {
     logic,
@@ -83,7 +83,7 @@ export const MyContacts = (props: MyContactsType) => {
               <m.div className={s.formInput}
                      variants={MyContactsAnimation.containerInput}
                      initial="hidden"
-                     animate={visible ? "visible" : 'hidden'}>
+                     animate={isVisible ? "visible" : 'hidden'}>
 
                 {input.map(input => <m.label
                     key={input.name}
@@ -119,7 +119,7 @@ export const MyContacts = (props: MyContactsType) => {
               `}
                      variants={MyContactsAnimation.textareaItem}
                      initial="hidden"
-                     animate={visible ? "visible" : 'hidden'}
+                     animate={isVisible ? "visible" : 'hidden'}
               >
                 <textarea
                   {...register("text")}
@@ -135,7 +135,7 @@ export const MyContacts = (props: MyContactsType) => {
             <Button
               disabled={isDisabled}
               variantsAnimation={MyContactsAnimation.button}
-              visible={visible}
+              visible={isVisible}
             >
               Send
             </Button>
