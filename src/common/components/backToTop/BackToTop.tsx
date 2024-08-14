@@ -11,7 +11,7 @@ export const BackToTop = () => {
 
   // Показываем кнопку, когда прокручиваем вниз 300px от верха
   const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
+    if (window.scrollY > 300) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
