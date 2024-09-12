@@ -23,9 +23,15 @@ const skills: SkillsType[] = [
   {title: 'GIT', icon: 'git'},
   {title: 'REACT', icon: 'react'},
   {title: 'REDUX', icon: 'redux',},
+  {title: 'NEXT', icon: 'next'},
   {title: 'STORYBOOK', icon: 'storybook'},
   {title: 'TDD-JEST', icon: 'jest'},
   {title: 'REST-API', icon: 'api'},
+  {title: 'FORMIK', icon: 'formik'},
+  {title: 'RHF', icon: 'reactHookForm'},
+  {title: 'MATERIAL-UI', icon: 'materialUI'},
+  {title: 'RADIX', icon: 'radix'},
+  {title: 'REACT-ROUTER', icon: 'reactRouter'},
 ]
 
 export const MySkills = memo((props: MySkillsType) => {
