@@ -4,6 +4,8 @@ import {v1} from "uuid";
 import socialImg from 'assets/image/myCraft/social.png';
 import taskFlow from 'assets/image/myCraft/task.png';
 import trainingComplex from 'assets/image/myCraft/cards.png';
+import somegram from 'assets/image/myCraft/somegram.png';
+import historical from 'assets/image/myCraft/historical.png';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {Craft} from "./craft/Craft";
 
@@ -33,6 +35,21 @@ const crafts = [
     description: 'The application is for creating and studying flashcards. It allows users to organize information into' +
       ' decks, add text, images and practice to improve memory. Developed with React and TypeScript.',
     link: 'https://training-complex.vercel.app/',
+  },
+  {
+    id: v1(),
+    title: 'Somegram',
+    background: somegram,
+    description: 'Publish and edit content, manage profile, work with images and integrate payment systems.',
+    link: 'https://somegram.online/',
+  },
+  {
+    id: v1(),
+    title: 'Historical dates',
+    background: historical,
+    description: 'Visualisation of historical dates with interactive interface and animation. Users can explore events' +
+      ' by year, moving between different periods presented in a convenient format.',
+    link: 'https://historical-dates-amber.vercel.app/',
   },
 ]
 
