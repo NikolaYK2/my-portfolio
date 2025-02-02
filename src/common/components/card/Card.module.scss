@@ -1,0 +1,8 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3% 10%;
+  background: var(--color-darck-900-transparent) url('../../../assets/image/app/15.png') center center /cover no-repeat;
+  border: 1px solid var(--color-darck-100);
+}
