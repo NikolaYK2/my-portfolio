@@ -5,8 +5,8 @@ export const itemVariants = [
       opacity: 1,
       x: 0,
       transition: {
-        delay: 0.6,
-        duration: 0.7,
+        delay: 0.5,
+        duration: 0.6,
       },
     },
   },
@@ -16,8 +16,8 @@ export const itemVariants = [
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.6,
-        duration: 0.7,
+        delay: 0.5,
+        duration: 0.6,
       },
     },
   },
@@ -27,8 +27,8 @@ export const itemVariants = [
       opacity: 1,
       x: 0,
       transition: {
-        delay: 0.6,
-        duration: 0.7,
+        delay: 0.5,
+        duration: 0.6,
       },
     },
   },
