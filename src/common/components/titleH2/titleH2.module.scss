@@ -42,7 +42,7 @@
   }
 }
 
-.backgroundTitleH2{
+.backgroundTitleH2 {
   position: absolute;
   display: flex;
   align-items: center;
@@ -54,6 +54,6 @@
   font-size: var(--font-size-Big);
   text-transform: uppercase;
   font-weight: 900;
-  color:var(--color-darck-900);
+  color: var(--color-darck-900);
   text-shadow: 0 0 2px var(--color-darck-100);
 }
