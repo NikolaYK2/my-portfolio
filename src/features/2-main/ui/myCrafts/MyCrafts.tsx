@@ -1,13 +1,13 @@
 import React from 'react';
-import s from './MyCrafts.module.scss';
 import {v1} from "uuid";
 import socialImg from 'assets/image/myCraft/social.png';
 import taskFlow from 'assets/image/myCraft/task.png';
 import trainingComplex from 'assets/image/myCraft/cards.png';
 import somegram from 'assets/image/myCraft/somegram.png';
-import historical from 'assets/image/myCraft/historical.png';
+import sofa from 'assets/image/myCraft/sofa.png';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {Craft} from "./craft/Craft";
+import s from './MyCrafts.module.scss';
 
 const crafts = [
   {
@@ -45,11 +45,10 @@ const crafts = [
   },
   {
     id: v1(),
-    title: 'Historical dates',
-    background: historical,
-    description: 'Visualisation of historical dates with interactive interface and animation. Users can explore events' +
-      ' by year, moving between different periods presented in a convenient format.',
-    link: 'https://historical-dates-amber.vercel.app/',
+    title: 'Sofantastica',
+    background: sofa,
+    description: 'A fully responsive e-commerce furniture store built using React. It features a dynamic product catalog, intuitive filtering and sorting, a shopping cart with a smooth user experience, and an integrated admin panel for managing products and categories.',
+    link: 'https://sofantastica.pl/',
   },
 ]
 
