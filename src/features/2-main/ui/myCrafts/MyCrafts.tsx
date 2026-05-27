@@ -33,6 +33,11 @@ const crafts: CraftData[] = [
       {label: 'PromPay', href: 'https://t.me/prompay_app_bot'},
     ],
     tags: ['React Native', 'Expo', 'Telegram App', 'Fintech'],
+    facts: [
+      {label: 'Role', value: 'Front-end and mobile implementation'},
+      {label: 'Stack', value: 'React Native, Expo, Telegram Mini Apps'},
+      {label: 'Impact', value: 'One codebase for multiple fintech brands'},
+    ],
   },
   {
     id: 'banya',
@@ -42,6 +47,11 @@ const crafts: CraftData[] = [
       'A marketplace platform for discovering and booking baths, saunas, spa services and bath-industry listings with filters, cards and service flows.',
     link: 'https://banya.ru/',
     tags: ['Marketplace', 'Booking', 'Responsive UI'],
+    facts: [
+      {label: 'Role', value: 'Front-end feature delivery'},
+      {label: 'Stack', value: 'React, responsive UI, service flows'},
+      {label: 'Impact', value: 'Clear booking and discovery experience'},
+    ],
   },
   {
     id: 'task-flow',
@@ -51,6 +61,12 @@ const crafts: CraftData[] = [
       'A simple and intuitive application that helps you manage your tasks efficiently. ' +
       'Add, edit and delete tasks, set priorities and stay organised.',
     link: 'https://nikolayk2.github.io/it-incubator-todolist-ts-01/',
+    tags: ['React', 'TypeScript', 'State Management'],
+    facts: [
+      {label: 'Role', value: 'Product UI and state flows'},
+      {label: 'Stack', value: 'React, TypeScript'},
+      {label: 'Impact', value: 'Complete CRUD workflow for daily planning'},
+    ],
   },
   {
     id: 'training-complex',
@@ -59,6 +75,12 @@ const crafts: CraftData[] = [
     description: 'The application is for creating and studying flashcards. It allows users to organize information into' +
       ' decks, add text, images and practice to improve memory. Developed with React and TypeScript.',
     link: 'https://training-complex.vercel.app/',
+    tags: ['React', 'TypeScript', 'Learning App'],
+    facts: [
+      {label: 'Role', value: 'Learning product interface'},
+      {label: 'Stack', value: 'React, TypeScript'},
+      {label: 'Impact', value: 'Deck and flashcard practice experience'},
+    ],
   },
   // {
   //   id: 'somegram',
@@ -73,6 +95,12 @@ const crafts: CraftData[] = [
     background: sofa,
     description: 'A fully responsive e-commerce furniture store built using React. It features a dynamic product catalog, intuitive filtering and sorting, a shopping cart with a smooth user experience, and an integrated admin panel for managing products and categories.',
     link: 'https://sofantastica.com/',
+    tags: ['React', 'E-commerce', 'Admin UI'],
+    facts: [
+      {label: 'Role', value: 'E-commerce front-end'},
+      {label: 'Stack', value: 'React, catalog, cart, admin panel'},
+      {label: 'Impact', value: 'Responsive store and product management flows'},
+    ],
   },
 ]
 

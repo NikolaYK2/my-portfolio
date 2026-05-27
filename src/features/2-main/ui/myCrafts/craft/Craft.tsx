@@ -11,6 +11,11 @@ export type CraftLink = {
   href: string,
 }
 
+export type CraftFact = {
+  label: string,
+  value: string,
+}
+
 export type CraftData = {
   id: string,
   title: string,
@@ -19,6 +24,7 @@ export type CraftData = {
   link?: string,
   links?: CraftLink[],
   tags?: string[],
+  facts?: CraftFact[],
 }
 type CraftType = {
   crafts: CraftData,
@@ -64,7 +70,17 @@ export const Craft = ({crafts, index}: CraftType) => {
                     {crafts.tags.map((tag) => <li key={tag}>{tag}</li>)}
                   </ul>
                 )}
-                <p>{crafts.description}</p>
+                {crafts.facts && (
+                  <dl className={s.facts}>
+                    {crafts.facts.map((fact) => (
+                      <React.Fragment key={fact.label}>
+                        <dt>{fact.label}</dt>
+                        <dd>{fact.value}</dd>
+                      </React.Fragment>
+                    ))}
+                  </dl>
+                )}
+                <p className={s.craftDescription}>{crafts.description}</p>
               </div>
             </div>
           </div>

@@ -212,7 +212,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
-        margin: 0 0 12px;
+        margin: 0 0 10px;
         padding: 0;
         opacity: 0;
         list-style: none;
@@ -228,7 +228,34 @@
         }
       }
 
-      p:last-child {
+      .facts {
+        display: grid;
+        grid-template-columns: minmax(46px, auto) 1fr;
+        gap: 5px 10px;
+        margin: 0 0 12px;
+        opacity: 0;
+        transition: opacity .3s ease;
+
+        dt,
+        dd {
+          font-family: 'Jost', sans-serif;
+          font-size: var(--font-size-mobile);
+          line-height: 1.2;
+        }
+
+        dt {
+          color: var(--color-medium);
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+
+        dd {
+          margin: 0;
+          color: var(--color-darck-100);
+        }
+      }
+
+      .craftDescription {
         display: flex;
         text-align: start;
         opacity: 0;
@@ -259,7 +286,12 @@
         transition: opacity 1s ease;
       }
 
-      p:last-child {
+      .facts {
+        opacity: 1;
+        transition: opacity 1s ease;
+      }
+
+      .craftDescription {
         opacity: 1;
         transition: opacity 1s ease;
       }
