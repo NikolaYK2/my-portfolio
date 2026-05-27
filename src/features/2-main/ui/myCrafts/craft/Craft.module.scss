@@ -36,15 +36,14 @@
   .containerBackground {
     position: relative;
     width: 100%;
+    aspect-ratio: 16 / 9;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-position: center top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-    padding: 28%;
 
     cursor: pointer;
     transform: scale(1);
@@ -91,6 +90,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
+      max-width: 90%;
       padding: 14px;
       transition: all .5s ease-in-out;
 

@@ -90,13 +90,20 @@ export const IconSvg = ({name}: IconSvgProps) => {
       </svg>;
     case 'reactNative':
       return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <defs>
+          <clipPath id="react-native-screen">
+            <rect x="23" y="14" width="18" height="34" rx="2"/>
+          </clipPath>
+        </defs>
         <rect x="18" y="6" width="28" height="52" rx="7" fill="#111827" stroke="#5DD4F4" strokeWidth="4"/>
         <rect x="23" y="14" width="18" height="34" rx="2" fill="#102A3A"/>
         <circle cx="32" cy="52" r="2.5" fill="#5DD4F4"/>
-        <ellipse cx="32" cy="31" rx="18" ry="7" stroke="#5DD4F4" strokeWidth="3"/>
-        <ellipse cx="32" cy="31" rx="18" ry="7" stroke="#5DD4F4" strokeWidth="3" transform="rotate(60 32 31)"/>
-        <ellipse cx="32" cy="31" rx="18" ry="7" stroke="#5DD4F4" strokeWidth="3" transform="rotate(120 32 31)"/>
-        <circle cx="32" cy="31" r="4" fill="#5DD4F4"/>
+        <g clipPath="url(#react-native-screen)">
+          <ellipse cx="32" cy="31" rx="10.5" ry="4.2" stroke="#5DD4F4" strokeWidth="2.2"/>
+          <ellipse cx="32" cy="31" rx="10.5" ry="4.2" stroke="#5DD4F4" strokeWidth="2.2" transform="rotate(60 32 31)"/>
+          <ellipse cx="32" cy="31" rx="10.5" ry="4.2" stroke="#5DD4F4" strokeWidth="2.2" transform="rotate(120 32 31)"/>
+          <circle cx="32" cy="31" r="2.8" fill="#5DD4F4"/>
+        </g>
       </svg>;
     case 'telegramMiniApp':
       return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
