@@ -16,22 +16,22 @@ type SkillsType = {
   icon: IconSvgType;
 }
 const skills: SkillsType[] = [
-  {title: 'HTML', icon: 'html5'},
-  {title: 'CSS', icon: 'css3'},
-  {title: 'JAVASCRIPT', icon: 'js'},
-  {title: 'TYPESCRIPT', icon: 'typescript'},
-  {title: 'GIT', icon: 'git'},
   {title: 'REACT', icon: 'react'},
-  {title: 'REDUX', icon: 'redux',},
-  {title: 'NEXT', icon: 'next'},
-  {title: 'STORYBOOK', icon: 'storybook'},
-  {title: 'TDD-JEST', icon: 'jest'},
-  {title: 'REST-API', icon: 'api'},
-  {title: 'FORMIK', icon: 'formik'},
-  {title: 'RHF', icon: 'reactHookForm'},
-  {title: 'MATERIAL-UI', icon: 'materialUI'},
-  {title: 'RADIX', icon: 'radix'},
-  {title: 'REACT-ROUTER', icon: 'reactRouter'},
+  {title: 'NEXT.JS', icon: 'next'},
+  {title: 'REACT NATIVE', icon: 'reactNative'},
+  {title: 'EXPO', icon: 'expo'},
+  {title: 'TELEGRAM MINI APPS', icon: 'telegramMiniApp'},
+  {title: 'TYPESCRIPT / JS', icon: 'typescript'},
+  {title: 'GRAPHQL', icon: 'graphql'},
+  {title: 'REST API', icon: 'api'},
+  {title: 'TANSTACK QUERY', icon: 'tanstackQuery'},
+  {title: 'ZUSTAND', icon: 'zustand'},
+  {title: 'REDUX TOOLKIT', icon: 'redux'},
+  {title: 'RHF / ZOD', icon: 'zod'},
+  {title: 'TAILWIND / SCSS', icon: 'tailwind'},
+  {title: 'RADIX / SHADCN', icon: 'radix'},
+  {title: 'STORYBOOK / JEST', icon: 'storybook'},
+  {title: 'GIT / CI-CD', icon: 'git'},
 ]
 
 export const MySkills = memo((props: MySkillsType) => {

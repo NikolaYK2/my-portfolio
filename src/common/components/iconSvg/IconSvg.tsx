@@ -31,12 +31,80 @@ export type IconSvgType =
   | 'radix'
   | 'reactRouter'
   | 'reactHookForm'
+  | 'telegramMiniApp'
+  | 'reactNative'
+  | 'expo'
+  | 'graphql'
+  | 'zustand'
+  | 'tanstackQuery'
+  | 'tailwind'
+  | 'zod'
 
 export type IconSvgProps = {
   name: IconSvgType
 }
 export const IconSvg = ({name}: IconSvgProps) => {
   switch (name) {
+    case 'zod':
+      return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <path d="M32 6 54 16v14c0 14.5-9.2 23.9-22 28C19.2 53.9 10 44.5 10 30V16L32 6Z" fill="#233A8B"/>
+        <path d="M23 33.5 29 39l13-15" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M19 18h26l-7 8H26l-7-8Z" fill="#2C5BEA"/>
+      </svg>;
+    case 'tailwind':
+      return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <path
+          d="M18.2 27.8c3-12 18-12 21 0 1.8 7.2 7.6 8.2 12.6 3-3 12-18 12-21 0-1.8-7.2-7.6-8.2-12.6-3Zm-6 14.4c3-12 18-12 21 0 1.8 7.2 7.6 8.2 12.6 3-3 12-18 12-21 0-1.8-7.2-7.6-8.2-12.6-3Z"
+          fill="#38BDF8"/>
+      </svg>;
+    case 'tanstackQuery':
+      return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <path d="M32 5 56 18.5v27L32 59 8 45.5v-27L32 5Z" fill="#FF4154"/>
+        <path d="M18 24.5 32 16l14 8.5L32 33 18 24.5Z" fill="#FFD94A"/>
+        <path d="M18 39.5 32 31l14 8.5L32 48 18 39.5Z" fill="#002B3A" opacity=".9"/>
+        <path d="M18 31.5 32 23l14 8.5L32 40 18 31.5Z" fill="#FFFFFF"/>
+      </svg>;
+    case 'zustand':
+      return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <rect x="10" y="10" width="44" height="44" rx="10" fill="#1B1B1B"/>
+        <path d="M21 22h22L27 42h18" stroke="#E9D8A6" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="45" cy="21" r="4" fill="#1DCB0A"/>
+      </svg>;
+    case 'graphql':
+      return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <path d="M32 8 53 20v24L32 56 11 44V20L32 8Z" stroke="#E535AB" strokeWidth="5" strokeLinejoin="round"/>
+        <path d="M12 20 32 56 52 20M12 44h40M32 8v48" stroke="#E535AB" strokeWidth="3.5" strokeLinejoin="round"/>
+        <circle cx="32" cy="8" r="5" fill="#E535AB"/>
+        <circle cx="53" cy="20" r="5" fill="#E535AB"/>
+        <circle cx="53" cy="44" r="5" fill="#E535AB"/>
+        <circle cx="32" cy="56" r="5" fill="#E535AB"/>
+        <circle cx="11" cy="44" r="5" fill="#E535AB"/>
+        <circle cx="11" cy="20" r="5" fill="#E535AB"/>
+      </svg>;
+    case 'expo':
+      return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <rect x="8" y="8" width="48" height="48" rx="14" fill="#FFFFFF"/>
+        <path
+          d="M21 45.5c-2 0-3.2-1.8-2.2-3.6L29.4 21c1.2-2.4 4-2.4 5.2 0l10.6 20.9c1 1.8-.2 3.6-2.2 3.6-1.2 0-2.2-.6-2.9-1.8L32 28.5l-8.1 15.2c-.7 1.2-1.7 1.8-2.9 1.8Z"
+          fill="#0B1023"/>
+      </svg>;
+    case 'reactNative':
+      return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <rect x="18" y="6" width="28" height="52" rx="7" fill="#111827" stroke="#5DD4F4" strokeWidth="4"/>
+        <rect x="23" y="14" width="18" height="34" rx="2" fill="#102A3A"/>
+        <circle cx="32" cy="52" r="2.5" fill="#5DD4F4"/>
+        <ellipse cx="32" cy="31" rx="18" ry="7" stroke="#5DD4F4" strokeWidth="3"/>
+        <ellipse cx="32" cy="31" rx="18" ry="7" stroke="#5DD4F4" strokeWidth="3" transform="rotate(60 32 31)"/>
+        <ellipse cx="32" cy="31" rx="18" ry="7" stroke="#5DD4F4" strokeWidth="3" transform="rotate(120 32 31)"/>
+        <circle cx="32" cy="31" r="4" fill="#5DD4F4"/>
+      </svg>;
+    case 'telegramMiniApp':
+      return <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 64 64" fill="none">
+        <rect x="17" y="6" width="30" height="52" rx="8" fill="#101820" stroke="#2AABEE" strokeWidth="4"/>
+        <rect x="22" y="13" width="20" height="35" rx="3" fill="#162C3D"/>
+        <path d="M43 22 20 31c-1.6.6-1.5 1.5-.2 1.9l5.9 1.8 13.6-8.6c.7-.4 1.2-.2.8.3L29 36.4l-.4 6.1c.6 0 .9-.3 1.2-.6l2.8-2.8 5.9 4.4c1.1.6 1.9.3 2.1-1l3.9-18.4c.4-1.6-.6-2.3-1.5-2.1Z" fill="#2AABEE"/>
+        <circle cx="32" cy="53" r="2.4" fill="#2AABEE"/>
+      </svg>;
     case 'reactHookForm':
       return <svg xmlns="http://www.w3.org/2000/svg" width="203" height="202"
                   fillRule="evenodd" viewBox="0 0 203 202">

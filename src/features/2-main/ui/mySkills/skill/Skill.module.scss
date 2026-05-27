@@ -53,6 +53,9 @@
   > p {
     color: var(--color-medium);
     font-size: var(--font-size-p);
+    line-height: 1.2;
+    text-align: center;
+    overflow-wrap: anywhere;
   }
 
   @media (max-width: 523px) {
