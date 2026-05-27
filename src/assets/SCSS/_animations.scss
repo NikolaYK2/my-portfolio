@@ -17,3 +17,43 @@
     max-height: 500px;
   }
 }
+
+@keyframes softFloatY {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, calc(var(--float-distance, 8px) * -1), 0);
+  }
+}
+
+@keyframes softPulseFloat {
+  0%,
+  100% {
+    opacity: var(--pulse-opacity, .22);
+    transform: translate3d(0, 0, 0) rotate(var(--pulse-rotate, -14deg)) scale(1);
+  }
+
+  50% {
+    opacity: var(--pulse-opacity-active, .34);
+    transform: translate3d(0, calc(var(--pulse-distance, 10px) * -1), 0) rotate(var(--pulse-rotate, -14deg)) scale(1.04);
+  }
+}
+
+@mixin soft-float-y {
+  animation: softFloatY var(--float-duration, 6.5s) ease-in-out var(--float-delay, 0s) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@mixin soft-pulse-float {
+  animation: softPulseFloat var(--pulse-duration, 8s) ease-in-out var(--pulse-delay, 0s) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}

@@ -1,5 +1,6 @@
 @import '../../../../../assets/SCSS/font';
 @import '../../../../../assets/SCSS/style';
+@import '../../../../../assets/SCSS/animations';
 
 .containerCraft {
   position: relative;
@@ -10,27 +11,40 @@
 
   margin: 0 5% 5%;
 
-  box-shadow: 0 9px 31px 6px $shadowSkill;
-  overflow: hidden;
-
   z-index: 30000;
+
+  @media (max-width: 690px) {
+    max-width: 80%;
+  }
+}
+
+.floatLayer {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(157, 161, 165, .10);
+  background: var(--color-darck-500);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .38);
+  transition: border-color .35s ease, box-shadow .35s ease;
+  @include soft-float-y;
+
+  &:hover,
+  &:focus-within {
+    border-color: rgba(29, 203, 10, .48);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, .42), 0 0 28px rgba(29, 203, 10, .16);
+  }
 
   &:after {
     content: '';
     display: block;
     height: 2px;
     width: 0;
-    background: var(--color-darck-100);
+    background: linear-gradient(90deg, var(--color-medium), var(--color-darck-100));
     transition: width .6s ease 0s;
   }
 
   &:hover:after {
     width: 100%;
     transition: width .6s ease 0s;
-  }
-
-  @media (max-width: 690px) {
-    max-width: 80%;
   }
 
   .containerBackground {
@@ -72,7 +86,7 @@
       transform: scale3d(1.2, 1.2, 1.2);
       filter: grayscale(.8);
       will-change: transform;
-      Transition: transform 1s ease 0s, fillter 1s ease .3s;
+      transition: transform 1s ease 0s, filter 1s ease .3s;
     }
 
     &:hover .actions {
@@ -157,27 +171,31 @@
       padding: 25px;
       overflow: hidden;
       transition: max-height .3s ease;
-      background: url('../../../../../assets/image/app/15.png') 90% 57%/cover no-repeat, var(--color-darck-500);
+      background:
+              linear-gradient(135deg, rgba(29, 203, 10, .08), rgba(26, 26, 26, .96) 36%),
+              url('../../../../../assets/image/app/15.png') 90% 57%/cover no-repeat,
+              var(--color-darck-500);
       z-index: 2;
 
-
-
-      .craftName{
+      .craftName {
         display: flex;
         justify-content: space-between;
         align-items: start;
-        .icon{
+
+        .icon {
           position: absolute;
-          top:20px;
+          top: 20px;
           right: 5%;
           width: 35px;
           height: 35px;
           opacity: 1;
           transition: opacity .3s ease;
-          >svg path{
+
+          > svg path {
             fill: var(--color-darck-100);
           }
         }
+
         p:first-child {
           display: flex;
           max-width: calc(100% - 45px);
@@ -230,15 +248,18 @@
       z-index: 3;
       will-change: transform;
       transition: max-height .5s ease;
-      .icon{
+
+      .icon {
         opacity: 0;
         transition: opacity .3s ease;
       }
+
       .tags {
         opacity: 1;
         transition: opacity 1s ease;
       }
-      p:last-child{
+
+      p:last-child {
         opacity: 1;
         transition: opacity 1s ease;
       }

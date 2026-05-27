@@ -1,5 +1,6 @@
 @import '../../../../assets/SCSS/style';
 @import '../../../../assets/SCSS/font';
+@import '../../../../assets/SCSS/animations';
 
 .wrapper {
   position: relative;
@@ -37,6 +38,85 @@
   height: 100%;
   margin: 0 auto;
   padding: 0 5px;
+  z-index: 2;
+}
+
+.decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+
+  > span {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    background:
+            linear-gradient(145deg, rgba(29, 203, 10, .18), rgba(12, 12, 12, .86) 42%, rgba(0, 0, 0, .58)),
+            linear-gradient(315deg, rgba(157, 161, 165, .10), transparent 56%);
+    border: 1px solid rgba(29, 203, 10, .22);
+    box-shadow:
+            0 28px 76px rgba(0, 0, 0, .46),
+            0 0 34px rgba(29, 203, 10, .12),
+            inset 0 0 24px rgba(157, 161, 165, .06);
+    backdrop-filter: blur(4px);
+    @include soft-pulse-float;
+  }
+}
+
+.decorTileLarge {
+  --pulse-delay: .4s;
+  --pulse-duration: 9s;
+  --pulse-distance: 12px;
+  --pulse-opacity: .38;
+  --pulse-opacity-active: .54;
+  --pulse-rotate: -18deg;
+
+  width: 210px;
+  height: 210px;
+  left: -70px;
+  bottom: 11%;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 18%;
+    left: -20%;
+    width: 72%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(29, 203, 10, .72), transparent);
+    box-shadow: 0 0 18px rgba(29, 203, 10, .36);
+    transform: rotate(38deg);
+  }
+}
+
+.decorTileSmall {
+  --pulse-delay: 1.2s;
+  --pulse-duration: 7.5s;
+  --pulse-distance: 8px;
+  --pulse-opacity: .32;
+  --pulse-opacity-active: .48;
+  --pulse-rotate: 22deg;
+
+  width: 112px;
+  height: 112px;
+  top: 13%;
+  right: 8%;
+}
+
+.decorTileSide {
+  --pulse-delay: .8s;
+  --pulse-duration: 8.5s;
+  --pulse-distance: 10px;
+  --pulse-opacity: .28;
+  --pulse-opacity-active: .42;
+  --pulse-rotate: -12deg;
+
+  width: 145px;
+  height: 145px;
+  right: -48px;
+  bottom: 28%;
 }
 
 .wrapperName {
@@ -83,8 +163,7 @@
     font-weight: 400;
     color: var(--color-medium);
     @extend %fontSizeP;
-    margin: 0 0 10%;
-    text-transform: capitalize;
+    margin: 0 0 7%;
     z-index: 3;
 
     > span {
@@ -99,12 +178,33 @@
   }
 }
 
+.wrapperName .roleLine {
+  margin: 0 0 12px;
+  color: var(--color-darck-100);
+  font-weight: 500;
+  text-transform: none;
+
+  > span {
+    color: var(--color-medium);
+  }
+}
+
+.wrapperName .supportLine {
+  max-width: 430px;
+  margin: 0 0 28px;
+  color: var(--color-darck-100);
+  font-size: var(--font-size-p);
+  line-height: 1.45;
+  text-transform: none;
+}
+
 .btnAndItem {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: start;
   flex-wrap: wrap;
+  gap: 10px;
   z-index: 2;
 
   > section {
@@ -114,6 +214,48 @@
       padding-top: 2px;
       padding-bottom: 2px;
       padding-right: 10px;
+    }
+  }
+}
+
+.projectsCta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 0;
+  color: var(--color-medium);
+  font-family: 'Jost', sans-serif;
+  font-size: var(--font-size-H2);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  text-shadow: 0 0 18px rgba(29, 203, 10, .24);
+  cursor: pointer;
+  z-index: 3;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 28%, rgba(0, 0, 0, .28) 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 18%, rgba(0, 0, 0, .18) 100%);
+  transition: color .3s ease, transform .3s ease, text-shadow .3s ease;
+
+  &:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-3px) rotate(45deg);
+    transition: transform .3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--color-darck-100);
+    text-shadow: 0 0 20px rgba(29, 203, 10, .34);
+    transform: translateY(2px);
+
+    &:after {
+      transform: translateY(1px) rotate(45deg);
     }
   }
 }
@@ -161,6 +303,45 @@
   }
   100% {
     transform: scale(1.05) rotate(-10deg);
+  }
+}
+
+@media (max-width: 690px) {
+  .wrapperName {
+    max-width: 100%;
+  }
+
+  .wrapperName .supportLine {
+    max-width: 320px;
+    margin-bottom: 22px;
+  }
+
+  .btnAndItem {
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .projectsCta {
+    margin-top: 18px;
+    font-size: var(--font-size-p);
+  }
+
+  .decorTileLarge {
+    width: 140px;
+    height: 140px;
+    left: -78px;
+    bottom: 8%;
+  }
+
+  .decorTileSmall {
+    width: 78px;
+    height: 78px;
+    top: 16%;
+    right: -18px;
+  }
+
+  .decorTileSide {
+    display: none;
   }
 }
 

@@ -7,6 +7,7 @@ import {DownloadCV} from "common/components/downloadCV/DownloadCV";
 import {IconSvg} from "common/components/iconSvg/IconSvg";
 import {useWaypoint} from "common/hooks/useWaypoint";
 import {Waypoint} from "react-waypoint";
+import {Link} from "react-scroll";
 
 type WrapperType = {
   id: string
@@ -34,17 +35,32 @@ export const Wrapper = (props: WrapperType) => {
   return (
     <div id={props.id} className={s.wrapper} style={{backgroundImage: `url(${fonPhoto})`}}>
       <Waypoint onEnter={waypointHandlerEnter}/>
+      <div className={s.decor} aria-hidden="true">
+        <span className={s.decorTileLarge}/>
+        <span className={s.decorTileSmall}/>
+        <span className={s.decorTileSide}/>
+      </div>
 
       <div className={s.wrapperContainer}>
         <div id='wrapperName' className={s.wrapperName} ref={paralaxWrapper}>
           <p>I am</p>
           <h1><span>N</span>ik<TypingEffect text={'olaj Kevlich'}/><span>.</span></h1>
-          <p><span>a fro</span>nt-end developer</p>
+          <p className={s.roleLine}><span>React</span> / React Native developer</p>
+          <p className={s.supportLine}>I build web, mobile and Telegram apps with production-ready UX.</p>
 
           <div className={s.btnAndItem}>
             <DownloadCV/>
             <Messengers variant={"circle"}/>
           </div>
+          <Link
+            className={s.projectsCta}
+            to="crafts"
+            smooth={true}
+            spy={true}
+            offset={-50}
+          >
+            View projects
+          </Link>
           <div className={`${s.backgroundHi} ${isVisible ? s.activeBackgroundHi : ''}`}>
             <IconSvg name={'hi'}/>
           </div>
