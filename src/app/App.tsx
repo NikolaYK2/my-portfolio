@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import s from './App.module.scss';
 import {Loading} from "common/components/loading/Loading";
 import {debounce} from "common/utils/debounce";
@@ -17,7 +17,7 @@ function App() {
     //эта ссылка будет использоваться для связи с основным разделом контента
     const contentRef = useRef<HTMLDivElement | null>(null);
 
-    const scrollProgress = () => {
+    const scrollProgress = useCallback(() => {
         // как далеко пользователь прокрутил вниз
         const scrollTop = document.documentElement.scrollTop;
 
@@ -34,8 +34,8 @@ function App() {
 
             setWeight(((scrollTop - contentOffsetTop) / (contentHeight - window.innerHeight)) * 100);
         }
-    };
-    let debounceSay = debounce(scrollProgress, 100)
+    }, []);
+    const debounceSay = useMemo(() => debounce(scrollProgress, 100), [scrollProgress])
 
 //Загрузка шрифтов -----------------------------------
     useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
         return () => {
             window.removeEventListener('scroll', debounceSay)
         }
-    }, []);
+    }, [debounceSay]);
 
     //scroll bar ------------------------------
 

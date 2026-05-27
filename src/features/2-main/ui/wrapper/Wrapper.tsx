@@ -7,7 +7,6 @@ import {Messengers} from "common/components/messegers/Messengers";
 import {DownloadCV} from "common/components/downloadCV/DownloadCV";
 import {IconSvg} from "common/components/iconSvg/IconSvg";
 import {useWaypoint} from "common/hooks/useWaypoint";
-import {Waypoint} from "react-waypoint";
 import {Link} from "react-scroll";
 import {ImageBackground} from "common/components/imageBackground/ImageBackground";
 
@@ -18,7 +17,7 @@ type WrapperType = {
 const heroSignals = ['React', 'TypeScript', 'React Native', 'Telegram Apps'] as const;
 
 export const Wrapper = (props: WrapperType) => {
-  const {isVisible, waypointHandlerEnter} = useWaypoint()
+  const {isVisible, waypointRef} = useWaypoint<HTMLDivElement>()
   const paralaxWrapper = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -33,13 +32,16 @@ export const Wrapper = (props: WrapperType) => {
 
   useLayoutEffect(() => {
     const parallaxSpeed = 0.30;
-    paralaxWrapper.current!.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
+    if (!paralaxWrapper.current) {
+      return;
+    }
+
+    paralaxWrapper.current.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
   }, [scrollPosition])
 
   return (
-    <div id={props.id} className={s.wrapper}>
+    <div id={props.id} className={s.wrapper} ref={waypointRef}>
       <ImageBackground src={fonPhoto} className={s.backgroundImage}/>
-      <Waypoint onEnter={waypointHandlerEnter}/>
       <div className={s.decor} aria-hidden="true">
         <span className={s.decorTileLarge}/>
         <span className={s.decorTileSmall}/>

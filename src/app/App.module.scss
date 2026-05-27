@@ -1,4 +1,4 @@
-@import "../assets/SCSS/style";
+@use "../assets/SCSS/style" as *;
 
 .App {
   position: relative;

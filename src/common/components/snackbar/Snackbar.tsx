@@ -10,7 +10,7 @@ type Props = {
 export const Snackbar = ({message, setMessage, isError}: Props) => {
 
   useEffect(() => {
-    let timeId: NodeJS.Timeout;
+    let timeId: ReturnType<typeof setTimeout> | undefined;
 
     if (message !== '') {
       timeId = setTimeout(() => {
@@ -19,7 +19,11 @@ export const Snackbar = ({message, setMessage, isError}: Props) => {
 
     }
 
-    return () => clearTimeout(timeId)
+    return () => {
+      if (timeId) {
+        clearTimeout(timeId)
+      }
+    }
 
   }, [message, setMessage]);
 

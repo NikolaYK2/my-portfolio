@@ -1,4 +1,4 @@
-@import '../../../assets/SCSS/font';
+@use "../../../assets/SCSS/font" as *;
 
 .containerTitleH2 {
   position: relative;

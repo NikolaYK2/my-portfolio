@@ -1,6 +1,6 @@
-@import '../../../../assets/SCSS/style';
-@import '../../../../assets/SCSS/font';
-@import '../../../../assets/SCSS/animations';
+@use "../../../../assets/SCSS/style" as *;
+@use "../../../../assets/SCSS/font" as *;
+@use "../../../../assets/SCSS/animations" as *;
 
 .wrapper {
   position: relative;

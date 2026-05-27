@@ -1,4 +1,4 @@
-@import "../../../assets/SCSS/animations";
+@use "../../../assets/SCSS/animations" as *;
 
 .containerLoading {
   position: absolute;

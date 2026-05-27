@@ -1,4 +1,4 @@
-@import "../../../assets/SCSS/index";
+@use "../../../assets/SCSS/index" as *;
 .main {
   display: flex;
   flex-direction: column;

@@ -3,7 +3,6 @@ import s from './MySkills.module.scss';
 import {TitleH2} from "common/components/titleH2/titleH2";
 import {IconSvgType} from "common/components/iconSvg/IconSvg";
 import {Skill} from "features/2-main/ui/mySkills/skill/Skill";
-import {Waypoint} from "react-waypoint";
 import {domAnimation, LazyMotion, m} from 'framer-motion';
 import {useWaypoint} from "common/hooks/useWaypoint";
 
@@ -36,7 +35,7 @@ const skills: SkillsType[] = [
 
 export const MySkills = memo((props: MySkillsType) => {
 
-  const {isVisible, waypointHandlerEnter} = useWaypoint()
+  const {isVisible, waypointRef} = useWaypoint<HTMLDivElement>()
 
   const container = {
     visible: {
@@ -53,12 +52,12 @@ export const MySkills = memo((props: MySkillsType) => {
         <TitleH2 title={'My skills'}/>
         <LazyMotion features={domAnimation}>
           <m.div
+            ref={waypointRef}
             className={`${s.containerSkills} paddingBlock`}
             variants={container}
             initial="hidden"
             animate={isVisible ? 'visible' : 'hidden'}
           >
-            <Waypoint onEnter={waypointHandlerEnter}/>
             {skills.map((skill) => <Skill skill={skill} key={skill.title}/>)}
           </m.div>
         </LazyMotion>

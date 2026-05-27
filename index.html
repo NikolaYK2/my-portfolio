@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="%BASE_URL%favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Nikolaj Kevlich portfolio - React and React Native developer"
+    />
+    <link rel="apple-touch-icon" href="%BASE_URL%logo192.png" />
+    <link rel="manifest" href="%BASE_URL%manifest.json" />
+    <title>Nikolaj Kevlich Portfolio</title>
+    <style>
+      .my-loader-page {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .my-loader {
+        width: 10px;
+        height: 10px;
+        background: #1DCB0A;
+        border-radius: 50%;
+        animation: spin 2s linear infinite alternate-reverse;
+        margin: 40px 40px 0 0;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(50%, 60%);
+        }
+        50% {
+          transform: translate(100%, 0);
+        }
+        75% {
+          transform: translate(150%, 60%);
+        }
+        100% {
+          transform: translate(200%, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="my-loader-page">
+        <div class="my-loader"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

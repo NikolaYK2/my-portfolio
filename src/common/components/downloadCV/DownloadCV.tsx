@@ -43,7 +43,7 @@ export const DownloadCV = () => {
 
                                  }}
                                  className={s.cv}
-                                 href={`${process.env.PUBLIC_URL}/cv_${cv}.pdf`}
+                                 href={`${import.meta.env.BASE_URL}cv_${cv}.pdf`}
                                  download={'Nikolaj_CV.pdf'}
                                  onClick={handleClickCloseModal}
           >{cv}</motion.a>

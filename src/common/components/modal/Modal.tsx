@@ -1,4 +1,4 @@
-import React, {MouseEvent, ReactNode, useEffect, useRef} from 'react';
+import React, {MouseEvent, ReactNode, useCallback, useEffect, useRef} from 'react';
 import s from './Modal.module.scss'
 import {clsx} from "clsx";
 import {createPortal} from "react-dom";
@@ -12,16 +12,16 @@ type ModalProps = {
   onOpenChange?: (isOpen: boolean) => void
 }
 export const Modal = ({children, className, isOpen = true, onOpenChange}: ModalProps) => {
-  const contentRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLElement>(null);
 
 
-  const handleClickClose = () => {
+  const handleClickClose = useCallback(() => {
     onOpenChange?.(false);
-  }
+  }, [onOpenChange])
 
-  const handleClickStopPropagation = (e: MouseEvent<HTMLElement>) => {
+  const handleClickStopPropagation = useCallback((e: MouseEvent<HTMLElement>) => {
     e.stopPropagation()
-  }
+  }, [])
 
   useEffect(() => {
 
@@ -70,18 +70,16 @@ export const Modal = ({children, className, isOpen = true, onOpenChange}: ModalP
         }
       }
     };
-    if (isOpen) {
-      document.body.style.overflowY = "hidden";
-    } else {
-      document.body.style.overflow = "unset"
-    }
     if (!isOpen) return;
 
+    const previousOverflowY = document.body.style.overflowY;
+    document.body.style.overflowY = "hidden";
     document.addEventListener('keydown', handleKeyDown);
     return () => {
+      document.body.style.overflowY = previousOverflowY;
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, children]);
+  }, [isOpen, handleClickClose]);
 
   if (!isOpen) return null
 

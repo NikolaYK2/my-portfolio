@@ -9,7 +9,6 @@ import {apiContacts} from "features/2-main/api/myContacts/apiContacts";
 import {Snackbar} from "common/components/snackbar/Snackbar";
 import {useFetchSendMessage} from "../../lib/useFetchSendMessage";
 import {useWaypoint} from "common/hooks/useWaypoint";
-import {Waypoint} from "react-waypoint";
 import {domAnimation, LazyMotion, m} from 'framer-motion';
 import {Loading} from "common/components/loading/Loading";
 import {MyContactsAnimation} from "features/2-main/ui/myСontacts/MyContactsAnimation";
@@ -40,7 +39,7 @@ type MyContactsType = {
   id: string
 }
 export const MyContacts = (props: MyContactsType) => {
-  const {isVisible, waypointHandlerEnter} = useWaypoint()
+  const {isVisible, waypointRef} = useWaypoint<HTMLElement>()
 
   const {
     logic,
@@ -71,7 +70,7 @@ export const MyContacts = (props: MyContactsType) => {
   }
 
   return (
-    <section id={props.id} className={s.contact}>
+    <section id={props.id} className={s.contact} ref={waypointRef}>
       {isDisabled && <Loading name={'message'}/>}
 
       {message && <Snackbar message={message} isError={isError} setMessage={setMessage}/>}
@@ -142,7 +141,6 @@ export const MyContacts = (props: MyContactsType) => {
           </LazyMotion>
         </form>
       </div>
-      <Waypoint onEnter={waypointHandlerEnter}/>
     </section>
   );
 };

@@ -13,7 +13,7 @@ type CardProps = {
   | 'onDrag'
   | 'onDragEnd'
 >;
-export const Card = forwardRef<HTMLDivElement, CardProps>(({children, className, ...props}, ref) => {
+export const Card = forwardRef<HTMLElement, CardProps>(({children, className, ...props}, ref) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.section

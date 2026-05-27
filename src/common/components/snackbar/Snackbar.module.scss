@@ -1,5 +1,5 @@
-@import '../../../assets/SCSS/font';
-@import '../../../assets/SCSS/animations';
+@use "../../../assets/SCSS/font" as *;
+@use "../../../assets/SCSS/animations" as *;
 
 .snackbar {
   position: absolute;

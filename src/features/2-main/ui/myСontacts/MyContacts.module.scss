@@ -1,5 +1,5 @@
-@import "../../../../assets/SCSS/font";
-@import "../../../../assets/SCSS/style";
+@use "../../../../assets/SCSS/font" as *;
+@use "../../../../assets/SCSS/style" as *;
 
 .contact {
   position: relative;

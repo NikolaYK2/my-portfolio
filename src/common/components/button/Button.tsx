@@ -1,4 +1,4 @@
-import {m, Variant} from 'framer-motion';
+import {m, Variants} from 'framer-motion';
 import React, {ReactNode} from 'react';
 import s from "./Button.module.scss";
 import {clsx} from "clsx";
@@ -6,7 +6,7 @@ import {clsx} from "clsx";
 type ButtonType = {
   children: ReactNode;
   disabled?: boolean,
-  variantsAnimation?: Variant | {}
+  variantsAnimation?: Variants
   visible?: boolean,
   onClick?: () => void
 }
@@ -21,7 +21,7 @@ export const Button = ({disabled, visible = true, variantsAnimation, children, o
       <m.button
         className={clsx(s.button, disabled && s.disabled)}
         disabled={disabled}
-        variants={variantsAnimation ? variantsAnimation : {}}
+        variants={variantsAnimation}
         initial="hidden"
         animate={visible ? "visible" : 'hidden'}
         onClick={handleClick}

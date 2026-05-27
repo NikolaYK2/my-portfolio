@@ -1,5 +1,5 @@
-@import "../../assets/SCSS/style";
-@import "../../assets/SCSS/font";
+@use "../../assets/SCSS/style" as *;
+@use "../../assets/SCSS/font" as *;
 
 .footer {
   position: relative;

@@ -2,7 +2,6 @@ import {domAnimation, LazyMotion, m} from "framer-motion";
 import s from "./Craft.module.scss";
 import React from "react";
 import {IconSvg} from "common/components/iconSvg/IconSvg";
-import {Waypoint} from "react-waypoint";
 import {useWaypoint} from "common/hooks/useWaypoint";
 import {itemVariants} from "features/2-main/ui/myCrafts/craft/CraftAnimation";
 
@@ -31,7 +30,7 @@ type CraftType = {
   index: number
 }
 export const Craft = ({crafts, index}: CraftType) => {
-  const {isVisible, waypointHandlerEnter} = useWaypoint()
+  const {isVisible, waypointRef} = useWaypoint<HTMLDivElement>({rootMargin: '-20% 0px -20% 0px'})
 
   const selectedVariant = itemVariants[index % itemVariants.length];
   const actions = crafts.links ?? (crafts.link ? [{label: 'watch', href: crafts.link}] : []);
@@ -44,48 +43,52 @@ export const Craft = ({crafts, index}: CraftType) => {
   return (
 
     <LazyMotion features={domAnimation}>
-      <Waypoint onEnter={waypointHandlerEnter} topOffset={'20%'} bottomOffset={'20%'}>
-        <m.div className={`${s.containerCraft}`} variants={selectedVariant} initial="hidden"
-               animate={isVisible ? 'visible' : 'hidden'} style={floatStyle}>
-          <div className={s.floatLayer}>
-            <div className={s.containerBackground} style={{backgroundImage: `url(${crafts.background})`}}>
-              <div className={s.actions}>
-                {actions.map((action) => (
-                  <a key={action.href} href={action.href} target="_blank" rel="noreferrer">
-                    <button type="button">{action.label}</button>
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div className={s.containerText}>
-              <div className={s.blockItem}>
-                <div className={s.craftName}>
-                  <p>{crafts.title}</p>
-                  <div className={s.icon}>
-                    <IconSvg name={'description'}/>
-                  </div>
-                </div>
-                {crafts.tags && (
-                  <ul className={s.tags}>
-                    {crafts.tags.map((tag) => <li key={tag}>{tag}</li>)}
-                  </ul>
-                )}
-                {crafts.facts && (
-                  <dl className={s.facts}>
-                    {crafts.facts.map((fact) => (
-                      <React.Fragment key={fact.label}>
-                        <dt>{fact.label}</dt>
-                        <dd>{fact.value}</dd>
-                      </React.Fragment>
-                    ))}
-                  </dl>
-                )}
-                <p className={s.craftDescription}>{crafts.description}</p>
-              </div>
+      <m.div
+        ref={waypointRef}
+        className={`${s.containerCraft}`}
+        variants={selectedVariant}
+        initial="hidden"
+        animate={isVisible ? 'visible' : 'hidden'}
+        style={floatStyle}
+      >
+        <div className={s.floatLayer}>
+          <div className={s.containerBackground} style={{backgroundImage: `url(${crafts.background})`}}>
+            <div className={s.actions}>
+              {actions.map((action) => (
+                <a key={action.href} href={action.href} target="_blank" rel="noreferrer">
+                  <button type="button">{action.label}</button>
+                </a>
+              ))}
             </div>
           </div>
-        </m.div>
-      </Waypoint>
+          <div className={s.containerText}>
+            <div className={s.blockItem}>
+              <div className={s.craftName}>
+                <p>{crafts.title}</p>
+                <div className={s.icon}>
+                  <IconSvg name={'description'}/>
+                </div>
+              </div>
+              {crafts.tags && (
+                <ul className={s.tags}>
+                  {crafts.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+              )}
+              {crafts.facts && (
+                <dl className={s.facts}>
+                  {crafts.facts.map((fact) => (
+                    <React.Fragment key={fact.label}>
+                      <dt>{fact.label}</dt>
+                      <dd>{fact.value}</dd>
+                    </React.Fragment>
+                  ))}
+                </dl>
+              )}
+              <p className={s.craftDescription}>{crafts.description}</p>
+            </div>
+          </div>
+        </div>
+      </m.div>
     </LazyMotion>
   );
 };
