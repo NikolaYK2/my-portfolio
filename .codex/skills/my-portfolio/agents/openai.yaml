@@ -1,0 +1,4 @@
+interface:
+  display_name: "My Portfolio"
+  short_description: "Work on Nikolay Kevlich portfolio project."
+  default_prompt: "Work on this portfolio repo using the project conventions and verification workflow."
