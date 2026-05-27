@@ -71,6 +71,7 @@ export const Wrapper = (props: WrapperType) => {
           >
             View projects
           </Link>
+
           <div className={`${s.backgroundHi} ${isVisible ? s.activeBackgroundHi : ''}`}>
             <IconSvg name={'hi'}/>
           </div>
