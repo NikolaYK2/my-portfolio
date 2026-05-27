@@ -16,6 +16,7 @@ Then inspect the exact files involved in the request before editing.
 
 - Stack: Create React App, React 18, TypeScript, SCSS modules, framer-motion, react-scroll, react-waypoint, react-hook-form, zod, axios, antd.
 - Package manager: Yarn 1.22.22. Prefer `yarn` commands.
+- Shell environment: Windows with PowerShell 7. Prefer PowerShell syntax and Windows paths; use `C:\Program Files\PowerShell\7\pwsh.exe` when an explicit shell is needed.
 - Entry points: `src/index.tsx`, `src/app/App.tsx`.
 - Layout sections: `Header`, `Wrapper`, `MySkills`, `MyCrafts`, `Work`, `MyContacts`, `Footer`.
 - Navigation ids: `wrap`, `skills`, `crafts`, `contact`.

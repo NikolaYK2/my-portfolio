@@ -2,6 +2,8 @@
 
 Workspace: `D:\Job\my-portfolio`.
 
+Environment: Windows with PowerShell 7. Prefer PowerShell commands and Windows paths. When an explicit shell is needed, use `C:\Program Files\PowerShell\7\pwsh.exe`.
+
 This is Nikolay Kevlich's personal portfolio, built with Create React App, React 18, TypeScript, SCSS modules, framer-motion, react-scroll, react-waypoint, react-hook-form, zod, axios, antd, and gh-pages. Package manager is Yarn 1.22.22 (`packageManager` in `package.json`), though npm scripts also exist.
 
 Core commands:
