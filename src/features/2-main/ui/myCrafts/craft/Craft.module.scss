@@ -76,18 +76,28 @@
       Transition: transform 1s ease 0s, fillter 1s ease .3s;
     }
 
-    &:hover a {
+    &:hover .actions {
       transform: scale(0.7);
       will-change: transform;
       transition: all 1s ease;
       background-color: $craftBcA;
     }
 
-    a {
+    .actions {
       position: relative;
       visibility: hidden;
       opacity: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px;
       transition: all .5s ease-in-out;
+
+      a {
+        display: flex;
+        text-decoration: none;
+      }
     }
 
     &:hover button:after {
@@ -104,14 +114,29 @@
       font-size: var(--font-size-p);
       text-transform: uppercase;
       margin: 0;
-      padding: 20px 30px;
+      padding: 16px 24px;
+      white-space: nowrap;
     }
 
-    &:hover a {
+    &:hover .actions {
       transition: all .5s ease-in-out;
       visibility: visible;
       opacity: 1;
 
+    }
+
+    @media (hover: none), (max-width: 690px) {
+      &:before {
+        opacity: .45;
+        visibility: visible;
+      }
+
+      .actions {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(.7);
+        background-color: $craftBcA;
+      }
     }
   }
 
@@ -130,6 +155,7 @@
       max-height: 70px;
       width: 100%;
       padding: 25px;
+      overflow: hidden;
       transition: max-height .3s ease;
       background: url('../../../../../assets/image/app/15.png') 90% 57%/cover no-repeat, var(--color-darck-500);
       z-index: 2;
@@ -153,13 +179,35 @@
           }
         }
         p:first-child {
-          display: inline-flex;
+          display: flex;
+          max-width: calc(100% - 45px);
           font-size: var(--font-size-p);
+          line-height: 1.2;
           color: var(--color-darck-100);
           font-weight: 900;
           margin: 0 0 5%;
         }
 
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0 0 12px;
+        padding: 0;
+        opacity: 0;
+        list-style: none;
+        transition: opacity .3s ease;
+
+        li {
+          padding: 4px 8px;
+          border: 1px solid rgba(157, 161, 165, .35);
+          color: var(--color-darck-100);
+          font-size: var(--font-size-mobile);
+          line-height: 1;
+          background: rgba(16, 16, 16, .65);
+        }
       }
 
       p:last-child {
@@ -185,6 +233,10 @@
       .icon{
         opacity: 0;
         transition: opacity .3s ease;
+      }
+      .tags {
+        opacity: 1;
+        transition: opacity 1s ease;
       }
       p:last-child{
         opacity: 1;

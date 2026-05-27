@@ -6,22 +6,30 @@ import {Waypoint} from "react-waypoint";
 import {useWaypoint} from "common/hooks/useWaypoint";
 import {itemVariants} from "features/2-main/ui/myCrafts/craft/CraftAnimation";
 
-type Type = {
+export type CraftLink = {
+  label: string,
+  href: string,
+}
+
+export type CraftData = {
   id: string,
   title: string,
   background: string,
   description: string,
-  link: string,
+  link?: string,
+  links?: CraftLink[],
+  tags?: string[],
 }
 type CraftType = {
-  crafts: Type,
+  crafts: CraftData,
   index: number
 }
 export const Craft = ({crafts, index}: CraftType) => {
   const {isVisible, waypointHandlerEnter} = useWaypoint()
 
-  // Выбираем вариант на основе индекса
   const selectedVariant = itemVariants[index % itemVariants.length];
+  const actions = crafts.links ?? (crafts.link ? [{label: 'watch', href: crafts.link}] : []);
+
   return (
 
     <LazyMotion features={domAnimation}>
@@ -29,9 +37,13 @@ export const Craft = ({crafts, index}: CraftType) => {
         <m.div className={`${s.containerCraft}`} variants={selectedVariant} initial="hidden"
                animate={isVisible ? 'visible' : 'hidden'}>
           <div className={s.containerBackground} style={{backgroundImage: `url(${crafts.background})`}}>
-            <a href={crafts.link}>
-              <button>watch</button>
-            </a>
+            <div className={s.actions}>
+              {actions.map((action) => (
+                <a key={action.href} href={action.href} target="_blank" rel="noreferrer">
+                  <button type="button">{action.label}</button>
+                </a>
+              ))}
+            </div>
           </div>
           <div className={s.containerText}>
             <div className={s.blockItem}>
@@ -41,6 +53,11 @@ export const Craft = ({crafts, index}: CraftType) => {
                   <IconSvg name={'description'}/>
                 </div>
               </div>
+              {crafts.tags && (
+                <ul className={s.tags}>
+                  {crafts.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+              )}
               <p>{crafts.description}</p>
             </div>
           </div>
