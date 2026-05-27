@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import s from './Work.module.scss';
-import i from 'assets/image/wrapper/portfolio.png'
+import i from 'assets/image/wrapper/portfolio.webp'
 import {animationOnScroll} from "common/utils/animateOnScroll";
+import {ImageBackground} from "common/components/imageBackground/ImageBackground";
 
 export const Work = () => {
 
@@ -11,7 +12,8 @@ export const Work = () => {
   }, []);
 
   return (
-    <section className={s.work} style={{backgroundImage: `url(${i})`}}>
+    <section className={s.work}>
+      <ImageBackground src={i}/>
       <div className={s.container}>
         <h2 id='h2'>Do you like my work?</h2>
         <p id='p'>Let’s work together!</p>
