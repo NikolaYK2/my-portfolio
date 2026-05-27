@@ -13,6 +13,8 @@ type WrapperType = {
   id: string
 }
 
+const heroSignals = ['React', 'TypeScript', 'React Native', 'Telegram Apps'] as const;
+
 export const Wrapper = (props: WrapperType) => {
   const {isVisible, waypointHandlerEnter} = useWaypoint()
   const paralaxWrapper = useRef<HTMLDivElement>(null);
@@ -47,6 +49,9 @@ export const Wrapper = (props: WrapperType) => {
           <h1><span>N</span>ik<TypingEffect text={'olaj Kevlich'}/><span>.</span></h1>
           <p className={s.roleLine}><span>React</span> / React Native developer</p>
           <p className={s.supportLine}>I build web, mobile and Telegram apps with production-ready UX.</p>
+          <ul className={s.heroSignals} aria-label="Core stack">
+            {heroSignals.map((signal) => <li key={signal}>{signal}</li>)}
+          </ul>
 
           <div className={s.btnAndItem}>
             <DownloadCV/>
