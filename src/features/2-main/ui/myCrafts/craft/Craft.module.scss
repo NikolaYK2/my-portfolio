@@ -141,6 +141,7 @@
     }
 
     button {
+      position: relative;
       background: transparent;
       @extend %fontSizeH2;
       font-size: var(--font-size-p);
@@ -148,6 +149,11 @@
       margin: 0;
       padding: 16px 24px;
       white-space: nowrap;
+
+      &::before,
+      &::after {
+        pointer-events: none;
+      }
     }
 
     &:hover .actions {
